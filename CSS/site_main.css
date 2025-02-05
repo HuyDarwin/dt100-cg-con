@@ -71,6 +71,14 @@ body {
   color:#CD8DD3;
 }
 
+.q-escape {
+  background-color:red;
+  width:26.5%;
+  height:4.5%;
+  top:333%;
+  left:68.8%;
+}
+
 .question{
   background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20c%C3%A2u%20h%E1%BB%8Fi%20dt100.png?v=1738762405696') no-repeat;
 	background-position: center;
