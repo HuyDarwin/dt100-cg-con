@@ -31,15 +31,44 @@ body {
 .question{
   width:84%;
   height:12%;
-  background-color:yellow;
-  opacity:0.25;
   left:8%;
   top:70%;
 }
 
 .answer{
-  width:84%;
+  width:27.98%;
   height:14%;
-  left:8%;
   top:80%;
+}
+
+.ans-letter{
+  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/ph%C6%B0%C6%A1ng%20%C3%A1n.png?v=1738762364707') no-repeat;
+	background-position: center;
+	background-size: cover;
+  width:12.5%;
+  height:25%;
+  left:43%;
+  top:0%;
+}
+
+.ans-letter-p{
+  width:100%;
+  height:100%;
+  left:0%;
+  top:0%;
+  text-align:center;
+  font-family:'Chevin';
+  font-size:40px;
+}
+
+#answer-a{
+  left:8%;
+}
+
+#answer-b{
+  left:36.01%;
+}
+
+#answer-c{
+  left:64.02%;
 }
