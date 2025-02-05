@@ -6,6 +6,24 @@ $.keyframe.define([{
     '100%': {
        "transform": "translateY(0%)"
     }
+},{
+    name: 'key-q-reveal-2',
+    '0%': {
+      "clip-path": "inset(0% 0% 50% 0%)"
+    },
+    '100%': {
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+}]);
+
+$.keyframe.define([{
+    name: 'key-q-reveal-2',
+    '0%': {
+      "clip-path": "inset(0% 0% 50% 0%)"
+    },
+    '100%': {
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
 }]);
 
 function ResetQuestion(){
@@ -15,6 +33,11 @@ function ResetQuestion(){
 function QuestionReveal() {
     $('.q-con').playKeyframe({
       name: 'key-q-reveal',
+      duration: '0.75s',
+      timingFunction: 'ease'
+    })
+    $('.question').playKeyframe({
+      name: 'key-q-reveal-2',
       duration: '0.75s',
       timingFunction: 'ease'
     })
