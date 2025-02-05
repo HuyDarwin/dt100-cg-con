@@ -1,4 +1,4 @@
-  left:698.8body {
+body {
   background-color: black;
 }
 
@@ -23,62 +23,10 @@
 }
 
 #background{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Postcode%20Loterij%20E%C3%A9n%20Tegen%20100%20(05.05.2024)%2014-28%20screenshot.png?v=1738766132362') no-repeat;
+  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Postcode%20Loterij%20E%C3%A9n%20Tegen%20100%20(05.05.2024)%206-47%20screenshot.png?v=1738762653465') no-repeat;
 	background-position: center;
 	background-size: cover;
-}
-
-/* Q - Hold */
-
-.q-remain {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
-	background-position: center;
-	background-size: cover;
-  width:12.5%;
-  height:4.5%;
-  top:65.5%;
-  left:15.8%;
-}
-
-.q-remain-p{
-  width:100%;
-  height:75%;
-  left:0%;
-  top:25%;
-  text-align:center;
-  font-family:'Chevin';
-  font-size:36px;
-  color:#CD8DD3;
-}
-
-.q-money {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
-	background-position: center;
-	background-size: cover;
-  width:12.5%;
-  height:4.5%;
-  top:65.5%;
-  left:15.8%;
-}
-
-.q-money-p{
-  width:100%;
-  height:90%;
-  left:0%;
-  top:10%;
-  text-align:center;
-  font-family:'Chevin';
-  font-size:40px;
-  colo
-
-.q-escape {
-  background-color:red;
-  width:26.5%;
-  height:4.5%;
-  top:333%;
-  left:68.8%;
-}%;
-  left:69%;
+  opacity:0;
 }
 
 .question{
@@ -161,5 +109,5 @@
 }
 
 #answer-c{
-.02%;
+  left:64.02%;
 }
