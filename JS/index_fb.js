@@ -1,13 +1,11 @@
 $.keyframe.define([{
     name: 'key-q-reveal',
     '0%': {
-      top:"0px"
-    },
-    '50%': {
-      top:$("#testcontainer").innerHeight() + "px"
+      "transform":"translateY(100px)"
     },
     '100%': {
-      top:"0px"}
+      "transform":"translateY(0)"
+    }
 }]);
 
 function ResetQuestion(){
@@ -15,10 +13,15 @@ function ResetQuestion(){
 }
 
 function QuestionReveal() {
-    
+    $('.question').playKeyframe({
+      name: 'key-q-reveal',
+      duration: '3.5s'
+    })
 }
 
-QuestionReveal();
+setTimeout(function(){
+  QuestionReveal();
+},1000);
 
 function AnswerStatus (ans, status) {
   var answer = '';
