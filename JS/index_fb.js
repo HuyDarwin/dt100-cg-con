@@ -1,10 +1,10 @@
 $.keyframe.define([{
     name: 'key-q-reveal',
     '0%': {
-      "transform":"translateY(100px)"
+      "transform": "translateY(100%)"
     },
     '100%': {
-      "transform":"translateY(0)"
+       "transform": "translateY(0%)"
     }
 }]);
 
@@ -13,15 +13,19 @@ function ResetQuestion(){
 }
 
 function QuestionReveal() {
-    $('.question').playKeyframe({
+    $('.q-con').playKeyframe({
       name: 'key-q-reveal',
-      duration: '3.5s'
+      duration: '0.75s',
+      timingFunction: 'ease'
     })
 }
 
 setTimeout(function(){
   QuestionReveal();
 },1000);
+setTimeout(function(){
+  QuestionReveal();
+},3000);
 
 function AnswerStatus (ans, status) {
   var answer = '';
