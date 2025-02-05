@@ -199,11 +199,45 @@ body {
 }
 
 .eliminate-money{
-  background-color:red;
-  width:84%;
-  height:12%;
-  left:35%;
-  top:70%;
+  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20th%C6%B0%E1%BB%9Fng.png?v=1738762395889') no-repeat;
+	background-position: center;
+	background-size: cover;
+  width:28%;
+  height:7.5%;
+  left:36%;
+  top:86.5%;
+}
+
+.eliminate-money-p{
+  width:96%;
+  height:86%;
+  left:2%;
+  top:12%;
+  text-align:center;
+  font-family:'Chevin';
+  font-size:64px;
+  color:white;
+}
+
+.total-money{
+  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20th%C6%B0%E1%BB%9Fng.png?v=1738762395889') no-repeat;
+	background-position: center;
+	background-size: cover;
+  width:28%;
+  height:7.5%;
+  left:36%;
+  top:86.5%;
+}
+
+.total-money-p{
+  width:96%;
+  height:86%;
+  left:2%;
+  top:12%;
+  text-align:center;
+  font-family:'Chevin';
+  font-size:64px;
+  color:white;
 }
 
 
