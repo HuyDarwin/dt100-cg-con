@@ -1,3 +1,25 @@
+$.keyframe.define([{
+    name: 'key-q-reveal',
+    '0%': {
+      top:"0px"
+    },
+    '50%': {
+      top:$("#testcontainer").innerHeight() + "px"
+    },
+    '100%': {
+      top:"0px"}
+}]);
+
+function ResetQuestion(){
+  
+}
+
+function QuestionReveal() {
+    
+}
+
+QuestionReveal();
+
 function AnswerStatus (ans, status) {
   var answer = '';
   if(ans == 1){
@@ -35,12 +57,13 @@ function AnswerStatus (ans, status) {
     $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',1)
     $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',1)
   }
-  
 }
 
-AnswerStatus (2,1);
-
-setTimeout(function(){
-  AnswerStatus(2,3);
-  AnswerStatus(3,2);
-}, 1000)
+function EscapeStatus (mode, status) {
+  if (status == 0) {
+    $('#q-escape-p-' + mode).css('opacity', 0.25);
+  }
+  else if (status == 1) {
+    $('#q-escape-p-' + mode).css('opacity', 1);    
+  }
+}
