@@ -31,7 +31,9 @@ body {
 
 /* Q-Hold */
 
-
+#q-hold{
+  opacity:0;
+}
 
 .q-remain {
   background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
@@ -189,3 +191,19 @@ body {
 #answer-c{
   left:64.02%;
 }
+
+/* E-Hold */
+
+#e-hold{
+  opacity:1;
+}
+
+.eliminate-money{
+  background-color:red;
+  width:84%;
+  height:12%;
+  left:35%;
+  top:70%;
+}
+
+

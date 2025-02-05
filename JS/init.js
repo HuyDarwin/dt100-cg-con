@@ -24,8 +24,10 @@ accounting.settings.currency.format = {
 	zero: "%s  -- "  // for zero values, eg. "$  --" [optional]
 };
 
+/*
 // Example using underscore.js - extend default settings (also works with $.extend in jQuery):
 accounting.settings.number = _.defaults({
 	precision: 0,
 	thousand: " "
 }, accounting.settings.number);
+*/
