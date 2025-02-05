@@ -1,0 +1,40 @@
+@font-face {
+	font-family: "Chevin";
+	src:
+		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("woff"),
+		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("opentype"),
+		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	overflow: hidden;
+}
+
+div, img, button, textarea, iframe, select, option, input, label, video {
+	position:absolute;
+	margin:auto;
+}
+
+video {
+	position:absolute;
+	margin:auto;
+	top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+}
+
+p {
+	margin:auto;
+	position:absolute;
+}
+
+table {
+	margin:auto;
+	position:absolute;
+}
