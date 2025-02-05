@@ -9,24 +9,38 @@ function AnswerStatus (ans, status) {
   else if (ans == 3){
     answer = 'c';
   }
+   
+  $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',0)
+  $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',0)   
+  $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',0)
+  $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',0)   
+  $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',0)
+  $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',0)   
+  $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',0)
+  $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',0)
   
   if(status == 0) {
-    $('#answer-' + answer + ' .ans-letter').css('background-image', "url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/ph%C6%B0%C6%A1ng%20%C3%A1n.png?v=1738762364707')");
-    $('#answer-' + answer + ' .ans-text').css('background-image', "url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/%C4%91%C3%A1p%20%C3%A1n.png?v=1738762380503');    
+    $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',1)
+    $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',1)
   }
   else if(status == 1) {
-    $('#answer-' + answer + ' .ans-letter').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/ph%C6%B0%C6%A1ng%20%C3%A1n%20ch%E1%BB%91t.png?v=1738772828836');
-    $('#answer-' + answer + ' .ans-text').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/%C4%91%C3%A1p%20%C3%A1n%20ch%E1%BB%91t.png?v=1738772831196');    
+    $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',1)
+    $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',1)
   }
   else if(status == 2) {
-    $('#answer-' + answer + ' .ans-letter').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/ph%C6%B0%C6%A1ng%20%C3%A1n%20%C4%91%C3%BAng.png?v=1738772826517');
-    $('#answer-' + answer + ' .ans-text').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/%C4%91%C3%A1p%20%C3%A1n%20%C4%91%C3%BAng.png?v=1738772947460');    
+    $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',1)
+    $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',1) 
   }
   else if(status == 3) {
-    $('#answer-' + answer + ' .ans-letter').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/ph%C6%B0%C6%A1ng%20%C3%A1n%20sai.png?v=1738772825514');
-    $('#answer-' + answer + ' .ans-text').css('background-image', 'https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/%C4%91%C3%A1p%20%C3%A1n%20sai.png?v=1738772947786');    
+    $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',1)
+    $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',1)
   }
   
 }
 
-AnswerStatus (2,2);
+AnswerStatus (2,1);
+
+setTimeout(function(){
+  AnswerStatus(2,3);
+  AnswerStatus(3,2);
+}, 1000)

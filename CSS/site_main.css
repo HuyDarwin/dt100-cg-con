@@ -194,6 +194,14 @@ body {
   left:64.02%;
 }
 
+.ans-letter-lock, .ans-letter-correct, .ans-letter-wrong {
+  opacity:0;
+}
+
+.ans-text-lock, .ans-text-correct, .ans-text-wrong {
+  opacity:0;
+}
+
 /* E-Hold */
 
 #e-hold{
