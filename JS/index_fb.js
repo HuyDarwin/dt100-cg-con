@@ -24,7 +24,7 @@ function ResetQuestion(){
 }
 
 function QuestionReveal() {
-    $('.q-con').playKeyframe({
+    $('.question').playKeyframe({
       name: 'key-q-reveal',
       duration: '0.75s',
       timingFunction: 'ease'
