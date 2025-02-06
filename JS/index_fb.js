@@ -31,6 +31,28 @@ $.keyframe.define([
       "opacity": "1",
        "clip-path": "inset(0% 0% 0% 0%)"
     }
+  },
+  {
+    name: 'key-q-reveal-3',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-4',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(100% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
   }
 ]);
 
@@ -62,16 +84,16 @@ function RemainReveal() {
 function RemainHide() {
     $('.q-remain').playKeyframe({
       name: 'key-q-hide',
-      duration: '0.5s',
-      timingFunction: 'ease'
+      duration: '0.25s',
+      timingFunction: 'linear'
     })
 }
 
 function MoneyReveal() {
     $('.q-money').playKeyframe({
       name: 'key-q-reveal',
-      duration: '0.5s',
-      timingFunction: 'ease'
+      duration: '0.25s',
+      timingFunction: 'linear'
     })
 }
 
@@ -83,23 +105,90 @@ function EscapeReveal(){
     }, 100)
     setTimeout(function(){
       $('#q-escape-p-50').css('opacity',1)
-    }, 30)
+    }, 200)
     setTimeout(function(){
       $('#q-escape-p-75').css('opacity',1)
-    }, 500)
+    }, 300)
   
     $('.q-escape').playKeyframe({
       name: 'key-q-reveal',
-      duration: '0.5s',
+      duration: '0.25s',
       timingFunction: 'linear'
     })
+}
+
+function EscapeHide(){  
+    setTimeout(function(){
+      $('#q-escape-p-75').css('opacity',0)
+    }, 0)
+    setTimeout(function(){
+      $('#q-escape-p-50').css('opacity',0)
+    }, 100)
+    setTimeout(function(){
+      $('#q-escape-p-25').css('opacity',0)
+    }, 200)
+  
+    $('.q-escape').playKeyframe({
+      name: 'key-q-hide',
+      duration: '0.25s',
+      timingFunction: 'linear'
+    })
+}
+
+function AnswerReveal (ans) {
+  var answer = '';
+  if(ans == 1){
+    answer = 'a';
+  }
+  else if (ans == 2){
+    answer = 'b';
+  }
+  else if (ans == 3){
+    answer = 'c';
+  }
+  
+  $('#answer-' + answer).css('opacity',1)
+  $('#answer-' + answer + ' div').css('opacity',1)
+  
+  $('#answer-' + answer + ' .ans-letter').playKeyframe({
+      name: 'key-q-reveal-4',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+  
+  $('#answer-' + answer + ' .ans-text').playKeyframe({
+      name: 'key-q-reveal-3',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  }) 
 }
 
 ResetQuestion()
 QuestionReveal()
 setTimeout(function(){
-  EscapeReveal()
+  AnswerReveal(1)
 }, 2000)
+setTimeout(function(){
+  AnswerReveal(2)
+}, 4000)
+setTimeout(function(){
+  AnswerReveal(3)
+}, 6000)
+setTimeout(function(){
+  RemainReveal()
+}, 8000)
+setTimeout(function(){
+  RemainHide()
+}, 11000)
+setTimeout(function(){
+  EscapeReveal()
+}, 11250)
+setTimeout(function(){
+  MoneyReveal()
+}, 11500)
+setTimeout(function(){
+  EscapeHide()
+}, 13000)
 
 function AnswerStatus (ans, status) {
   var answer = '';
