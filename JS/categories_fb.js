@@ -9,6 +9,16 @@ $.keyframe.define([
       "opacity": "0",
       "scale": "0"
     }
+  },{
+    name: 'reveal',
+    '0%': {
+      "opacity": "1",
+      "scale": "1"
+    },
+    '100%': {
+      "opacity": "1",
+      "scale": "1"
+    }
   }
 ]);
 
@@ -16,9 +26,7 @@ function ResetAllTypes(){
   $('.type').css('top','100%');
   
   $('.type-1 #easy').animate({"left":"-0.25%"}, 0);
-  $('.type-1 #easy').resetKeyframe();
   $('.type-1 #hard').animate({"left":"49.75%"}, 0);
-  $('.type-1 #hard').resetKeyframe();
 }
 
 function RevealType (type) {
@@ -36,7 +44,15 @@ function ChooseOption (type, opt){
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-1 #easy').animate({"left":"25%"}, 250);
+      $('#type-1 #easy').animate({"left":"25%"}, 250,function(){
+        $('#type-1 #easy').stop();
+      $('.type-1 #easy').animate({"left":"50%"}, 250);
+      });
+      $('#type-1 #hard').playKeyframe({
+        name: 'reveal',
+        duration: '0s',
+        timingFunction: 'ease'
+      })
     }
   }
 }
