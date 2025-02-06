@@ -83,17 +83,36 @@ $.keyframe.define([
     '0%': {
       "opacity": "1",
       "transform": "translateY(100%)",
-      "clip-path": "inset(100% 0% 0% 0%)"
+      "clip-path": "inset(0% 0% 100% 0%)"
     },
     '100%': {
       "opacity": "1",
-       "clip-path": "inset(0% 0% 0% 0%)"
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
     }
+  },
+  {
+    name: 'eliminate-to-total',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '50%': {
+      "opacity": "1",
+      "transform": "translateY(-100%)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(0%)",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }    
   }
 ]);
 
 function ResetQuestion(){
-  $('.q-con div, .q-con, .answer').css('opacity',0);
+  $('.q-con div, .q-con, .answer').css('opacity',0).pauseKeyframe();
 }
 
 function QuestionReveal() {
@@ -216,7 +235,7 @@ function ResetMoneyGpx(){
   $('.eliminate-money, .total-money').css('opacity',0);
 }
 
-function RevealEliminateMoneyGpx(){
+function RevealEliminateGpx(){
   $('.eliminate-money').playKeyframe({
       name: 'key-q-reveal-5',
       duration: '0.75s',
@@ -224,11 +243,33 @@ function RevealEliminateMoneyGpx(){
   })  
 }
 
+function EliminateToTotalGpx(){
+  $('.total-money').playKeyframe({
+      name: 'key-q-reveal-5',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+  $('.eliminate-money').playKeyframe({
+      name: 'eliminate-to-total',
+      duration: '0.5s',
+      timingFunction: 'ease'
+  })  
+}
+
+
+
 ResetMoneyGpx()
-RevealEliminateMoneyGpx()
+ResetQuestion()
+
+setTimeout(function(){
+  RevealEliminateGpx()
+}, 1000)
+
+setTimeout(function(){
+  EliminateToTotalGpx()
+}, 2000)
 
 /*
-ResetQuestion()
 QuestionReveal()
 AnswerReveal(1)
 AnswerReveal(2)
@@ -238,6 +279,9 @@ MoneyReveal()
 setTimeout(function(){
   HideQuestionAndAnswer()
 }, 1000)
+*/
+
+/*
 setTimeout(function(){
   AnswerReveal(1)
 }, 2000)
