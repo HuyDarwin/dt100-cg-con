@@ -44,9 +44,45 @@ $.keyframe.define([
     }
   },
   {
+    name: 'key-q-hide-3',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(100px)",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }
+  },
+  {
     name: 'key-q-reveal-4',
     '0%': {
       "opacity": "1",
+      "clip-path": "inset(100% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'key-q-hide-4',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-5',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(100%)",
       "clip-path": "inset(100% 0% 0% 0%)"
     },
     '100%': {
@@ -163,8 +199,45 @@ function AnswerReveal (ans) {
   }) 
 }
 
+function HideQuestionAndAnswer(){
+  $('.q-con').playKeyframe({
+      name: 'key-q-hide-3',
+      duration: '0.75s',
+      timingFunction: 'ease'
+  })  
+  $('.answer').playKeyframe({
+      name: 'key-q-hide-4',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+}
+
+function ResetMoneyGpx(){
+  $('.eliminate-money, .total-money').css('opacity',0);
+}
+
+function RevealEliminateMoneyGpx(){
+  $('.eliminate-money').playKeyframe({
+      name: 'key-q-reveal-5',
+      duration: '0.75s',
+      timingFunction: 'ease'
+  })  
+}
+
+ResetMoneyGpx()
+RevealEliminateMoneyGpx()
+
+/*
 ResetQuestion()
 QuestionReveal()
+AnswerReveal(1)
+AnswerReveal(2)
+AnswerReveal(3)
+EscapeReveal()
+MoneyReveal()
+setTimeout(function(){
+  HideQuestionAndAnswer()
+}, 1000)
 setTimeout(function(){
   AnswerReveal(1)
 }, 2000)
@@ -189,6 +262,10 @@ setTimeout(function(){
 setTimeout(function(){
   EscapeHide()
 }, 13000)
+setTimeout(function(){
+  HideQuestionAndAnswer()
+}, 15000)
+*/
 
 function AnswerStatus (ans, status) {
   var answer = '';
