@@ -54,6 +54,27 @@ body {
   top:24%;
 }
 
-p{
-  width:
+#type-1 .category-p{
+  width:90%;
+  height:35%;
+  top:25%;
+  left:5%;
+  font-family:'Chevin';
+  font-size:68px;
+  color:white;
+  text-align:center;
+}
+
+#type-1 .easy-hard{
+  width:50.5%;
+  height:37.5%;
+  top:47%;
+}
+
+#type-1 #easy{
+  left:-0.25%;
+}
+
+#type-1 #hard{
+  opacity:0;
 }
