@@ -2,10 +2,10 @@ $.keyframe.define([
   {
     name: 'key-q-reveal',
     '0%': {
-      "transform": "translateY(100%)"
+      "transform": "translateY(100px)"
     },
     '100%': {
-       "transform": "translateY(0%)"
+       "transform": "translateY(0px)"
     }
   },
   {
@@ -20,21 +20,27 @@ $.keyframe.define([
 ]);
 
 function ResetQuestion(){
-  
+  $('.q-con div, .q-con, .answer').css('opacity',0);
 }
 
 function QuestionReveal() {
-    $('.question').playKeyframe({
+    $('.q-con, ')
+    $('.q-con div').playKeyframe({
       name: 'key-q-reveal',
       duration: '0.75s',
       timingFunction: 'ease'
     })
-    $('.question').playKeyframe({
+    $('.q-con').playKeyframe({
       name: 'key-q-reveal-2',
       duration: '0.75s',
       timingFunction: 'ease'
     })
 }
+
+ResetQuestion()
+setTimeout(function(){
+  QuestionReveal()
+}, 1000)
 
 function AnswerStatus (ans, status) {
   var answer = '';
