@@ -19,14 +19,28 @@ $.keyframe.define([
       "opacity": "1",
       "scale": "1"
     }
+  },{
+    name: 'move-horizontally',
+    '100%': {
+      "opacity": "1",
+      "left": "25%"
+    }
   }
 ]);
 
 function ResetAllTypes(){
   $('.type').css('top','100%');
   
-  $('.type-1 #easy').animate({"left":"-0.25%"}, 0);
-  $('.type-1 #hard').animate({"left":"49.75%"}, 0);
+  $('#type-1 #easy').playKeyframe({
+    name: 'reveal',
+    duration: '0s',
+    timingFunction: 'ease'
+  })
+  $('#type-1 #hard').playKeyframe({
+    name: 'reveal',
+    duration: '0s',
+    timingFunction: 'ease'
+  })
 }
 
 function RevealType (type) {
@@ -44,15 +58,23 @@ function ChooseOption (type, opt){
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-1 #easy').animate({"left":"25%"}, 250,function(){
-        $('#type-1 #easy').stop();
-      $('.type-1 #easy').animate({"left":"50%"}, 250);
-      });
-      $('#type-1 #hard').playKeyframe({
-        name: 'reveal',
-        duration: '0s',
+      $('#type-1 #easy').playKeyframe({
+        name: 'move-horizontally',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+    else if(opt==2){
+      $('#type-1 #easy').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
         timingFunction: 'ease'
       })
+      $('#type-1 #hard').playKeyframe({
+        name: 'move-horizontally',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
     }
   }
 }
@@ -73,5 +95,5 @@ setTimeout(function(){
   RevealType(1)
 }, 4500)
 setTimeout(function(){
-  ChooseOption(1,1)
+  ChooseOption(1,2)
 }, 6000)
