@@ -246,18 +246,33 @@ function RevealEliminateGpx(){
 function EliminateToTotalGpx(){
   $('.total-money').playKeyframe({
       name: 'key-q-reveal-5',
-      duration: '0.25s',
+      duration: '0.375s',
       timingFunction: 'ease'
   })  
   $('.eliminate-money').playKeyframe({
       name: 'eliminate-to-total',
-      duration: '0.5s',
+      duration: '0.75s',
       timingFunction: 'ease'
   })  
 }
 
+function HideEliminateGpx(){
+  $('.eliminate-money').playKeyframe({
+      name: 'key-q-hide-4',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+}
 
+function HideTotalGpx(){
+  $('.total-money').playKeyframe({
+      name: 'key-q-hide-4',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+}
 
+/*
 ResetMoneyGpx()
 ResetQuestion()
 
@@ -266,8 +281,9 @@ setTimeout(function(){
 }, 1000)
 
 setTimeout(function(){
-  EliminateToTotalGpx()
+  HideEliminateGpx()
 }, 2000)
+*/
 
 /*
 QuestionReveal()
@@ -358,3 +374,7 @@ function EscapeStatus (mode, status) {
     $('#q-escape-p-' + mode).css('opacity', 1);    
   }
 }
+
+/* Init */
+ResetMoneyGpx()
+ResetQuestion()
