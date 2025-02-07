@@ -95,5 +95,23 @@ body {
   left:9.5%;
   height:55%;
   top:7.25%;
+}
+
+#type-2 .category{
+  width:84%;
+  left:8%;
+  height:15%;
+  top:27.25%;
   background-color:red;
+}
+
+#type-2 .category-p{
+  width:90%;
+  height:35%;
+  top:25%;
+  left:5%;
+  font-family:'Chevin';
+  font-size:64px;
+  color:white;
+  text-align:center;
 }

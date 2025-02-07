@@ -14,10 +14,31 @@ $.keyframe.define([
     }
   },
   {
-    name: 'move-horizontally',
+    name: 'move-right',
     '100%': {
       "opacity": "1",
-      "left": "25%"
+      "transform": "translateX(50%)"
+    }
+  },
+  {
+    name: 'move-left',
+    '100%': {
+      "opacity": "1",
+      "transform": "translateX(-50%)"
+    }
+  },
+  {
+    name: 'move-down',
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(50%)"
+    }
+  },
+  {
+    name: 'move-up',
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(-50%)"
     }
   }
 ]);
@@ -48,7 +69,7 @@ function ChooseOption (type, opt){
         timingFunction: 'ease'
       })
       $('#type-1 #easy').playKeyframe({
-        name: 'move-horizontally',
+        name: 'move-right',
         duration: '0.25s',
         timingFunction: 'ease'
       })      
@@ -60,7 +81,7 @@ function ChooseOption (type, opt){
         timingFunction: 'ease'
       })
       $('#type-1 #hard').playKeyframe({
-        name: 'move-horizontally',
+        name: 'move-left',
         duration: '0.25s',
         timingFunction: 'ease'
       })      
@@ -70,8 +91,10 @@ function ChooseOption (type, opt){
 
 /* Init */
 
+
 ResetAllTypes();
 $('#type-2').css('top','0%')
+
 
 /*
 ResetAllTypes();
