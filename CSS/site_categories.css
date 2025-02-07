@@ -100,18 +100,31 @@ body {
 #type-2 .category{
   width:84%;
   left:8%;
-  height:15%;
-  top:27.25%;
-  background-color:red;
+  height:17%;
+  top:60%;
 }
 
 #type-2 .category-p{
-  width:90%;
-  height:35%;
-  top:25%;
-  left:5%;
+  width:76%;
+  height:25%;
+  top:16%;
+  left:12%;
   font-family:'Chevin';
-  font-size:64px;
+  font-size:56px;
   color:white;
   text-align:center;
+}
+
+#type-2 .easy-hard{
+  width:42.75%;
+  height:17%;
+  top:74.25%;
+}
+
+#type-2 #easy{
+  left:7.75%;
+}
+
+#type-2 #hard{
+  left:49.25%;
 }
