@@ -1,5 +1,8 @@
 $.keyframe.define([
   {
+    name: 'reset'
+  },
+  {
     name: 'key-q-reveal',
     '0%': {
       "opacity": "1",
