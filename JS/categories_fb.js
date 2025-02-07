@@ -48,7 +48,7 @@ function ResetAllTypes(){
   
   $('#type-1 .easy-hard').playKeyframe('reset')
   $('#type-2 .easy-hard').playKeyframe('reset')
-  $('#type-3 .').playKeyframe('reset')
+  $('#type-3 .category').playKeyframe('reset')
 }
 
 function RevealType (type) {
@@ -109,9 +109,53 @@ function ChooseOption (type, opt){
       })      
     }
   }
+  else if(type==3){
+    if(opt==1){
+      $('#type-3 #category-b').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-3 #category-a').playKeyframe({
+        name: 'move-down',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+    else if(opt==2){
+      $('#type-3 #category-a').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-3 #category-b').playKeyframe({
+        name: 'move-up',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+  }
 }
 
 /* Init */
+
+ResetAllTypes();
+setTimeout(function(){
+  RevealType(3)
+}, 500)
+setTimeout(function(){
+  ChooseOption(3,1)
+}, 2000)
+
+setTimeout(function(){
+  ResetAllTypes();
+}, 3500)
+setTimeout(function(){
+  RevealType(3)
+}, 4500)
+setTimeout(function(){
+  ChooseOption(3,2)
+}, 6000)
 
 /*
 ResetAllTypes();
