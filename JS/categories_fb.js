@@ -46,10 +46,9 @@ $.keyframe.define([
 function ResetAllTypes(){
   $('.type').css('top','100%');
   
-  $('#type-1 #easy').playKeyframe('reset')
-  $('#type-1 #hard').playKeyframe('reset')
-  $('#type-2 #easy').playKeyframe('reset')
-  $('#type-2 #hard').playKeyframe('reset')
+  $('#type-1 .easy-hard').playKeyframe('reset')
+  $('#type-2 .easy-hard').playKeyframe('reset')
+  $('#type-3 .').playKeyframe('reset')
 }
 
 function RevealType (type) {
@@ -114,8 +113,11 @@ function ChooseOption (type, opt){
 
 /* Init */
 
+/*
 ResetAllTypes();
 $('#type-3').css('top','0%');
+*/
+
 /*
 ResetAllTypes();
 setTimeout(function(){
