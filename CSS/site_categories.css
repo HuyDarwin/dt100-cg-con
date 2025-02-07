@@ -23,7 +23,7 @@ body {
 }
 
 #background{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Postcode%20Loterij%20E%C3%A9n%20Tegen%20100%20(05.05.2024)%2015-59%20screenshot.png?v=1738920008110') no-repeat;
+  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%404x.png?v=1738851294903') no-repeat;
 	background-position: center;
 	background-size: cover;
   opacity:1;
@@ -95,6 +95,11 @@ body {
   left:9.5%;
   height:55%;
   top:7.25%;
+  
+  background-image: none;
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 
 #type-2 .category{
@@ -126,5 +131,34 @@ body {
 }
 
 #type-2 #hard{
-  left:49.25%;
+  left:49.5%;
+}
+
+#type-2 .easy-hard-p{
+  width:80%;
+  height:30%;
+  top:20%;
+  left:10%;
+  font-family:'Chevin';
+  font-size:52px;
+  color:white;
+  text-align:center;
+}
+
+#type-3 .category{
+  width:100%;
+  height:25%;
+  left:0%;
+  top:24%;
+}
+
+#type-3 .category-p{
+  width:90%;
+  height:35%;
+  top:25%;
+  left:5%;
+  font-family:'Chevin';
+  font-size:64px;
+  color:white;
+  text-align:center;
 }

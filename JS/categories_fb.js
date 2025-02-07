@@ -48,16 +48,13 @@ function ResetAllTypes(){
   
   $('#type-1 #easy').playKeyframe('reset')
   $('#type-1 #hard').playKeyframe('reset')
+  $('#type-2 #easy').playKeyframe('reset')
+  $('#type-2 #hard').playKeyframe('reset')
 }
 
 function RevealType (type) {
   $('.type').css('top','100%');
-  if(type==1){
-    $('#type-1').animate({"top":"0%"}, 500);
-  }
-  else if(type==2){
-    $('#type-2').animate({"top":"0%"}, 500);
-  }
+  $('#type-' + type).animate({"top":"0%"}, 500);
 }
 
 function ChooseOption (type, opt){
@@ -87,14 +84,57 @@ function ChooseOption (type, opt){
       })      
     }
   }
+  else if(type==2){
+    if(opt==1){
+      $('#type-2 #hard').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-2 #easy').playKeyframe({
+        name: 'move-right',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+    else if(opt==2){
+      $('#type-2 #easy').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-2 #hard').playKeyframe({
+        name: 'move-left',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+  }
 }
 
 /* Init */
 
-
 ResetAllTypes();
-$('#type-2').css('top','0%')
+$('#type-3').css('top','0%');
+/*
+ResetAllTypes();
+setTimeout(function(){
+  RevealType(2)
+}, 500)
+setTimeout(function(){
+  ChooseOption(2,1)
+}, 2000)
 
+setTimeout(function(){
+  ResetAllTypes();
+}, 3500)
+setTimeout(function(){
+  RevealType(2)
+}, 4500)
+setTimeout(function(){
+  ChooseOption(2,2)
+}, 6000)
+*/
 
 /*
 ResetAllTypes();
