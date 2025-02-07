@@ -139,6 +139,12 @@ function ChooseOption (type, opt){
 
 /* Init */
 
+
+ResetAllTypes();
+$('#type-4').css('top','0%');
+
+
+/*
 ResetAllTypes();
 setTimeout(function(){
   RevealType(3)
@@ -156,10 +162,6 @@ setTimeout(function(){
 setTimeout(function(){
   ChooseOption(3,2)
 }, 6000)
-
-/*
-ResetAllTypes();
-$('#type-3').css('top','0%');
 */
 
 /*
