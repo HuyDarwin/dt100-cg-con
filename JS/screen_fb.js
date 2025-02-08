@@ -150,6 +150,17 @@ $.keyframe.define([
       "opacity": "1",
       "transform": "translateY(-50%)"
     }
+  },
+  {
+    name: 'n-reveal',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(200%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "transform": "translateY(0%)"
+    }
   }
 ]);
 
@@ -311,16 +322,29 @@ function ImageReveal() {
 /* n-hold */
 
 function ResetNumEle(){
-  $('.number-eliminated, .num-e-main, .num-e-red, .num-e-yellow').css('opacity',0).playKeyframe('reset');
-}
-
-function RevealNumEle(){
-  $('.number-eliminated').css('top','100%');
-  $('.number-eliminated').animate({"top":"0%"}, 500);
+  $('.number-eliminated').css('opacity',0).playKeyframe('reset');
 }
 
 function ShowWhichNumEle(num){
-  $('.num-e-main, .num-e-red, .num-e-yellow').css('opacity',0).playKeyframe('reset');
+  $('.num-e-main, .num-e-red, .num-e-yellow').css('opacity',0);
+  if(num==1){
+    $('.num-e-main').css('opacity',1);    
+  }
+  else if(num==2){
+    $('.num-e-red').css('opacity',1);    
+  }
+  else if(num==3){
+    $('.num-e-red').css('opacity',1);    
+  }
+}
+
+function RevealNumEle(){
+  ShowWhichNumEle(1);
+  $('.number-eliminated').playKeyframe({
+    name: 'n-reveal',
+    duration: '0.75s',
+    timingFunction: 'ease'
+  })
 }
 
 /* Init */
