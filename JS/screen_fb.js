@@ -144,6 +144,8 @@ function ChooseOption (type, opt){
 
 
 ResetAllTypes();
+
+/*
 setTimeout(function(){
   RevealType(1)
 }, 500)
@@ -160,3 +162,4 @@ setTimeout(function(){
 setTimeout(function(){
   ChooseOption(1,2)
 }, 6000)
+*/

@@ -142,4 +142,4 @@ function ChooseOption (type, opt){
 
 /* Init */
 
-ResetAllTypes();
+
