@@ -209,5 +209,51 @@ body {
 }
 
 #type-5 .category{
+  width:48%;
+  height:61%;
+  top:23.5%;
+}
+
+#type-5 #category-a{
+  left:1%;
+}
+
+#type-5 #category-b{
+  right:1%;
+}
+
+#type-5 .category-image{
+  top:0%;
+  left:0%;
+  width:100%;
+  height:92%;
   
+  background-image: none;
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+  
+  border-radius:5%;
+  
+  box-shadow: 10px 10px 5px 0px ;
+  
+  background-color:red;
+}
+
+#type-5 .category-letter{
+  bottom:0%;
+  width:13.5%;
+  left:43.25%;
+  height:13.5%;
+}
+
+#type-5 .category-letter-p {
+  width:98%;
+  height:98%;
+  top:1%;
+  left:1%;
+  font-family:'Chevin';
+  font-size:56px;
+  color:white;
+  text-align:center;
 }
