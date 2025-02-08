@@ -50,6 +50,8 @@ function ResetAllTypes(){
   $('#type-2 .easy-hard').playKeyframe('reset')
   $('#type-3 .category').playKeyframe('reset')
   $('#type-4 .category').playKeyframe('reset')
+  $('#type-5 .category').playKeyframe('reset')
+  $('#type-6 .category').playKeyframe('reset')
 }
 
 function RevealType (type) {
@@ -110,30 +112,34 @@ function ChooseOption (type, opt){
       })      
     }
   }
+  else if(type==5 || type==6){
+    if(opt==1){
+      $('#type-' + type + ' #category-b').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-' + type + ' #category-a').playKeyframe({
+        name: 'move-right',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+    else if(opt==2){
+      $('#type-' + type + ' #category-a').playKeyframe({
+        name: 'hide',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })
+      $('#type-' + type + ' #category-b').playKeyframe({
+        name: 'move-left',
+        duration: '0.25s',
+        timingFunction: 'ease'
+      })      
+    }
+  }
 }
 
 /* Init */
 
-
 ResetAllTypes();
-$('#type-5').css('top','0%');
-
-/*
-ResetAllTypes();
-setTimeout(function(){
-  RevealType(4)
-}, 500)
-setTimeout(function(){
-  ChooseOption(4,1)
-}, 2000)
-
-setTimeout(function(){
-  ResetAllTypes();
-}, 3500)
-setTimeout(function(){
-  RevealType(4)
-}, 4500)
-setTimeout(function(){
-  ChooseOption(4,2)
-}, 6000)
-*/
