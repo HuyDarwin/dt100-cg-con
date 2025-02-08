@@ -116,65 +116,24 @@ function ChooseOption (type, opt){
 
 
 ResetAllTypes();
-$('#type-4').css('top','0%');
-
+$('#type-5').css('top','0%');
 
 /*
 ResetAllTypes();
 setTimeout(function(){
-  RevealType(3)
+  RevealType(4)
 }, 500)
 setTimeout(function(){
-  ChooseOption(3,1)
+  ChooseOption(4,1)
 }, 2000)
 
 setTimeout(function(){
   ResetAllTypes();
 }, 3500)
 setTimeout(function(){
-  RevealType(3)
+  RevealType(4)
 }, 4500)
 setTimeout(function(){
-  ChooseOption(3,2)
-}, 6000)
-*/
-
-/*
-ResetAllTypes();
-setTimeout(function(){
-  RevealType(2)
-}, 500)
-setTimeout(function(){
-  ChooseOption(2,1)
-}, 2000)
-
-setTimeout(function(){
-  ResetAllTypes();
-}, 3500)
-setTimeout(function(){
-  RevealType(2)
-}, 4500)
-setTimeout(function(){
-  ChooseOption(2,2)
-}, 6000)
-*/
-
-/*
-ResetAllTypes();
-setTimeout(function(){
-  RevealType(1)
-}, 500)
-setTimeout(function(){
-  ChooseOption(1,1)
-}, 2000)
-
-setTimeout(function(){
-  ResetAllTypes();
-}, 3500)
-setTimeout(function(){
-  RevealType(1)
-}, 4500)
-setTimeout(function(){
-  ChooseOption(1,2)
+  ChooseOption(4,2)
 }, 6000)
 */
