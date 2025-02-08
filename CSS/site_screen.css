@@ -440,18 +440,15 @@ body {
 .ans-text-lock, .ans-text-correct, .ans-text-wrong {
   opacity:0;
 }
-}
 
 .q-image{
-  left:14%;
+  left:30%;
   top:0%;
-  width:72%;
-  height:70%;
+  width:40%;
+  height:45%;
   
   background-image: none;
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-  
-  background-color:red;
 }

@@ -150,14 +150,6 @@ $.keyframe.define([
       "opacity": "1",
       "transform": "translateY(-50%)"
     }
-  },
-  {
-    name: 'zoom-ch',
-    '100%': {
-      "opacity": "1",
-      "scale":"0.5",
-      "transform": "translateY(-50%)"
-    }
   }
 ]);
 
@@ -261,7 +253,8 @@ function ChooseOption (type, opt){
 /* q-hold */
 
 function ResetQuestion(){
-  $('.q-escape, .q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+  $('.q-image, .q-escape, .q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+  $('.q-a-con').css({'transform':'scaleY(1) scaleX(1) translateY(0%)'});
 }
 
 function QuestionReveal() {
@@ -312,13 +305,9 @@ function AnswerReveal (ans) {
 
 function ImageReveal() {
   $('.q-image').css('opacity',1);
-  $('#q-hold').playKeyframe('zoom-ch')
+  $('.q-a-con').css({'transform':'scaleY(0.6) scaleX(0.75) translateY(37.5%)'});
 }
 
 /* Init */
 
-
 ResetAllTypes();
-ResetQuestion();
-ImageReveal();
-QuestionReveal();
