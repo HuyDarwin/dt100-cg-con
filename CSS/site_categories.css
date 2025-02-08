@@ -169,3 +169,41 @@ body {
 #type-3 #category-b{
   top:53.6%;
 }
+
+#type-4 .image{
+  width:81.25%;
+  left:9.5%;
+  height:55%;
+  top:7.25%;
+  
+  background-image: none;
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#type-4 .category{
+  width:84%;
+  left:8%;
+  height:17%;
+  top:60%;
+}
+
+#type-4 .category-p{
+  width:76%;
+  height:25%;
+  top:16%;
+  left:12%;
+  font-family:'Chevin';
+  font-size:56px;
+  color:white;
+  text-align:center;
+}
+
+#type-4 #category-a{
+  top:65%;
+}
+
+#type-4 #category-b{
+  top:95%;
+}
