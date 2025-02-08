@@ -318,10 +318,10 @@ body {
 }
 
 .q-escape {
-  width:60%;
-  height:20%;
-  top:10%;
-  left:20%;
+  width:40%;
+  height:30%;
+  top:0%;
+  left:30%;
 }
 
 .q-escape-p {
@@ -330,7 +330,7 @@ body {
   top:20%;
   text-align:center;
   font-family:'Chevin';
-  font-size:36px;
+  font-size:80px;
   color:#CD8DD3;  
 }
 
@@ -439,4 +439,19 @@ body {
 
 .ans-text-lock, .ans-text-correct, .ans-text-wrong {
   opacity:0;
+}
+}
+
+.q-image{
+  left:14%;
+  top:0%;
+  width:72%;
+  height:70%;
+  
+  background-image: none;
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+  
+  background-color:red;
 }

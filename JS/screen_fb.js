@@ -3,6 +3,116 @@ $.keyframe.define([
     name: 'reset'
   },
   {
+    name: 'key-q-reveal',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(100%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "transform": "translateY(0%)"
+    }
+  },
+  {
+    name: 'key-q-hide',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "transform": "translateY(100%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-2',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 50% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-3',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'key-q-hide-3',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(100px)",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-4',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(100% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+       "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'key-q-hide-4',
+    '0%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }
+  },
+  {
+    name: 'key-q-reveal-5',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(100%)",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    }
+  },
+  {
+    name: 'eliminate-to-total',
+    '0%': {
+      "opacity": "1",
+      "transform": "translateY(0)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '50%': {
+      "opacity": "1",
+      "transform": "translateY(-100%)",
+      "clip-path": "inset(0% 0% 0% 0%)"
+    },
+    '100%': {
+      "opacity": "1",
+      "transform": "translateY(0%)",
+      "clip-path": "inset(0% 0% 100% 0%)"
+    }    
+  },
+  {
     name: 'hide',
     '0%': {
       "opacity": "1",
@@ -38,6 +148,14 @@ $.keyframe.define([
     name: 'move-up',
     '100%': {
       "opacity": "1",
+      "transform": "translateY(-50%)"
+    }
+  },
+  {
+    name: 'zoom-ch',
+    '100%': {
+      "opacity": "1",
+      "scale":"0.5",
       "transform": "translateY(-50%)"
     }
   }
@@ -140,26 +258,67 @@ function ChooseOption (type, opt){
   }
 }
 
+/* q-hold */
+
+function ResetQuestion(){
+  $('.q-escape, .q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+}
+
+function QuestionReveal() {
+    $('.q-escape').css('opacity',1)
+    $('.question').playKeyframe({
+      name: 'key-q-reveal',
+      duration: '0.75s',
+      timingFunction: 'ease'
+    })
+    $('.q-con').playKeyframe({
+      name: 'key-q-reveal-2',
+      duration: '0.75s',
+      timingFunction: 'ease'
+    })
+}
+
+function QuestionHide(){
+  ResetQuestion();
+}
+
+function AnswerReveal (ans) {
+  var answer = '';
+  if(ans == 1){
+    answer = 'a';
+  }
+  else if (ans == 2){
+    answer = 'b';
+  }
+  else if (ans == 3){
+    answer = 'c';
+  }
+  
+  $('#answer-' + answer).css('opacity',1)
+  $('#answer-' + answer + ' div').css('opacity',1)
+  
+  $('#answer-' + answer + ' .ans-letter').playKeyframe({
+      name: 'key-q-reveal-4',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  })  
+  
+  $('#answer-' + answer + ' .ans-text').playKeyframe({
+      name: 'key-q-reveal-3',
+      duration: '0.25s',
+      timingFunction: 'ease'
+  }) 
+}
+
+function ImageReveal() {
+  $('.q-image').css('opacity',1);
+  $('#q-hold').playKeyframe('zoom-ch')
+}
+
 /* Init */
 
 
 ResetAllTypes();
-
-/*
-setTimeout(function(){
-  RevealType(1)
-}, 500)
-setTimeout(function(){
-  ChooseOption(1,1)
-}, 2000)
-
-setTimeout(function(){
-  ResetAllTypes();
-}, 3500)
-setTimeout(function(){
-  RevealType(1)
-}, 4500)
-setTimeout(function(){
-  ChooseOption(1,2)
-}, 6000)
-*/
+ResetQuestion();
+ImageReveal();
+QuestionReveal();

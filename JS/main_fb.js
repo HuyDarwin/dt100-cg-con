@@ -115,7 +115,7 @@ $.keyframe.define([
 ]);
 
 function ResetQuestion(){
-  $('.q-con div, .q-con, .answer').css('opacity',0).pauseKeyframe();
+  $('.q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
 }
 
 function QuestionReveal() {
