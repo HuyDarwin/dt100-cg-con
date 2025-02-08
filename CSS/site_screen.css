@@ -452,3 +452,27 @@ body {
 	background-position: center;
 	background-size: cover;
 }
+
+/* N-Hold */
+#n-hold{
+  opacity:1;
+}
+
+.number-eliminated{
+  width:70%;
+  left:15%;
+  top:15%;
+  height:70%;
+  font-family:"Chevin";
+}
+
+.number-eliminated-p{
+  font-size:600px;
+  text-align:center;
+  color:white;
+  
+  top:5%;
+  left:10%;
+  width:80%;
+  height:80%;
+}

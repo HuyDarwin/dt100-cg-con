@@ -308,6 +308,23 @@ function ImageReveal() {
   $('.q-a-con').css({'transform':'scaleY(0.6) scaleX(0.75) translateY(37.5%)'});
 }
 
+/* n-hold */
+
+function ResetNumEle(){
+  $('.number-eliminated, .num-e-main, .num-e-red, .num-e-yellow').css('opacity',0).playKeyframe('reset');
+}
+
+function RevealNumEle(){
+  $('.number-eliminated').css('top','100%');
+  $('.number-eliminated').animate({"top":"0%"}, 500);
+}
+
+function ShowWhichNumEle(num){
+  $('.num-e-main, .num-e-red, .num-e-yellow').css('opacity',0).playKeyframe('reset');
+}
+
 /* Init */
 
 ResetAllTypes();
+ResetQuestion();
+ResetNumEle();
