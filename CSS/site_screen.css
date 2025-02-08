@@ -34,9 +34,9 @@ body {
 #c-hold{
   opacity:1;
   
-  width:59.2%;
-  height:88%;
-  left:39.5%;
+  width:84%;
+  height:125%;
+  left:0%;
   top:0%;
 }
 
@@ -60,7 +60,7 @@ body {
   top:25%;
   left:5%;
   font-family:'Chevin';
-  font-size:72px;
+  font-size:64px;
   color:white;
   text-align:center;
 }
@@ -85,7 +85,7 @@ body {
   top:32.5%;
   left:10%;
   font-family:'Chevin';
-  font-size:84px;
+  font-size:76px;
   color:white;
   text-align:center;
 }
@@ -115,7 +115,7 @@ body {
   top:16%;
   left:12%;
   font-family:'Chevin';
-  font-size:64px;
+  font-size:56px;
   color:white;
   text-align:center;
 }
@@ -140,7 +140,7 @@ body {
   top:20%;
   left:10%;
   font-family:'Chevin';
-  font-size:58px;
+  font-size:52px;
   color:white;
   text-align:center;
 }
@@ -157,7 +157,7 @@ body {
   top:27.5%;
   left:5%;
   font-family:'Chevin';
-  font-size:76px;
+  font-size:68px;
   color:white;
   text-align:center;
 }
@@ -195,7 +195,7 @@ body {
   top:16%;
   left:12%;
   font-family:'Chevin';
-  font-size:64px;
+  font-size:56px;
   color:white;
   text-align:center;
 }
@@ -251,7 +251,7 @@ body {
   top:1%;
   left:1%;
   font-family:'Chevin';
-  font-size:64px;
+  font-size:56px;
   color:white;
   text-align:center;
 }
@@ -299,24 +299,7 @@ body {
   top:1%;
   left:1%;
   font-family:'Chevin';
-  font-size:6px;
+  font-size:56px;
   color:white;
   text-align:center;
-}
-
-/* I - Hold */
-#i-hold{
-  opacity:1;
-}
-
-.q-image{
-  left:14%;
-  top:0%;
-  width:72%;
-  height:70%;
-  
-  background-image: none;
-  background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 }
