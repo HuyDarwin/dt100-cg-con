@@ -49,6 +49,7 @@ function ResetAllTypes(){
   $('#type-1 .easy-hard').playKeyframe('reset')
   $('#type-2 .easy-hard').playKeyframe('reset')
   $('#type-3 .category').playKeyframe('reset')
+  $('#type-4 .category').playKeyframe('reset')
 }
 
 function RevealType (type) {
@@ -57,78 +58,52 @@ function RevealType (type) {
 }
 
 function ChooseOption (type, opt){
-  if(type==1){
+  if(type==1 || type == 2){
     if(opt==1){
-      $('#type-1 #hard').playKeyframe({
+      $('#type-' + type + ' #hard').playKeyframe({
         name: 'hide',
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-1 #easy').playKeyframe({
+      $('#type-' + type + ' #easy').playKeyframe({
         name: 'move-right',
         duration: '0.25s',
         timingFunction: 'ease'
       })      
     }
     else if(opt==2){
-      $('#type-1 #easy').playKeyframe({
+      $('#type-' + type + ' #easy').playKeyframe({
         name: 'hide',
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-1 #hard').playKeyframe({
+      $('#type-' + type + ' #hard').playKeyframe({
         name: 'move-left',
         duration: '0.25s',
         timingFunction: 'ease'
       })      
     }
   }
-  else if(type==2){
+  else if(type==3 || type==4){
     if(opt==1){
-      $('#type-2 #hard').playKeyframe({
+      $('#type-' + type + ' #category-b').playKeyframe({
         name: 'hide',
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-2 #easy').playKeyframe({
-        name: 'move-right',
-        duration: '0.25s',
-        timingFunction: 'ease'
-      })      
-    }
-    else if(opt==2){
-      $('#type-2 #easy').playKeyframe({
-        name: 'hide',
-        duration: '0.25s',
-        timingFunction: 'ease'
-      })
-      $('#type-2 #hard').playKeyframe({
-        name: 'move-left',
-        duration: '0.25s',
-        timingFunction: 'ease'
-      })      
-    }
-  }
-  else if(type==3){
-    if(opt==1){
-      $('#type-3 #category-b').playKeyframe({
-        name: 'hide',
-        duration: '0.25s',
-        timingFunction: 'ease'
-      })
-      $('#type-3 #category-a').playKeyframe({
+      $('#type-' + type + ' #category-a').playKeyframe({
         name: 'move-down',
         duration: '0.25s',
         timingFunction: 'ease'
       })      
     }
     else if(opt==2){
-      $('#type-3 #category-a').playKeyframe({
+      $('#type-' + type + ' #category-a').playKeyframe({
         name: 'hide',
         duration: '0.25s',
         timingFunction: 'ease'
       })
-      $('#type-3 #category-b').playKeyframe({
+      $('#type-' + type + ' #category-b').playKeyframe({
         name: 'move-up',
         duration: '0.25s',
         timingFunction: 'ease'
