@@ -108,6 +108,7 @@ $('.get-qs').on("change", function(e){
   reader.readAsArrayBuffer(file);
 })
 
+$("")
 
 //
 
