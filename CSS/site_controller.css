@@ -17,6 +17,16 @@ button:hover {
 	transition: 0.25s;
 }
 
+button:disabled {
+  opacity:0.5;
+}
+
+button:disabled:hover {
+  background-color:black;
+  color:white;
+  transition: 0.25s;
+}
+
 textarea{
   color:white;
   background-color:black;
