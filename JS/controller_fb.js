@@ -47,7 +47,8 @@ $('.get-qs').on("change", function(e){
     questions = [];
     
     for(var i = 1; i <= MAX_QS; i++) {
-        var last = 3 + (i - 1) * 11;
+        var last = 3 + (i - 1) * 12;
+      
         questions.push({
           Type: sheet['B' + (last + 1)].v,
           
@@ -55,7 +56,7 @@ $('.get-qs').on("change", function(e){
           One_Img: sheet['B' + (last + 3)].v,
           One_Audio: sheet['B' + (last + 4)].v,
           One_Difficulty: sheet['B' + (last + 5)].v,
-          One_Question: sheet['B' + (last + 6)].v,
+          One_Question: sheet['B' + (last + 6)].v.replace("++++", "<br />"),
           One_AnswerA: sheet['B' + (last + 7)].v,
           One_AnswerB: sheet['B' + (last + 8)].v,
           One_AnswerC: sheet['B' + (last + 9)].v,
@@ -66,7 +67,7 @@ $('.get-qs').on("change", function(e){
           Two_Img: sheet['D' + (last + 3)].v,
           Two_Audio: sheet['D' + (last + 4)].v,
           Two_Difficulty: sheet['D' + (last + 5)].v,
-          Two_Question: sheet['D' + (last + 6)].v,
+          Two_Question: sheet['D' + (last + 6)].v.replace("++++", "<br />"),
           Two_AnswerA: sheet['D' + (last + 7)].v,
           Two_AnswerB: sheet['D' + (last + 8)].v,
           Two_AnswerC: sheet['D' + (last + 9)].v,
@@ -99,16 +100,18 @@ $('.get-qs').on("change", function(e){
     else if (type == 6) {
       text = "2 hình ảnh đính kèm chủ đề";
     }
-    $(".list_qs").append('<option value="' + (i + 1) + '">' + (i + 1) + '. ' + text + '</option>');
+    $(".list-qs").append('<option value="' + (i + 1) + '">' + (i + 1) + '. ' + text + '</option>');
     
     question_now = 1;
     
   }
   
   reader.readAsArrayBuffer(file);
-})
+});
 
-$("")
+$(".q-submit").click(function(){
+  question_now = $('.list-qs').val() - 1;
+});
 
 //
 
