@@ -101,10 +101,11 @@ $('.get-qs').on("change", function(e){
       text = "2 hình ảnh đính kèm chủ đề";
     }
     $(".list-qs").append('<option value="' + (i + 1) + '">' + (i + 1) + '. ' + text + '</option>');
-    
-    question_now = 1;
-    
+    console.log(i)
   }
+  question_now = 1;
+
+  enb(".c-reveal");    
   
   reader.readAsArrayBuffer(file);
 });
@@ -119,4 +120,3 @@ remove(ref(db));
 $('button').attr("disabled","true");
 $('.reload').removeAttr("disabled");
 $('.q-submit').removeAttr("disabled");
-$('.c-reveal').removeAttr("disabled");
