@@ -15,19 +15,48 @@ body {
 
 .holder{
   border-inline: 2px solid white;
+  background-color: black;
+}
+
+.holder-title {
+  top:0%;
+  left:0%;
+  width:100%;
+  height:20%;
+  
+  font-family:'Chevin';
+  font-size:275%;
+  text-align:center;
+  
+  background-color:white;
+}
+
+.holder-main {
+  bottom:0%;
+  left:0%;
+  width:100%;
+  height:80%;
 }
 
 #background{
-  background-color: black;
+  background-color: #221C35;
   
   background-image:none;
   background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
+  
   opacity:1;
   
   width:100%;
   height:100%;
   left:0%;
   top:0%;
+}
+
+#holder-1{
+  top:0%;
+  left:0%;
+  width:30%;
+  height:20%;
 }
