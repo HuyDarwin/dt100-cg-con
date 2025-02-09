@@ -30,4 +30,6 @@ body {
 	background-position: center;
 	background-size: cover;
   opacity:1;
+  
+  border-inline: 2px solid white;
 }
