@@ -349,3 +349,65 @@ textarea{
 #q-escape-75{
   left:745px;
 }
+
+.a-choose{
+  top:400px;
+  width:80px;
+  height:70px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;  
+}
+
+#a-choose-1{
+  left:315px;
+}
+
+#a-choose-2{
+  left:405px;
+}
+
+#a-choose-3{
+  left:495px;
+}
+
+.a-announce{
+  top:400px;
+  width:120px;
+  height:70px;
+  left:585px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;   
+}
+
+.q-hide{
+  top:400px;
+  width:155px;
+  height:70px;
+  left:715px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;   
+}
+
+/* Holder-5 */
+
+#holder-5{
+  top:540px;
+  left:580px;
+  width:880px;
+  height:540px;
+}
+
+.mob-remain-p{
+  left:5px;
+  top:60px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:36px;     
+}
