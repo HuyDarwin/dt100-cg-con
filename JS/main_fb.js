@@ -1,3 +1,20 @@
+import { getDatabase, ref, set, update, onValue, remove, get } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+//
+
+const db = getDatabase();
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    
+});
+
+// Variables
+
+//
+
 $.keyframe.define([
   {
     name: 'reset'

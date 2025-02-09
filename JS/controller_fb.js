@@ -8,6 +8,14 @@ const db = getDatabase();
 onValue(ref(db), (snapshot) => {
     const data = snapshot.val();
 
+    if(data.question_now != undefined){
+      $(".q-now").html("Câu hỏi hiện tại: " + data.question_now);
+      $(".q-next").html("Câu hỏi tiếp theo: " + (data.question_now + 1));
+    }
+    else {
+      $(".q-now").html("Câu hỏi hiện tại: ");
+      $(".q-next").html("Câu hỏi tiếp theo: ");
+    }
 });
 
 //
@@ -20,19 +28,7 @@ var question_now = 0;
 
 //
 
-function upd(key, val) {
-    update(ref(db), {
-        [key]: val
-    })
-}
 
-function enb(key) {
-    $(key).removeAttr('disabled')
-}
-
-function dib(key) {
-    $(key).attr('disabled', true);
-}
 
 //
 
@@ -72,46 +68,52 @@ $('.get-qs').on("change", function(e){
           Two_AnswerB: sheet['D' + (last + 8)].v,
           Two_AnswerC: sheet['D' + (last + 9)].v,
           Two_CorrectAns: sheet['D' + (last + 10)].v,
-          Two_Note: sheet['D' + (last + 11)].v,
-        })
+          Two_Note: sheet['D' + (last + 11)].v
+        });
     }
-  };
   
-  $(".list_qs").empty();
-  
-  for(var i = 0; i < questions.length; i++){
-    var type = questions[i].Type;
-    var text = "";
-    if (type == 1) {
-      text = "Khó dễ";
-    }
-    else if (type == 2) {
-      text = "Khó dễ có hình ảnh";
-    }
-    else if (type == 3) {
-      text = "2 chủ đề";
-    }
-    else if (type == 4) {
-      text = "2 chủ đề có hình ảnh";
-    }
-    else if (type == 5) {
-      text = "2 hình ảnh";
-    }
-    else if (type == 6) {
-      text = "2 hình ảnh đính kèm chủ đề";
-    }
-    $(".list-qs").append('<option value="' + (i + 1) + '">' + (i + 1) + '. ' + text + '</option>');
-    console.log(i)
-  }
-  question_now = 1;
+    $(".list_qs").empty();
 
-  enb(".c-reveal");    
+    for(var i = 0; i < questions.length; i++){
+      var type = questions[i].Type;
+      var text = "";
+      if (type == 1) {
+        text = "Khó dễ";
+      }
+      else if (type == 2) {
+        text = "Khó dễ có hình ảnh";
+      }
+      else if (type == 3) {
+        text = "2 chủ đề";
+      }
+      else if (type == 4) {
+        text = "2 chủ đề có hình ảnh";
+      }
+      else if (type == 5) {
+        text = "2 hình ảnh";
+      }
+      else if (type == 6) {
+        text = "2 hình ảnh đính kèm chủ đề";
+      }
+      $(".list-qs").append('<option value="' + (i + 1) + '">' + (i + 1) + '. ' + text + '</option>');
+    }
+    
+    question_now = 1;
+    upd('question_now', question_now);
+
+    enb(".c-reveal"); 
+  };   
   
   reader.readAsArrayBuffer(file);
 });
 
 $(".q-submit").click(function(){
   question_now = $('.list-qs').val() - 1;
+  upd('question_now', question_now);
+});
+
+$(".reload").click(function(){
+  upd("reload", 1);
 });
 
 //
