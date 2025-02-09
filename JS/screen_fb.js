@@ -347,8 +347,26 @@ function RevealNumEle(){
   })
 }
 
-/* Init */
+/* l - hold */
+function ResetLogo(){
+  $('.logo').css('top','100%');
+}
 
-ResetAllTypes();
-ResetQuestion();
-ResetNumEle();
+function RevealLogo(){
+  $('.logo').css("top","200%");
+  $('.logo').animate({"top":"0%"}, 750);  
+}
+
+/* all */
+function ResetAll(){
+  ResetAllTypes();
+  ResetQuestion();
+  ResetNumEle();  
+  ResetLogo();
+}
+
+/* Init */
+ResetAll();
+setTimeout(function(){
+  RevealLogo();
+})
