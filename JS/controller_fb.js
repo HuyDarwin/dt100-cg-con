@@ -5,21 +5,6 @@ const db = getDatabase();
 
 //
 
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
-
-    if(data.question_now != undefined){
-      $(".q-now").html("Câu hỏi hiện tại: " + data.question_now);
-      $(".q-next").html("Câu hỏi tiếp theo: " + (data.question_now + 1));
-    }
-    else {
-      $(".q-now").html("Câu hỏi hiện tại: ");
-      $(".q-next").html("Câu hỏi tiếp theo: ");
-    }
-});
-
-//
-
 var MAX_QS = 50;
 
 var questions = [];
@@ -28,7 +13,19 @@ var question_now = 0;
 
 //
 
+function upd(key, val) {
+    update(ref(db), {
+        [key]: val
+    })
+}
 
+function enb(key) {
+    $(key).removeAttr('disabled')
+}
+
+function dib(key) {
+    $(key).attr('disabled', true);
+}
 
 //
 
@@ -122,3 +119,20 @@ remove(ref(db));
 $('button').attr("disabled","true");
 $('.reload').removeAttr("disabled");
 $('.q-submit').removeAttr("disabled");
+
+upd("question_now", 0);
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    if(data.question_now != undefined){
+      $(".q-now").html("Câu hỏi hiện tại: " + data.question_now);
+      $(".q-next").html("Câu hỏi tiếp theo: " + (data.question_now + 1));
+    }
+    else {
+      $(".q-now").html("Câu hỏi hiện tại: ");
+      $(".q-next").html("Câu hỏi tiếp theo: ");
+    }
+});

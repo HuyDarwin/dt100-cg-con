@@ -3,14 +3,6 @@ import { getDatabase, ref, set, update, onValue, remove, get } from "https://www
 
 const db = getDatabase();
 
-//
-
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
-
-    
-});
-
 // Variables
 
 //
@@ -155,6 +147,14 @@ function ChooseOption (type, opt){
     }
   }
 }
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    
+});
 
 /* Init */
 

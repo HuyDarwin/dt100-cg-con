@@ -3,20 +3,22 @@ import { getDatabase, ref, set, update, onValue, remove, get } from "https://www
 
 const db = getDatabase();
 
-//
-
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
-
-    if(data.reload == 1) {
-      location.reload();
-      upd("reload", 0);
-    }
-});
-
 // Variables
 
 //
+function upd(key, val) {
+    update(ref(db), {
+        [key]: val
+    })
+}
+
+function enb(key) {
+    $(key).removeAttr('disabled')
+}
+
+function dib(key) {
+    $(key).attr('disabled', true);
+}
 
 $.keyframe.define([
   {
@@ -387,6 +389,17 @@ function ResetAll(){
   ResetNumEle();  
   ResetLogo();
 }
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    if(data.reload == 1) {
+      location.reload();
+      upd("reload", 0);
+    }
+});
 
 // 
 

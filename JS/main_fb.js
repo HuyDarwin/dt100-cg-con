@@ -3,17 +3,22 @@ import { getDatabase, ref, set, update, onValue, remove, get } from "https://www
 
 const db = getDatabase();
 
-//
-
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
-
-    
-});
-
 // Variables
 
 //
+function upd(key, val) {
+    update(ref(db), {
+        [key]: val
+    })
+}
+
+function enb(key) {
+    $(key).removeAttr('disabled')
+}
+
+function dib(key) {
+    $(key).attr('disabled', true);
+}
 
 $.keyframe.define([
   {
@@ -394,6 +399,14 @@ function EscapeStatus (mode, status) {
     $('#q-escape-p-' + mode).css('opacity', 1);    
   }
 }
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    
+});
 
 /* Init */
 ResetMoneyGpx()

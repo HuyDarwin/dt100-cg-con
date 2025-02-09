@@ -5,14 +5,6 @@ const db = getDatabase();
 
 //
 
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
-
-    
-});
-
-//
-
 function upd(key, val) {
     update(ref(db), {
         [key]: val
@@ -26,3 +18,11 @@ function enb(key) {
 function dib(key) {
     $(key).attr('disabled', true);
 }
+
+//
+
+onValue(ref(db), (snapshot) => {
+    const data = snapshot.val();
+
+    
+});
