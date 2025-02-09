@@ -17,3 +17,5 @@ onValue(ref(db), (snapshot) => {
 
 remove(ref(db));
 $('button').attr("disabled","true");
+$('.reload').removeAttr("disabled");
+$('.q-submit').removeAttr("disabled");
