@@ -20,11 +20,21 @@ var question_now = 0;
 
 //
 
-remove(ref(db));
-$('button').attr("disabled","true");
-$('.reload').removeAttr("disabled");
-$('.q-submit').removeAttr("disabled");
-$('.c-reveal').removeAttr("disabled");
+function upd(key, val) {
+    update(ref(db), {
+        [key]: val
+    })
+}
+
+function enb(key) {
+    $(key).removeAttr('disabled')
+}
+
+function dib(key) {
+    $(key).attr('disabled', true);
+}
+
+//
 
 $('.get-qs').on("change", function(e){
   var file = e.target.files[0];
@@ -97,3 +107,12 @@ $('.get-qs').on("change", function(e){
   
   reader.readAsArrayBuffer(file);
 })
+
+
+//
+
+remove(ref(db));
+$('button').attr("disabled","true");
+$('.reload').removeAttr("disabled");
+$('.q-submit').removeAttr("disabled");
+$('.c-reveal').removeAttr("disabled");
