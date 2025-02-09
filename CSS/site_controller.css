@@ -5,7 +5,6 @@ body {
 button {
 	cursor: pointer;
 	font-family:"Chevin";
-	font-weight:bold;
 	border-width:2%;
   border-color:white;
   background-color:black;
@@ -16,6 +15,11 @@ button:hover {
 	background-color:white;
   color:black;
 	transition: 0.5s;
+}
+
+textarea{
+  color:white;
+  background-color:black;
 }
 
 .stage{
@@ -139,3 +143,30 @@ button:hover {
   width:250px;
   color:white;
 }
+
+/* Holder-3 */
+
+#holder-3{
+  top:910px;
+  left:0px;
+  width:580px;
+  height:170px;
+}
+
+.reload{
+  left:5px;
+  top:50px;
+  width:150px;
+  height:40px;
+  font-size:24px;
+}
+
+/* Holder-4 */
+
+#holder-4{
+  top:0px;
+  left:580px;
+  width:880px;
+  height:540px;
+}
+
