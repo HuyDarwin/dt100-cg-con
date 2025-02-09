@@ -217,9 +217,20 @@ textarea{
   top:440px;
 }
 
-.q-type{
+.c-reveal{
   left:315px;
   top:60px;
+  width:320px;
+  height:40px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;  
+}
+
+.q-type{
+  left:315px;
+  top:110px;
   
   color:white;
   font-family:"Chevin";
@@ -227,7 +238,7 @@ textarea{
 }
 
 .q-c-type{
-  top:90px;
+  top:140px;
   width:160px;
   height:60px;
   
@@ -246,16 +257,25 @@ textarea{
 
 .q-chosen{
   left:655px;
-  top:110px;
+  top:160px;
   
   color:white;
   font-family:"Chevin";
   font-size:24px;  
 }
 
+.q-difficulty{
+  left:315px;
+  top:210px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
 .q-reveal{
   left:315px;
-  top:160px;
+  top:240px;
   width:160px;
   height:70px;
   
@@ -265,7 +285,7 @@ textarea{
 }
 
 .a-reveal{
-  top:160px;
+  top:240px;
   width:80px;
   height:70px;
   
@@ -287,7 +307,7 @@ textarea{
 }
 
 .mob-answer{
-  top:160px;
+  top:240px;
   width:115px;
   height:70px;
   left:755px;
@@ -295,4 +315,37 @@ textarea{
   color:white;
   font-family:"Chevin";
   font-size:24px;
+}
+
+.q-m-e-reveal{
+  top:320px;
+  width:240px;
+  height:70px;
+  left:315px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
+.q-escape{
+  top:320px;
+  width:80px;
+  height:70px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
+#q-escape-25{
+  left:565px;
+}
+
+#q-escape-50{
+  left:655px;
+}
+
+#q-escape-75{
+  left:745px;
 }
