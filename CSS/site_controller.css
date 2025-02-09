@@ -227,10 +227,72 @@ textarea{
 }
 
 .q-c-type{
-  top:60px;
+  top:90px;
+  width:160px;
+  height:60px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:28px;  
+}
+
+#q-c-type-1{
+  left:315px;
+}
+
+#q-c-type-2{
+  left:485px;
+}
+
+.q-chosen{
+  left:655px;
+  top:110px;
   
   color:white;
   font-family:"Chevin";
   font-size:24px;  
 }
 
+.q-reveal{
+  left:315px;
+  top:160px;
+  width:160px;
+  height:70px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
+.a-reveal{
+  top:160px;
+  width:80px;
+  height:70px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
+#a-reveal-1{
+  left: 485px;
+}
+
+#a-reveal-2{
+  left: 575px;
+}
+
+#a-reveal-3{
+  left: 665px;
+}
+
+.mob-answer{
+  top:160px;
+  width:115px;
+  height:70px;
+  left:755px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
