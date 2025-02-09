@@ -1,0 +1,33 @@
+body {
+  background-color: black;
+}
+
+.stage{
+  width:1920px;
+  height:1080px;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  overflow:hidden;
+  z-index:0;
+}
+
+.holder{
+  width:1920px;
+  height:1080px;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+}
+
+#background{
+  background-color: black;
+  
+  background-image:none;
+  background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+  opacity:1;
+}
