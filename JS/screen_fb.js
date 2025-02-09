@@ -155,7 +155,7 @@ $.keyframe.define([
     name: 'n-reveal',
     '0%': {
       "opacity": "1",
-      "transform": "translateY(200%)"
+      "transform": "translateY(150%)"
     },
     '100%': {
       "opacity": "1",
@@ -349,12 +349,15 @@ function RevealNumEle(){
 
 /* l - hold */
 function ResetLogo(){
-  $('.logo').css('top','100%');
+  $('.logo').css('opacity',0).playKeyframe('reset');
 }
 
 function RevealLogo(){
-  $('.logo').css("top","200%");
-  $('.logo').animate({"top":"0%"}, 750);  
+  $('.logo').playKeyframe({
+    name: 'n-reveal',
+    duration: '0.75s',
+    timingFunction: 'ease'
+  }) 
 }
 
 /* all */
@@ -367,6 +370,3 @@ function ResetAll(){
 
 /* Init */
 ResetAll();
-setTimeout(function(){
-  RevealLogo();
-})

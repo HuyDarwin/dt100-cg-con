@@ -23,7 +23,8 @@ body {
 }
 
 #background{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%404x.png?v=1738851294903') no-repeat;
+  background-image: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%404x.png?v=1738851294903');
+  background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
   opacity:1;
@@ -487,4 +488,9 @@ body {
   height:100%;
   top:0%;
   left:0%;
+  
+  background-image: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Untitled-1.png?v=1739088412250');
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
