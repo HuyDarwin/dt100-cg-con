@@ -74,3 +74,18 @@ body {
   width:580px;
   height:540px;
 }
+
+.get-qs{
+  top:50px;
+  left:5px;
+  width:100%;
+  color:white;
+  font-size:28px;
+}
+
+.load-qs{
+  top:100px;
+  left:5px;
+  width:150px;
+  height:300px;
+}
