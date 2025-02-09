@@ -20,6 +20,12 @@ button:hover {
 textarea{
   color:white;
   background-color:black;
+  resize:none;
+  
+  font-family:"Chevin";
+  font-size:20px;
+  
+  border: 2px solid white;  
 }
 
 .stage{
@@ -168,5 +174,63 @@ textarea{
   left:580px;
   width:880px;
   height:540px;
+}
+
+.question{
+  left:5px;
+  top:50px;
+  width:300px;
+  height:175px;
+}
+
+.ans-letter{
+  left:5px;
+  width:45px;
+  height:98px;
+  
+  background-color:black;
+  font-family:"Chevin";
+  font-size:32px;
+  text-align:center;
+  line-height:98px;
+  
+  border:2px solid white;
+  
+  color:purple;
+}
+
+.ans-text{
+  left:55px;
+  width:250px;
+  height:100px;
+}
+
+#ans-letter-a, #ans-text-a{
+  top:230px;
+}
+
+#ans-letter-b, #ans-text-b{
+  top:335px;
+}
+
+#ans-letter-c, #ans-text-c{
+  top:440px;
+}
+
+.q-type{
+  left:315px;
+  top:60px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;
+}
+
+.q-c-type{
+  top:60px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;  
 }
 
