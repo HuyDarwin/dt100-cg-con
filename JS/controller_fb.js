@@ -116,7 +116,7 @@ $('.get-qs').on("change", function(e){
 });
 
 $(".q-submit").click(function(){
-  question_now = $('.list-qs').val() - 1;
+  question_now = $('.list-qs').val();
   upd('question_now', question_now);
   UpdateData(1);
 });
@@ -141,7 +141,7 @@ onValue(ref(db), (snapshot) => {
 
     if(data.question_now != undefined){
       $(".q-now").html("Câu hỏi hiện tại: " + data.question_now);
-      $(".q-next").html("Câu hỏi tiếp theo: " + (data.question_now + 1));
+      $(".q-next").html("Câu hỏi tiếp theo: " + (parseInt(data.question_now) + 1));
     }
     else {
       $(".q-now").html("Câu hỏi hiện tại: ");
