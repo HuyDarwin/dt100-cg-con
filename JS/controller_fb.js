@@ -28,9 +28,12 @@ function dib(key) {
 }
 
 function UpdateData (index) {
-  if (question_now < 1 || question_now > 50)
+  if (question_now < 1 || question_now > 50) return;
+  
+  var r = question_now - 1;
+  
   if (index == 1) {
-    
+    upd("q-type", questions[r].Type);
   }
 }
 
@@ -104,6 +107,7 @@ $('.get-qs').on("change", function(e){
     
     question_now = 1;
     upd('question_now', question_now);
+    UpdateData(1);
 
     enb(".c-reveal"); 
   };   
