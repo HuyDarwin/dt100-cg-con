@@ -27,6 +27,13 @@ function dib(key) {
     $(key).attr('disabled', true);
 }
 
+function UpdateData (index) {
+  if (question_now < 1 || question_now > 50)
+  if (index == 1) {
+    
+  }
+}
+
 //
 
 $('.get-qs').on("change", function(e){
@@ -107,6 +114,7 @@ $('.get-qs').on("change", function(e){
 $(".q-submit").click(function(){
   question_now = $('.list-qs').val() - 1;
   upd('question_now', question_now);
+  UpdateData(1);
 });
 
 $(".reload").click(function(){
