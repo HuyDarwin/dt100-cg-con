@@ -31,6 +31,8 @@ $(function () {
         var escape_50 = true;
         var escape_75 = true;
         
+        var show_money = true;
+        var is_eli_showing = false;
 
         //
 
@@ -71,6 +73,11 @@ $(function () {
           upd("answer_c", "");
           upd("correct_ans", "");
           upd("note", "");
+          
+          show_money = true;
+          mob_eli = 0;
+          eli_money = 0;
+          option = 0;
         }
       
         function Init(){
@@ -78,6 +85,7 @@ $(function () {
           $('button').attr("disabled","true");
           $('.reload').removeAttr("disabled");
           $('.q-submit').removeAttr("disabled");
+          enb(".t-reveal");
 
           upd("question_now", 0);
           
@@ -150,9 +158,7 @@ $(function () {
           }
         }
       
-        function NextQuestionAndReset(){
-          ResetQuestion();
-          
+        function NextQuestion(){
           if (question_now < 50) {
             question_now++;
             upd('question_now', question_now);
@@ -253,6 +259,9 @@ $(function () {
       
       
         $(".c-reveal").click(function(){
+          mob_eli = 0;
+          upd("mob_eli", 0);
+          
           upd("c_reveal", 1);
           dib(".c-reveal");
           enb(".q-c-type");
@@ -305,14 +314,20 @@ $(function () {
         });
           
         $("#q-escape-25").click(function(){
+          show_money = false;
+          escape_25 = false;
           dib(".q-escape");
         });
           
         $("#q-escape-50").click(function(){
+          show_money = false;
+          escape_50 = false;
           dib(".q-escape");
         });
           
         $("#q-escape-75").click(function(){
+          show_money = false;
+          escape_75 = false;
           dib(".q-escape");
         });
       
@@ -341,9 +356,46 @@ $(function () {
       
         $(".q-hide").click(function(){
           dib(".q-hide");
+          enb(".eliminate");
+          if (show_money){
+            enb(".e-reveal");
+          }
         });
       
-        $("")
+        $(".e-reveal").click(function(){
+          dib(".e-reveal");
+          enb(".e-hide");
+          is_eli_showing = true;
+        });
+      
+        $(".e-hide").click(function(){
+          dib(".e-hide");
+          is_eli_showing = false;
+        });
+      
+        $(".t-reveal").click(function(){
+          dib(".t-reveal");
+          enb(".t-hide");
+          if(is_eli_showing) {
+            dib(".e-reveal");
+            is_eli_showing = false;
+          }
+        });
+      
+        $(".t-hide").click(function(){
+          dib(".t-hide");
+          enb(".t-reveal");
+        });
+      
+        $(".eliminate").click(function(){
+          mob_eli++;
+          if (mob_eli >= mob_to_eli){
+            mob_eli = mob_to_eli;
+            dib(".eliminate");
+            ResetQuestion();
+            NextQuestion();
+          }          
+        });
 
         //
 
