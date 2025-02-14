@@ -91,6 +91,27 @@ $(function () {
               upd("option_b_img", questions[r].Two_Img);
             }
           }
+          else if (index == 2) {
+            upd("choose_option", option);
+            
+            if (option == 1) {
+              upd("difficulty", questions[r].One_Difficulty);
+              upd("question", questions[r].One_Question);
+              upd("answer_a", questions[r].One_AnswerA);
+              upd("answer_b", questions[r].One_AnswerB);
+              upd("answer_c", questions[r].One_AnswerC);
+            }
+            else if (option == 2) {
+              upd("difficulty", questions[r].Two_Difficulty);
+              upd("question", questions[r].Two_Question);
+              upd("answer_a", questions[r].Two_AnswerA);
+              upd("answer_b", questions[r].Two_AnswerB);
+              upd("answer_c", questions[r].Two_AnswerC);              
+            }
+          }
+          else if (index == 3) {
+            
+          }
         }
       
         function NextQuestionAndReset(){
