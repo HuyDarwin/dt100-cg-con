@@ -409,6 +409,12 @@ $(function () {
           
             $("#type-1 .category-p td").html(data.option_a_name.toUpperCase());
             $("#type-2 .category-p td").html(data.option_a_name.toUpperCase());
+            $("#type-3 #category-p-a td").html(data.option_a_name.toUpperCase());
+            $("#type-3 #category-p-b td").html(data.option_b_name.toUpperCase());
+            $("#type-4 #category-p-a td").html(data.option_a_name.toUpperCase());
+            $("#type-4 #category-p-b td").html(data.option_b_name.toUpperCase());
+            $("#type-6 #category-text-p-a td").html(data.option_a_name.toUpperCase());
+            $("#type-6 #category-text-p-b td").html(data.option_b_name.toUpperCase());
 
             if(data.reload == 1) {
               location.reload();
