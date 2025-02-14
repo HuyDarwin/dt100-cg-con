@@ -397,13 +397,18 @@ $(function () {
           ResetLogo();
         }
 
+        // 
+
+        /* Init */
+        ResetAll();
+
         //
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
           
-            $("#type-1 .category-p").html(data.OneName);
-            $("#type-2 .category-p").html(data.OneName);
+            $("#type-1 .category-p td").html(data.option_a_name.toUpperCase());
+            $("#type-2 .category-p td").html(data.option_a_name.toUpperCase());
 
             if(data.reload == 1) {
               location.reload();
@@ -415,11 +420,6 @@ $(function () {
               upd("c_reveal", 0);
             }
         });
-
-        // 
-
-        /* Init */
-        ResetAll();
       
     }(window.CONTROLLER = window.CONTROLLER || {}));
 });

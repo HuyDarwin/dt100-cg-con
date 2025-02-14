@@ -42,34 +42,34 @@ $(function () {
           var r = question_now - 1;
 
           if (index == 1) {
-            upd("q-type", questions[r].Type);
+            upd("q_type", questions[r].Type);
             
             var type = questions[r].Type;
             if(type == 1) {
-              upd("option-a-name", questions[r].One_Name);              
+              upd("option_a_name", questions[r].One_Name);              
             }
             else if(type == 2) {
-              upd("option-a-name", questions[r].One_Name);
-              upd("option-a-img", questions[r].One_Img);
+              upd("option_a_name", questions[r].One_Name);
+              upd("option_a_img", questions[r].One_Img);
             }
             else if(type == 3) {
-              upd("option-a-name", questions[r].One_Name);
-              upd("option-b-name", questions[r].Two_Name);
+              upd("option_a_name", questions[r].One_Name);
+              upd("option_b_name", questions[r].Two_Name);
             }
             else if(type == 4) {
-              upd("option-a-name", questions[r].One_Name);
-              upd("option-b-name", questions[r].Two_Name);
-              upd("option-a-img", questions[r].One_Img);
+              upd("option_a_name", questions[r].One_Name);
+              upd("option_b_name", questions[r].Two_Name);
+              upd("option_a_img", questions[r].One_Img);
             }
             else if(type == 5) {
-              upd("option-a-img", questions[r].One_Img);
-              upd("option-b-img", questions[r].Two_Img);
+              upd("option_a_img", questions[r].One_Img);
+              upd("option_b_img", questions[r].Two_Img);
             }
             else if(type == 6) {
-              upd("option-a-name", questions[r].One_Name);
-              upd("option-b-name", questions[r].Two_Name);
-              upd("option-a-img", questions[r].One_Img);
-              upd("option-b-img", questions[r].Two_Img);
+              upd("option_a_name", questions[r].One_Name);
+              upd("option_b_name", questions[r].Two_Name);
+              upd("option_a_img", questions[r].One_Img);
+              upd("option_b_img", questions[r].Two_Img);
             }
           }
         }
@@ -175,6 +175,8 @@ $(function () {
           question_now = parseInt($('.list-qs').val());
           upd('question_now', question_now);
           UpdateData(1);
+          
+          enb(".c-reveal");
         });
 
         $(".reload").click(function(){
