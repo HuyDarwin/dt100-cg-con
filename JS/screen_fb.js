@@ -407,24 +407,24 @@ $(function () {
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
           
-            $("#type-1 .category-p td").html(data.option_a_name.toUpperCase());
+            $("#type-1 .category-p td").html(data.option_a_name.toString().toUpperCase());
             $("#type-2 .image").css("background-image", "url('" + data.option_a_img + "')");
-            $("#type-2 .category-p td").html(data.option_a_name.toUpperCase());
-            $("#type-3 #category-p-a td").html(data.option_a_name.toUpperCase());
-            $("#type-3 #category-p-b td").html(data.option_b_name.toUpperCase());
-            $("#type-4 #category-p-a td").html(data.option_a_name.toUpperCase());
+            $("#type-2 .category-p td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-3 #category-p-a td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-3 #category-p-b td").html(data.option_b_name.toString().toUpperCase());
+            $("#type-4 #category-p-a td").html(data.option_a_name.toString().toUpperCase());
             $("#type-4 .image").css("background-image", "url('" + data.option_a_img + "')");
-            $("#type-4 #category-p-b td").html(data.option_b_name.toUpperCase());
+            $("#type-4 #category-p-b td").html(data.option_b_name.toString().toUpperCase());
             $("#type-5 #category-image-a").css("background-image", "url('" + data.option_a_img + "')");
             $("#type-5 #category-image-b").css("background-image", "url('" + data.option_b_img + "')");
             $("#type-6 #category-image-a").css("background-image", "url('" + data.option_a_img + "')");
             $("#type-6 #category-image-b").css("background-image", "url('" + data.option_b_img + "')");
-            $("#type-6 #category-text-p-a td").html(data.option_a_name.toUpperCase());
-            $("#type-6 #category-text-p-b td").html(data.option_b_name.toUpperCase());
-            $(".question-p td").html(data.question.toUpperCase());
-            $("#answer-a .ans-letter-p td").html(data.answer_a.toUpperCase());
-            $("#answer-b .ans-letter-p td").html(data.answer_b.toUpperCase());
-            $("#answer-c .ans-letter-p td").html(data.answer_c.toUpperCase());
+            $("#type-6 #category-text-p-a td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-6 #category-text-p-b td").html(data.option_b_name.toString().toUpperCase());
+            $(".question-p td").html(data.question.toString().toUpperCase());
+            $("#answer-a .ans-text-p td").html(data.answer_a.toString().toUpperCase());
+            $("#answer-b .ans-text-p td").html(data.answer_b.toString().toUpperCase());
+            $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
 
             if(data.reload == 1) {
               location.reload();
@@ -448,18 +448,23 @@ $(function () {
               QuestionReveal();
               upd("q_reveal", 0);
             }
-            if(data.reveal_ans_1 == 1) {
+            if(data.a_reveal_1 == 1) {
               AnswerReveal(1);
               upd("a_reveal_1", 0);
             }
-            if(data.reveal_ans_2 == 1) {
+            if(data.a_reveal_2 == 1) {
               AnswerReveal(2);
               upd("a_reveal_2", 0);
             }
-            if(data.reveal_ans_3 == 1) {
+            if(data.a_reveal_3 == 1) {
               AnswerReveal(3);
               upd("a_reveal_3", 0);
             }
+            if(data.q_hide == 1) {
+              ResetQuestion();
+              RevealNumEle();
+              upd("q_hide", 0);
+            }          
         });
       
     }(window.CONTROLLER = window.CONTROLLER || {}));

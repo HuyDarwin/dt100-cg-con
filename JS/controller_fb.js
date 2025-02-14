@@ -366,6 +366,7 @@ $(function () {
         });
       
         $(".q-hide").click(function(){
+          upd("q_hide", 1);
           dib(".q-hide");
           enb(".eliminate");
           if (show_money){
