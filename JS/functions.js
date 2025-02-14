@@ -18,10 +18,13 @@ $(function () {
         var at4 = '';
         var at5 = '';
 
-        con.PlaySound = function(filename, n){
+        con.PlaySound = function(filename, n, time = 0){
           if (n == 1){
             try{			
               at =  new Audio(filename);
+              if (time != 0) {
+                at.currentTime = time;
+              }
               at.play();
               at.volume = 0.5;
             }
@@ -32,6 +35,9 @@ $(function () {
           else if (n == 2){
             try{			
               at2 =  new Audio(filename);
+              if (time != 0) {
+                at2.currentTime = time;
+              }
               at2.play();
               at2.volume = 0.5;
             }
@@ -42,6 +48,9 @@ $(function () {
           else if (n == 3){
             try{			
               at3 =  new Audio(filename);
+              if (time != 0) {
+                at3.currentTime = time;
+              }
               at3.play();
               at3.volume = 0.5;
             }
@@ -52,6 +61,9 @@ $(function () {
           else if (n == 4){
             try{			
               at4 =  new Audio(filename);
+              if (time != 0) {
+                at4.currentTime = time;
+              }
               at4.play();
               at4.volume = 0.4;
             }
@@ -62,6 +74,9 @@ $(function () {
           else if (n == 5){
             try{			
               at5 =  new Audio(filename);
+              if (time != 0) {
+                at5.currentTime = time;
+              }
               at5.play();
               at5.volume = 0.2;
             }
@@ -71,7 +86,7 @@ $(function () {
           }
         };
 
-        con.StopSounds = function(a,b) {
+        con.StopSound = function(a,b) {
           try {
             if(a == 1 && at != ''){
               at.pause();
@@ -143,6 +158,46 @@ $(function () {
                   at5.currentTime = 0;
                   at5 = '';
                 }
+              }
+            }
+          }
+          catch(e){
+            // swallow
+          }
+        };	
+
+        con.ResumeSound = function(a) {
+          try {
+            if(a == 1 && at != ''){
+              at.play();
+            }
+            if(a == 2 && at2 != ''){
+              at2.play();
+            }
+            if(a == 3 && at3 != ''){
+              at3.play();
+            }
+            if(a == 4 && at4 != ''){
+              at4.play();
+            }
+            if(a == 5 && at5 != ''){
+              at5.play();
+            }
+            if(a != 1 && a != 2 && a != 3 && a != 4 && a != 5){
+              if(at != ''){
+                at.play();
+              }
+              if(at2 != ''){
+                at2.play();
+              }
+              if(at3 != ''){
+                at3.play();
+              }
+              if(at4 != ''){
+                at4.play();
+              }
+              if(at5 != ''){
+                at5.play();
               }
             }
           }

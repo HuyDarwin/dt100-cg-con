@@ -41,6 +41,12 @@ $(function () {
 
           if (index == 1) {
             upd("q-type", questions[r].Type);
+            if(questions[r].Type == 1) {
+              
+            }
+          }
+          else if (index == 2) {
+            upd("")
           }
         }
 

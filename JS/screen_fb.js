@@ -412,10 +412,6 @@ $(function () {
 
         /* Init */
         ResetAll();
-
-        setTimeout(function(){
-          con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/sound_08_sweep_tak.mp3?v=1739527388261",1);
-        }, 5000);
-
+      
     }(window.CONTROLLER = window.CONTROLLER || {}));
 });
