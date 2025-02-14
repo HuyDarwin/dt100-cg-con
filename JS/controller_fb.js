@@ -19,6 +19,18 @@ $(function () {
         var question_now = 0;
       
         var option = 0;
+      
+        var mob_left = 100;
+        var total_money = 0;
+      
+        var mob_to_eli = 0;
+        var mob_eli = 0;
+        var eli_money = 0;
+      
+        var escape_25 = true;
+        var escape_50 = true;
+        var escape_75 = true;
+        
 
         //
 
@@ -241,6 +253,7 @@ $(function () {
       
       
         $(".c-reveal").click(function(){
+          upd("c_reveal", 1);
           dib(".c-reveal");
           enb(".q-c-type");
         });
@@ -251,6 +264,86 @@ $(function () {
           UpdateData(2);
           enb(".q-reveal");
         });
+      
+        $(".q-reveal").click(function(){
+          upd("q_reveal", 1);
+          dib(".q-reveal");
+          enb("#a-reveal-1");
+        });
+      
+        $("#a-reveal-1").click(function(){
+          upd("a_reveal_1", 1);
+          dib("#a-reveal-1");
+          enb("#a-reveal-2");
+        });
+      
+        $("#a-reveal-2").click(function(){
+          upd("a_reveal_2", 1);
+          dib("#a-reveal-2");
+          enb("#a-reveal-3");
+        });
+      
+        $("#a-reveal-3").click(function(){
+          upd("a_reveal_3", 1);
+          dib("#a-reveal-3");
+          enb(".mob-answer");
+        });
+      
+        $(".mob-answer").click(function(){
+          upd("mob_answer", 1);
+          dib(".mob-answer");
+          enb(".q-m-e-reveal, .a-choose");
+          if (escape_25) {
+            enb("#q-escape-25");
+          }
+          if (escape_50) {
+            enb("#q-escape-50");
+          }
+          if (escape_75) {
+            enb("#q-escape-75");
+          }
+        });
+          
+        $("#q-escape-25").click(function(){
+          dib(".q-escape");
+        });
+          
+        $("#q-escape-50").click(function(){
+          dib(".q-escape");
+        });
+          
+        $("#q-escape-75").click(function(){
+          dib(".q-escape");
+        });
+      
+        $("#a-choose-1").click(function(){
+          UpdateData(3);
+          dib(".a-choose");
+          enb(".a-announce");
+        });
+      
+        $("#a-choose-2").click(function(){
+          UpdateData(3);
+          dib(".a-choose");
+          enb(".a-announce");
+        });
+      
+        $("#a-choose-3").click(function(){
+          UpdateData(3);
+          dib(".a-choose");
+          enb(".a-announce");
+        });
+      
+        $(".a-announce").click(function(){
+          dib(".a-announce");
+          enb(".q-hide");
+        });
+      
+        $(".q-hide").click(function(){
+          dib(".q-hide");
+        });
+      
+        $("")
 
         //
 
