@@ -401,10 +401,18 @@ $(function () {
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
+          
+            $("#type-1 .category-p").html(data.OneName);
+            $("#type-2 .category-p").html(data.OneName);
 
             if(data.reload == 1) {
               location.reload();
               upd("reload", 0);
+            }
+          
+            if(data.c_reveal == 1) {
+              RevealType (data.q_type);
+              upd("c_reveal", 0);
             }
         });
 

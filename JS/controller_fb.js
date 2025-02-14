@@ -17,6 +17,8 @@ $(function () {
         var questions = [];
 
         var question_now = 0;
+      
+        var option = 0;
 
         //
 
@@ -41,16 +43,57 @@ $(function () {
 
           if (index == 1) {
             upd("q-type", questions[r].Type);
-            if(questions[r].Type == 1) {
-              
+            
+            var type = questions[r].Type;
+            if(type == 1) {
+              upd("option-a-name", questions[r].One_Name);              
+            }
+            else if(type == 2) {
+              upd("option-a-name", questions[r].One_Name);
+              upd("option-a-img", questions[r].One_Img);
+            }
+            else if(type == 3) {
+              upd("option-a-name", questions[r].One_Name);
+              upd("option-b-name", questions[r].Two_Name);
+            }
+            else if(type == 4) {
+              upd("option-a-name", questions[r].One_Name);
+              upd("option-b-name", questions[r].Two_Name);
+              upd("option-a-img", questions[r].One_Img);
+            }
+            else if(type == 5) {
+              upd("option-a-img", questions[r].One_Img);
+              upd("option-b-img", questions[r].Two_Img);
+            }
+            else if(type == 6) {
+              upd("option-a-name", questions[r].One_Name);
+              upd("option-b-name", questions[r].Two_Name);
+              upd("option-a-img", questions[r].One_Img);
+              upd("option-b-img", questions[r].Two_Img);
             }
           }
-          else if (index == 2) {
-            upd("")
+        }
+      
+        function NextQuestionAndReset(){
+          upd("q_type", "");
+          upd("option_a_name", "");
+          upd("option_b_name", "");
+          upd("option_a_img", "");
+          upd("option_b_img", "");
+          
+          if (question_now < 50) {
+            question_now++;
+            upd('question_now', question_now);
+            UpdateData(1);
           }
         }
 
         //
+      
+        $(".c-reveal").click(function(){
+          upd("c_reveal", 1);
+          dib(".c-reveal");
+        });
 
         $('.get-qs').on("change", function(e){
           var file = e.target.files[0];
