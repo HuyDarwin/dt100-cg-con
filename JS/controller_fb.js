@@ -36,12 +36,29 @@ $(function () {
             $(key).attr('disabled', true);
         }
       
+        $('button [name="autoname_class"]').click(function(){
+          var bid = this.class;
+          update(ref(db), { [bid] : 1 })
+        })
+      
+        $('button [name="autoname"]').click(function(){
+          var bid = this.id;
+          update(ref(db), { [bid] : 1 })
+        })
+      
         function ResetQuestion() {
           upd("q_type", "");
           upd("option_a_name", "");
           upd("option_b_name", "");
           upd("option_a_img", "");
-          upd("option_b_img", "");          
+          upd("option_b_img", ""); 
+          upd("difficulty", "");
+          upd("question", "");
+          upd("answer_a", "");
+          upd("answer_b", "");
+          upd("answer_c", "");
+          upd("correct_ans", "");
+          upd("note", "");
         }
       
         function Init(){
@@ -110,7 +127,14 @@ $(function () {
             }
           }
           else if (index == 3) {
-            
+            if (option == 1) {
+              upd("correct_ans", questions[r].One_CorrectAns);
+              upd("note", questions[r].One_Note);
+            }
+            else if (option == 2) {
+              upd("correct_ans", questions[r].Two_CorrectAns);
+              upd("note", questions[r].Two_Note);              
+            }
           }
         }
       
@@ -125,11 +149,6 @@ $(function () {
         }
 
         //
-      
-        $(".c-reveal").click(function(){
-          upd("c_reveal", 1);
-          dib(".c-reveal");
-        });
 
         $('.get-qs').on("change", function(e){
           var file = e.target.files[0];
@@ -217,6 +236,20 @@ $(function () {
 
         $(".reload").click(function(){
           upd("reload", 1);
+        });
+      
+      
+      
+        $(".c-reveal").click(function(){
+          dib(".c-reveal");
+          enb(".q-c-type");
+        });
+      
+        $("#q-c-type-1").click(function(){
+          option = 1;
+          dib(".q-c-type");
+          UpdateData(2);
+          enb(".q-reveal");
         });
 
         //
