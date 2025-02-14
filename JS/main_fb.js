@@ -1,413 +1,423 @@
 import { getDatabase, ref, set, update, onValue, remove, get } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
-//
 
-const db = getDatabase();
+$(function () {
+    "use strict";
 
-// Variables
+    window.CONTROLLER = window.CONTROLLER || {};
 
-//
-function upd(key, val) {
-    update(ref(db), {
-        [key]: val
-    })
-}
+    (function (con) {
+        //
 
-function enb(key) {
-    $(key).removeAttr('disabled')
-}
+        const db = getDatabase();
 
-function dib(key) {
-    $(key).attr('disabled', true);
-}
+        // Variables
 
-$.keyframe.define([
-  {
-    name: 'reset'
-  },
-  {
-    name: 'key-q-reveal',
-    '0%': {
-      "opacity": "1",
-      "transform": "translateY(100%)"
-    },
-    '100%': {
-      "opacity": "1",
-       "transform": "translateY(0%)"
-    }
-  },
-  {
-    name: 'key-q-hide',
-    '0%': {
-      "opacity": "1",
-      "transform": "translateY(0%)"
-    },
-    '100%': {
-      "opacity": "1",
-       "transform": "translateY(100%)"
-    }
-  },
-  {
-    name: 'key-q-reveal-2',
-    '0%': {
-      "opacity": "1",
-      "clip-path": "inset(0% 0% 50% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-       "clip-path": "inset(0% 0% 0% 0%)"
-    }
-  },
-  {
-    name: 'key-q-reveal-3',
-    '0%': {
-      "opacity": "1",
-      "clip-path": "inset(0% 0% 100% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-       "clip-path": "inset(0% 0% 0% 0%)"
-    }
-  },
-  {
-    name: 'key-q-hide-3',
-    '0%': {
-      "opacity": "1",
-      "transform": "translateY(0)",
-      "clip-path": "inset(0% 0% 0% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-      "transform": "translateY(100px)",
-      "clip-path": "inset(0% 0% 100% 0%)"
-    }
-  },
-  {
-    name: 'key-q-reveal-4',
-    '0%': {
-      "opacity": "1",
-      "clip-path": "inset(100% 0% 0% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-       "clip-path": "inset(0% 0% 0% 0%)"
-    }
-  },
-  {
-    name: 'key-q-hide-4',
-    '0%': {
-      "opacity": "1",
-      "clip-path": "inset(0% 0% 0% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-      "clip-path": "inset(0% 0% 100% 0%)"
-    }
-  },
-  {
-    name: 'key-q-reveal-5',
-    '0%': {
-      "opacity": "1",
-      "transform": "translateY(100%)",
-      "clip-path": "inset(0% 0% 100% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-      "transform": "translateY(0)",
-      "clip-path": "inset(0% 0% 0% 0%)"
-    }
-  },
-  {
-    name: 'eliminate-to-total',
-    '0%': {
-      "opacity": "1",
-      "transform": "translateY(0)",
-      "clip-path": "inset(0% 0% 0% 0%)"
-    },
-    '50%': {
-      "opacity": "1",
-      "transform": "translateY(-100%)",
-      "clip-path": "inset(0% 0% 0% 0%)"
-    },
-    '100%': {
-      "opacity": "1",
-      "transform": "translateY(0%)",
-      "clip-path": "inset(0% 0% 100% 0%)"
-    }    
-  }
-]);
+        //
+        function upd(key, val) {
+            update(ref(db), {
+                [key]: val
+            })
+        }
 
-function ResetQuestion(){
-  $('.q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
-}
+        function enb(key) {
+            $(key).removeAttr('disabled')
+        }
 
-function QuestionReveal() {
-    $('.question').playKeyframe({
-      name: 'key-q-reveal',
-      duration: '0.75s',
-      timingFunction: 'ease'
-    })
-    $('.q-con').playKeyframe({
-      name: 'key-q-reveal-2',
-      duration: '0.75s',
-      timingFunction: 'ease'
-    })
-}
+        function dib(key) {
+            $(key).attr('disabled', true);
+        }
 
-function RemainReveal() {
-    $('.q-remain').playKeyframe({
-      name: 'key-q-reveal',
-      duration: '0.75s',
-      timingFunction: 'ease'
-    })
-}
+        $.keyframe.define([
+          {
+            name: 'reset'
+          },
+          {
+            name: 'key-q-reveal',
+            '0%': {
+              "opacity": "1",
+              "transform": "translateY(100%)"
+            },
+            '100%': {
+              "opacity": "1",
+               "transform": "translateY(0%)"
+            }
+          },
+          {
+            name: 'key-q-hide',
+            '0%': {
+              "opacity": "1",
+              "transform": "translateY(0%)"
+            },
+            '100%': {
+              "opacity": "1",
+               "transform": "translateY(100%)"
+            }
+          },
+          {
+            name: 'key-q-reveal-2',
+            '0%': {
+              "opacity": "1",
+              "clip-path": "inset(0% 0% 50% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+               "clip-path": "inset(0% 0% 0% 0%)"
+            }
+          },
+          {
+            name: 'key-q-reveal-3',
+            '0%': {
+              "opacity": "1",
+              "clip-path": "inset(0% 0% 100% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+               "clip-path": "inset(0% 0% 0% 0%)"
+            }
+          },
+          {
+            name: 'key-q-hide-3',
+            '0%': {
+              "opacity": "1",
+              "transform": "translateY(0)",
+              "clip-path": "inset(0% 0% 0% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+              "transform": "translateY(100px)",
+              "clip-path": "inset(0% 0% 100% 0%)"
+            }
+          },
+          {
+            name: 'key-q-reveal-4',
+            '0%': {
+              "opacity": "1",
+              "clip-path": "inset(100% 0% 0% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+               "clip-path": "inset(0% 0% 0% 0%)"
+            }
+          },
+          {
+            name: 'key-q-hide-4',
+            '0%': {
+              "opacity": "1",
+              "clip-path": "inset(0% 0% 0% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+              "clip-path": "inset(0% 0% 100% 0%)"
+            }
+          },
+          {
+            name: 'key-q-reveal-5',
+            '0%': {
+              "opacity": "1",
+              "transform": "translateY(100%)",
+              "clip-path": "inset(0% 0% 100% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+              "transform": "translateY(0)",
+              "clip-path": "inset(0% 0% 0% 0%)"
+            }
+          },
+          {
+            name: 'eliminate-to-total',
+            '0%': {
+              "opacity": "1",
+              "transform": "translateY(0)",
+              "clip-path": "inset(0% 0% 0% 0%)"
+            },
+            '50%': {
+              "opacity": "1",
+              "transform": "translateY(-100%)",
+              "clip-path": "inset(0% 0% 0% 0%)"
+            },
+            '100%': {
+              "opacity": "1",
+              "transform": "translateY(0%)",
+              "clip-path": "inset(0% 0% 100% 0%)"
+            }    
+          }
+        ]);
 
-function RemainHide() {
-    $('.q-remain').playKeyframe({
-      name: 'key-q-hide',
-      duration: '0.25s',
-      timingFunction: 'linear'
-    })
-}
+        function ResetQuestion(){
+          $('.q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+        }
 
-function MoneyReveal() {
-    $('.q-money').playKeyframe({
-      name: 'key-q-reveal',
-      duration: '0.25s',
-      timingFunction: 'linear'
-    })
-}
+        function QuestionReveal() {
+            $('.question').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.75s',
+              timingFunction: 'ease'
+            })
+            $('.q-con').playKeyframe({
+              name: 'key-q-reveal-2',
+              duration: '0.75s',
+              timingFunction: 'ease'
+            })
+        }
 
-function EscapeReveal(){
-    $('.q-escape-p').css('opacity',0)
-  
-    setTimeout(function(){
-      $('#q-escape-p-25').css('opacity',1)
-    }, 100)
-    setTimeout(function(){
-      $('#q-escape-p-50').css('opacity',1)
-    }, 200)
-    setTimeout(function(){
-      $('#q-escape-p-75').css('opacity',1)
-    }, 300)
-  
-    $('.q-escape').playKeyframe({
-      name: 'key-q-reveal',
-      duration: '0.25s',
-      timingFunction: 'linear'
-    })
-}
+        function RemainReveal() {
+            $('.q-remain').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.75s',
+              timingFunction: 'ease'
+            })
+        }
 
-function EscapeHide(){  
-    setTimeout(function(){
-      $('#q-escape-p-75').css('opacity',0)
-    }, 0)
-    setTimeout(function(){
-      $('#q-escape-p-50').css('opacity',0)
-    }, 100)
-    setTimeout(function(){
-      $('#q-escape-p-25').css('opacity',0)
-    }, 200)
-  
-    $('.q-escape').playKeyframe({
-      name: 'key-q-hide',
-      duration: '0.25s',
-      timingFunction: 'linear'
-    })
-}
+        function RemainHide() {
+            $('.q-remain').playKeyframe({
+              name: 'key-q-hide',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
 
-function AnswerReveal (ans) {
-  var answer = '';
-  if(ans == 1){
-    answer = 'a';
-  }
-  else if (ans == 2){
-    answer = 'b';
-  }
-  else if (ans == 3){
-    answer = 'c';
-  }
-  
-  $('#answer-' + answer).css('opacity',1)
-  $('#answer-' + answer + ' div').css('opacity',1)
-  
-  $('#answer-' + answer + ' .ans-letter').playKeyframe({
-      name: 'key-q-reveal-4',
-      duration: '0.25s',
-      timingFunction: 'ease'
-  })  
-  
-  $('#answer-' + answer + ' .ans-text').playKeyframe({
-      name: 'key-q-reveal-3',
-      duration: '0.25s',
-      timingFunction: 'ease'
-  }) 
-}
+        function MoneyReveal() {
+            $('.q-money').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
 
-function HideQuestionAndAnswer(){
-  $('.q-con').playKeyframe({
-      name: 'key-q-hide-3',
-      duration: '0.75s',
-      timingFunction: 'ease'
-  })  
-  $('.answer').playKeyframe({
-      name: 'key-q-hide-4',
-      duration: '0.25s',
-      timingFunction: 'ease'
-  })  
-}
+        function EscapeReveal(){
+            $('.q-escape-p').css('opacity',0)
 
-function ResetMoneyGpx(){
-  $('.eliminate-money, .total-money').css('opacity',0);
-}
+            setTimeout(function(){
+              $('#q-escape-p-25').css('opacity',1)
+            }, 100)
+            setTimeout(function(){
+              $('#q-escape-p-50').css('opacity',1)
+            }, 200)
+            setTimeout(function(){
+              $('#q-escape-p-75').css('opacity',1)
+            }, 300)
 
-function RevealEliminateGpx(){
-  $('.eliminate-money').playKeyframe({
-      name: 'key-q-reveal-5',
-      duration: '0.75s',
-      timingFunction: 'ease'
-  })  
-}
+            $('.q-escape').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
 
-function EliminateToTotalGpx(){
-  $('.total-money').playKeyframe({
-      name: 'key-q-reveal-5',
-      duration: '0.375s',
-      timingFunction: 'ease'
-  })  
-  $('.eliminate-money').playKeyframe({
-      name: 'eliminate-to-total',
-      duration: '0.75s',
-      timingFunction: 'ease'
-  })  
-}
+        function EscapeHide(){  
+            setTimeout(function(){
+              $('#q-escape-p-75').css('opacity',0)
+            }, 0)
+            setTimeout(function(){
+              $('#q-escape-p-50').css('opacity',0)
+            }, 100)
+            setTimeout(function(){
+              $('#q-escape-p-25').css('opacity',0)
+            }, 200)
 
-function HideEliminateGpx(){
-  $('.eliminate-money').playKeyframe({
-      name: 'key-q-hide-4',
-      duration: '0.25s',
-      timingFunction: 'ease'
-  })  
-}
+            $('.q-escape').playKeyframe({
+              name: 'key-q-hide',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
 
-function HideTotalGpx(){
-  $('.total-money').playKeyframe({
-      name: 'key-q-hide-4',
-      duration: '0.25s',
-      timingFunction: 'ease'
-  })  
-}
+        function AnswerReveal (ans) {
+          var answer = '';
+          if(ans == 1){
+            answer = 'a';
+          }
+          else if (ans == 2){
+            answer = 'b';
+          }
+          else if (ans == 3){
+            answer = 'c';
+          }
 
-/*
-ResetMoneyGpx()
-ResetQuestion()
+          $('#answer-' + answer).css('opacity',1)
+          $('#answer-' + answer + ' div').css('opacity',1)
 
-setTimeout(function(){
-  RevealEliminateGpx()
-}, 1000)
+          $('#answer-' + answer + ' .ans-letter').playKeyframe({
+              name: 'key-q-reveal-4',
+              duration: '0.25s',
+              timingFunction: 'ease'
+          })  
 
-setTimeout(function(){
-  HideEliminateGpx()
-}, 2000)
-*/
+          $('#answer-' + answer + ' .ans-text').playKeyframe({
+              name: 'key-q-reveal-3',
+              duration: '0.25s',
+              timingFunction: 'ease'
+          }) 
+        }
 
-/*
-QuestionReveal()
-AnswerReveal(1)
-AnswerReveal(2)
-AnswerReveal(3)
-EscapeReveal()
-MoneyReveal()
-setTimeout(function(){
-  HideQuestionAndAnswer()
-}, 1000)
-*/
+        function HideQuestionAndAnswer(){
+          $('.q-con').playKeyframe({
+              name: 'key-q-hide-3',
+              duration: '0.75s',
+              timingFunction: 'ease'
+          })  
+          $('.answer').playKeyframe({
+              name: 'key-q-hide-4',
+              duration: '0.25s',
+              timingFunction: 'ease'
+          })  
+        }
 
-/*
-setTimeout(function(){
-  AnswerReveal(1)
-}, 2000)
-setTimeout(function(){
-  AnswerReveal(2)
-}, 4000)
-setTimeout(function(){
-  AnswerReveal(3)
-}, 6000)
-setTimeout(function(){
-  RemainReveal()
-}, 8000)
-setTimeout(function(){
-  RemainHide()
-}, 11000)
-setTimeout(function(){
-  EscapeReveal()
-}, 11250)
-setTimeout(function(){
-  MoneyReveal()
-}, 11500)
-setTimeout(function(){
-  EscapeHide()
-}, 13000)
-setTimeout(function(){
-  HideQuestionAndAnswer()
-}, 15000)
-*/
+        function ResetMoneyGpx(){
+          $('.eliminate-money, .total-money').css('opacity',0);
+        }
 
-function AnswerStatus (ans, status) {
-  var answer = '';
-  if(ans == 1){
-    answer = 'a';
-  }
-  else if (ans == 2){
-    answer = 'b';
-  }
-  else if (ans == 3){
-    answer = 'c';
-  }
-   
-  $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',0)
-  $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',0)   
-  $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',0)
-  $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',0)   
-  $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',0)
-  $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',0)   
-  $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',0)
-  $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',0)
-  
-  if(status == 0) {
-    $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',1)
-    $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',1)
-  }
-  else if(status == 1) {
-    $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',1)
-    $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',1)
-  }
-  else if(status == 2) {
-    $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',1)
-    $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',1) 
-  }
-  else if(status == 3) {
-    $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',1)
-    $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',1)
-  }
-}
+        function RevealEliminateGpx(){
+          $('.eliminate-money').playKeyframe({
+              name: 'key-q-reveal-5',
+              duration: '0.75s',
+              timingFunction: 'ease'
+          })  
+        }
 
-function EscapeStatus (mode, status) {
-  if (status == 0) {
-    $('#q-escape-p-' + mode).css('opacity', 0.25);
-  }
-  else if (status == 1) {
-    $('#q-escape-p-' + mode).css('opacity', 1);    
-  }
-}
+        function EliminateToTotalGpx(){
+          $('.total-money').playKeyframe({
+              name: 'key-q-reveal-5',
+              duration: '0.375s',
+              timingFunction: 'ease'
+          })  
+          $('.eliminate-money').playKeyframe({
+              name: 'eliminate-to-total',
+              duration: '0.75s',
+              timingFunction: 'ease'
+          })  
+        }
 
-//
+        function HideEliminateGpx(){
+          $('.eliminate-money').playKeyframe({
+              name: 'key-q-hide-4',
+              duration: '0.25s',
+              timingFunction: 'ease'
+          })  
+        }
 
-onValue(ref(db), (snapshot) => {
-    const data = snapshot.val();
+        function HideTotalGpx(){
+          $('.total-money').playKeyframe({
+              name: 'key-q-hide-4',
+              duration: '0.25s',
+              timingFunction: 'ease'
+          })  
+        }
 
-    
+        /*
+        ResetMoneyGpx()
+        ResetQuestion()
+
+        setTimeout(function(){
+          RevealEliminateGpx()
+        }, 1000)
+
+        setTimeout(function(){
+          HideEliminateGpx()
+        }, 2000)
+        */
+
+        /*
+        QuestionReveal()
+        AnswerReveal(1)
+        AnswerReveal(2)
+        AnswerReveal(3)
+        EscapeReveal()
+        MoneyReveal()
+        setTimeout(function(){
+          HideQuestionAndAnswer()
+        }, 1000)
+        */
+
+        /*
+        setTimeout(function(){
+          AnswerReveal(1)
+        }, 2000)
+        setTimeout(function(){
+          AnswerReveal(2)
+        }, 4000)
+        setTimeout(function(){
+          AnswerReveal(3)
+        }, 6000)
+        setTimeout(function(){
+          RemainReveal()
+        }, 8000)
+        setTimeout(function(){
+          RemainHide()
+        }, 11000)
+        setTimeout(function(){
+          EscapeReveal()
+        }, 11250)
+        setTimeout(function(){
+          MoneyReveal()
+        }, 11500)
+        setTimeout(function(){
+          EscapeHide()
+        }, 13000)
+        setTimeout(function(){
+          HideQuestionAndAnswer()
+        }, 15000)
+        */
+
+        function AnswerStatus (ans, status) {
+          var answer = '';
+          if(ans == 1){
+            answer = 'a';
+          }
+          else if (ans == 2){
+            answer = 'b';
+          }
+          else if (ans == 3){
+            answer = 'c';
+          }
+
+          $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',0)
+
+          if(status == 0) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',1)
+          }
+          else if(status == 1) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',1)
+          }
+          else if(status == 2) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',1) 
+          }
+          else if(status == 3) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',1)
+          }
+        }
+
+        function EscapeStatus (mode, status) {
+          if (status == 0) {
+            $('#q-escape-p-' + mode).css('opacity', 0.25);
+          }
+          else if (status == 1) {
+            $('#q-escape-p-' + mode).css('opacity', 1);    
+          }
+        }
+
+        //
+
+        onValue(ref(db), (snapshot) => {
+            const data = snapshot.val();
+
+
+        });
+
+        /* Init */
+        ResetMoneyGpx()
+        ResetQuestion()
+
+    }(window.CONTROLLER = window.CONTROLLER || {}));
 });
-
-/* Init */
-ResetMoneyGpx()
-ResetQuestion()
