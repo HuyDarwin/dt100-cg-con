@@ -35,6 +35,25 @@ $(function () {
         function dib(key) {
             $(key).attr('disabled', true);
         }
+      
+        function ResetQuestion() {
+          upd("q_type", "");
+          upd("option_a_name", "");
+          upd("option_b_name", "");
+          upd("option_a_img", "");
+          upd("option_b_img", "");          
+        }
+      
+        function Init(){
+          remove(ref(db));
+          $('button').attr("disabled","true");
+          $('.reload').removeAttr("disabled");
+          $('.q-submit').removeAttr("disabled");
+
+          upd("question_now", 0);
+          
+          ResetQuestion();
+        }
 
         function UpdateData (index) {
           if (question_now < 1 || question_now > 50) return;
@@ -75,11 +94,7 @@ $(function () {
         }
       
         function NextQuestionAndReset(){
-          upd("q_type", "");
-          upd("option_a_name", "");
-          upd("option_b_name", "");
-          upd("option_a_img", "");
-          upd("option_b_img", "");
+          ResetQuestion();
           
           if (question_now < 50) {
             question_now++;
@@ -185,12 +200,7 @@ $(function () {
 
         //
 
-        remove(ref(db));
-        $('button').attr("disabled","true");
-        $('.reload').removeAttr("disabled");
-        $('.q-submit').removeAttr("disabled");
-
-        upd("question_now", 0);
+        Init();
 
         //
 
