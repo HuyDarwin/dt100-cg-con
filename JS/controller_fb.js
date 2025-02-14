@@ -75,7 +75,7 @@ $(function () {
           upd("note", "");
           
           show_money = true;
-          mob_eli = 0;
+          mob_to_eli = 0;
           eli_money = 0;
           option = 0;
         }
@@ -132,14 +132,12 @@ $(function () {
             upd("choose_option", option);
             
             if (option == 1) {
-              upd("difficulty", questions[r].One_Difficulty);
               upd("question", questions[r].One_Question);
               upd("answer_a", questions[r].One_AnswerA);
               upd("answer_b", questions[r].One_AnswerB);
               upd("answer_c", questions[r].One_AnswerC);
             }
             else if (option == 2) {
-              upd("difficulty", questions[r].Two_Difficulty);
               upd("question", questions[r].Two_Question);
               upd("answer_a", questions[r].Two_AnswerA);
               upd("answer_b", questions[r].Two_AnswerB);
@@ -163,6 +161,7 @@ $(function () {
             question_now++;
             upd('question_now', question_now);
             UpdateData(1);
+            enb(".c-reveal");
           }
         }
 
@@ -274,6 +273,13 @@ $(function () {
           enb(".q-reveal");
         });
       
+        $("#q-c-type-2").click(function(){
+          option = 2;
+          dib(".q-c-type");
+          UpdateData(2);
+          enb(".q-reveal");
+        });
+      
         $(".q-reveal").click(function(){
           upd("q_reveal", 1);
           dib(".q-reveal");
@@ -301,14 +307,19 @@ $(function () {
         $(".mob-answer").click(function(){
           upd("mob_answer", 1);
           dib(".mob-answer");
-          enb(".q-m-e-reveal, .a-choose");
+          enb(".q-m-e-reveal");
+        });
+      
+        $(".q-m-e-reveal").click(function(){
+          dib(".q-m-e-reveal");
+          enb(".a-choose");
           if (escape_25) {
             enb("#q-escape-25");
           }
-          if (escape_50) {
+          else if (escape_50) {
             enb("#q-escape-50");
           }
-          if (escape_75) {
+          else if (escape_75) {
             enb("#q-escape-75");
           }
         });
@@ -333,19 +344,19 @@ $(function () {
       
         $("#a-choose-1").click(function(){
           UpdateData(3);
-          dib(".a-choose");
+          dib(".a-choose, .q-escape");
           enb(".a-announce");
         });
       
         $("#a-choose-2").click(function(){
           UpdateData(3);
-          dib(".a-choose");
+          dib(".a-choose, .q-escape");
           enb(".a-announce");
         });
       
         $("#a-choose-3").click(function(){
           UpdateData(3);
-          dib(".a-choose");
+          dib(".a-choose, .q-escape");
           enb(".a-announce");
         });
       
