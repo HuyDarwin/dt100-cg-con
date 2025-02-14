@@ -408,11 +408,17 @@ $(function () {
             const data = snapshot.val();
           
             $("#type-1 .category-p td").html(data.option_a_name.toUpperCase());
+            $("#type-2 .image").css("background-image", "url('" + data.option_a_img + "');");
             $("#type-2 .category-p td").html(data.option_a_name.toUpperCase());
             $("#type-3 #category-p-a td").html(data.option_a_name.toUpperCase());
             $("#type-3 #category-p-b td").html(data.option_b_name.toUpperCase());
             $("#type-4 #category-p-a td").html(data.option_a_name.toUpperCase());
+            $("#type-4 .image").css("background-image", "url('" + data.option_a_img + "');");
             $("#type-4 #category-p-b td").html(data.option_b_name.toUpperCase());
+            $("#type-5 #category-image-a").css("background-image", "url('" + data.option_a_img + "');");
+            $("#type-5 #category-image-b").css("background-image", "url('" + data.option_b_img + "');");
+            $("#type-6 #category-image-a").css("background-image", "url('" + data.option_a_img + "');");
+            $("#type-6 #category-image-b").css("background-image", "url('" + data.option_b_img + "');");
             $("#type-6 #category-text-p-a td").html(data.option_a_name.toUpperCase());
             $("#type-6 #category-text-p-b td").html(data.option_b_name.toUpperCase());
 
