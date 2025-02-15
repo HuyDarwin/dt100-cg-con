@@ -319,6 +319,7 @@ $(function () {
         });
       
         $(".q-m-e-reveal").click(function(){
+          upd("q_m_e_reveal", 1);
           dib(".q-m-e-reveal");
           enb(".a-choose");
           if (escape_25) {
@@ -333,18 +334,21 @@ $(function () {
         });
           
         $("#q-escape-25").click(function(){
+          upd("escape_sfx",1);
           show_money = false;
           escape_25 = false;
           dib(".q-escape");
         });
           
         $("#q-escape-50").click(function(){
+          upd("escape_sfx",1);
           show_money = false;
           escape_50 = false;
           dib(".q-escape");
         });
           
         $("#q-escape-75").click(function(){
+          upd("escape_sfx",1);
           show_money = false;
           escape_75 = false;
           dib(".q-escape");
@@ -439,6 +443,9 @@ $(function () {
               $(".q-now").html("Câu hỏi hiện tại: ");
               $(".q-next").html("Câu hỏi tiếp theo: ");
             }
+          
+            $(".mob-remain-p").html("Số người còn lại: " + );
+            $(".mob-w-e-p").html("Số người sẽ bị loại: " + );
         });
 
     }(window.CONTROLLER = window.CONTROLLER || {}));
