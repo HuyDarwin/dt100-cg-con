@@ -88,6 +88,14 @@ $(function () {
           enb(".t-reveal");
 
           upd("question_now", 0);
+          upd("mob_left",100);
+          upd("total_money",0);
+          upd("mob_to_eli",0);
+          upd("mob_eli",0);
+          upd("eli_money",0);
+          upd("escape_25",true);
+          upd("escape_50",true);
+          upd("escape_75",true);
           
           ResetQuestion();
         }

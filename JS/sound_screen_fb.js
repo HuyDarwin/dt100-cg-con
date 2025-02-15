@@ -60,6 +60,14 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/reveal%20answer.mp3?v=1739630572444",2);
               upd("a_reveal_3", 0);
             }
+            if(data.mob_answer == 1) {
+              con.StopSound(4);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/denk_tijd_06_sec_full.mp3?v=1739630706495",2);
+              setTimeout(function(){
+                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/spanning_nadenken.mp3?v=1739527926198",5,7);  
+              }, 7000);
+              upd("mob_answer", 0);
+            }
         });
         
       
