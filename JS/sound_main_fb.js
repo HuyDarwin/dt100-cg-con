@@ -13,7 +13,28 @@ $(function () {
         // Variables
 
         //
-      
+
+        function upd(key, val) {
+            update(ref(db), {
+                [key]: val
+            })
+        }
+
+        function enb(key) {
+            $(key).removeAttr('disabled')
+        }
+
+        function dib(key) {
+            $(key).attr('disabled', true);
+        }
+
+        //
+
+        onValue(ref(db), (snapshot) => {
+            const data = snapshot.val();
+          
+            
+        });
         
       
     }(window.CONTROLLER = window.CONTROLLER || {}));

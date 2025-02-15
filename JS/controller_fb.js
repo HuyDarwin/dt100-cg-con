@@ -404,13 +404,14 @@ $(function () {
           if (mob_eli >= mob_to_eli){
             mob_eli = mob_to_eli;
             dib(".eliminate");
-            ResetQuestion();
-            NextQuestion();
+            enb(".hide-eliminate");
           }          
         });
       
         $(".hide-eliminate").click(function(){
-          dib(".hide-elimini=ate");
+          dib(".hide-eliminate");
+          ResetQuestion();
+          NextQuestion();
         });
 
         //
