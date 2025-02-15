@@ -408,6 +408,10 @@ $(function () {
             NextQuestion();
           }          
         });
+      
+        $(".hide-eliminate").click(function(){
+          dib(".hide-elimini=ate");
+        });
 
         //
 

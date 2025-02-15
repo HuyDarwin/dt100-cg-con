@@ -627,6 +627,17 @@ textarea{
   font-size:28px;
 }
 
+.hide-eliminate{
+  left:595px;
+  top:420px;
+  height:75px;
+  width:160px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:28px; 
+}
+
 /* Holder-6 */
 
 #holder-6{
