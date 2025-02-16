@@ -97,6 +97,7 @@ $(function () {
           $('.q-submit').removeAttr("disabled");
           enb(".t-reveal");
           enb(".goodbye");
+          enb(".mob-remain-update, .mob-w-e-update, .money-add-update, .money-total-update");
 
           upd("question_now", 0);
           upd("mob_left",100);
@@ -515,6 +516,34 @@ $(function () {
             NextQuestion();
             $(".q-chosen").html("Đã chọn: ");            
           }, 100);
+        });
+      
+        $(".mob-remain-update").click(function(){
+          var val = $(".mob-remain-change").val();
+          if(parseInt(val) == val || val != NaN){
+            upd("mob_left", parseInt(val));
+          }
+        });
+      
+        $(".mob-w-e-update").click(function(){
+          var val = $(".mob-w-e-change").val();
+          if(parseInt(val) == val || val != NaN){
+            upd("mob_to_eli", parseInt(val));
+          }
+        });
+      
+        $(".money-add-update").click(function(){
+          var val = $(".money-add-change").val();
+          if(parseInt(val) == val || val != NaN){
+            upd("eli_money", parseInt(val));
+          }
+        });
+      
+        $(".money-total-update").click(function(){
+          var val = $(".money-total-change").val();
+          if(parseInt(val) == val || val != NaN){
+            upd("total_money", parseInt(val));
+          }
         });
 
         //
