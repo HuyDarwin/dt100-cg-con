@@ -351,10 +351,13 @@ $(function () {
               timingFunction: 'ease'
           })  
         }
+      
+        function ResetAll(){
+          ResetMoneyGpx();
+          ResetQuestion();        
+        }
 
         /*
-        ResetMoneyGpx()
-        ResetQuestion()
 
         setTimeout(function(){
           RevealEliminateGpx()
@@ -412,12 +415,104 @@ $(function () {
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
 
+            if(data.reload == 1) {
+              location.reload();
+              upd("reload", 0);
+            }
+          
+            $(".question-p td").html(data.question.toString().toUpperCase());
+            $("#answer-a .ans-text-p td").html(data.answer_a.toString().toUpperCase());
+            $("#answer-b .ans-text-p td").html(data.answer_b.toString().toUpperCase());
+            $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
+          
+            if(data.q_reveal == 1) {
+              setTimeout(function(){
+                QuestionReveal();
+              }, 500);
+              upd("q_reveal", 0);
+            }
+            if(data.q_m_e_reveal == 1) {
+              
+              upd("q_m_e_reveal", 0);
+            }
+          
+            if(data.escape_25 == true) {
+              EscapeStatus(25,1);
+            }
+            else{
+              EscapeStatus(25,0);
+            }
+            if(data.escape_50 == true) {
+              EscapeStatus(50,1);
+            }
+            else{
+              EscapeStatus(50,0);
+            }
+            if(data.escape_75 == true) {
+              EscapeStatus(75,1);
+            }
+            else{
+              EscapeStatus(75,0);
+            }
+          
+            if(data.a_reveal_1 == 1) {
+              AnswerReveal(1);
+              upd("a_reveal_1", 0);
+            }
+            if(data.a_reveal_2 == 1) {
+              AnswerReveal(2);
+              upd("a_reveal_2", 0);
+            }
+            if(data.a_reveal_3 == 1) {
+              AnswerReveal(3);
+              upd("a_reveal_3", 0);
+            }
+            if(data.a_choose_1 == 1) {
+              AnswerStatus(1,1);
+              upd("a_choose_1", 0);
+            }
+            if(data.a_choose_2 == 1) {
+              AnswerStatus(2,1);
+              upd("a_choose_2", 0);
+            }
+            if(data.a_choose_3 == 1) {
+              AnswerStatus(3,1);
+              upd("a_choose_3", 0);
+            }
+            if(data.a_right_1 == 1) {
+              AnswerStatus(1,2);
+              upd("a_right_1", 0);
+            }
+            if(data.a_right_2 == 1) {
+              AnswerStatus(2,2);
+              upd("a_right_2", 0);
+            }
+            if(data.a_right_3 == 1) {
+              AnswerStatus(3,2);
+              upd("a_right_3", 0);
+            }
+            if(data.a_wrong_1 == 1) {
+              AnswerStatus(1,3);
+              upd("a_wrong_1", 0);
+            }
+            if(data.a_wrong_2 == 1) {
+              AnswerStatus(2,3);
+              upd("a_wrong_2", 0);
+            }
+            if(data.a_wrong_3 == 1) {
+              AnswerStatus(3,3);
+              upd("a_wrong_3", 0);
+            }
+            if(data.q_hide == 1) {
+              HideQuestionAndAnswer();
+              upd("q_hide", 0);
+            }  
+
 
         });
 
         /* Init */
-        ResetMoneyGpx()
-        ResetQuestion()
+        ResetAll();
 
     }(window.CONTROLLER = window.CONTROLLER || {}));
 });

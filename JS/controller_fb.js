@@ -134,7 +134,9 @@ $(function () {
           lose = false;
 
           show_money = true;
+          
           is_eli_showing = false;
+          upd("is_eli_showing", is_eli_showing);
 
           chosen_ans = 0;
           correct_ans = 0;
@@ -556,6 +558,7 @@ $(function () {
           dib(".e-reveal");
           enb(".e-hide");
           is_eli_showing = true;
+          upd("is_eli_showing", is_eli_showing);
           
           upd("e_reveal",1);
         });
@@ -563,6 +566,7 @@ $(function () {
         $(".e-hide").click(function(){
           dib(".e-hide");
           is_eli_showing = false;
+          upd("is_eli_showing", is_eli_showing);
         });
       
         $(".t-reveal").click(function(){
@@ -571,6 +575,7 @@ $(function () {
           if(is_eli_showing) {
             dib(".e-reveal");
             is_eli_showing = false;
+            upd("is_eli_showing", is_eli_showing);
           }
           
           upd("t_reveal",1);

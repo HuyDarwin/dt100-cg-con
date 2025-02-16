@@ -458,6 +458,11 @@ $(function () {
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
+
+            if(data.reload == 1) {
+              location.reload();
+              upd("reload", 0);
+            }
           
             $("#type-1 .category-p td").html(data.option_a_name.toString().toUpperCase());
             $("#type-2 .image").css("background-image", "url('" + data.option_a_img + "')");
@@ -479,11 +484,6 @@ $(function () {
             $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
             $(".number-eliminated-p").html(data.mob_eli);
             $(".q-image").css("background-image", "url('" + data.option_a_img + "')");
-
-            if(data.reload == 1) {
-              location.reload();
-              upd("reload", 0);
-            }
           
             if(data.c_reveal == 1) {
               ResetLogo();

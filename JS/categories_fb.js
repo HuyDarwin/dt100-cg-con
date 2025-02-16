@@ -181,6 +181,11 @@ $(function () {
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
+
+            if(data.reload == 1) {
+              location.reload();
+              upd("reload", 0);
+            }
           
             $("#type-1 .category-p td").html(data.option_a_name.toString().toUpperCase());
             $("#type-2 .image").css("background-image", "url('" + data.option_a_img + "')");
