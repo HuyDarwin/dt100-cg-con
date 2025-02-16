@@ -52,7 +52,7 @@ $(function () {
                 at3.currentTime = time;
               }
               at3.play();
-              at3.volume = 0.5;
+              at3.volume = 0.4;
             }
             catch(e){
               // do nothing

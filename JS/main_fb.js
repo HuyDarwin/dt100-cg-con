@@ -260,6 +260,9 @@ $(function () {
             answer = 'c';
           }
 
+          $('#answer-' + answer).css('opacity',1)
+          $('#answer-' + answer + ' div').css('opacity',1)
+
           $('#answer-' + answer + ' .ans-letter').playKeyframe({
               name: 'key-q-reveal-4',
               duration: '0.25s',

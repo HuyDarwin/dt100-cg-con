@@ -1,0 +1,104 @@
+body {
+  background-color: black;
+}
+
+button {
+	cursor: pointer;
+	font-family:"Chevin";
+	border-width:2%;
+  border-color:white;
+  background-color:black;
+  color:white;
+}
+
+button:hover {
+	background-color:white;
+  color:black;
+	transition: 0.25s;
+}
+
+button:disabled {
+  opacity:0.5;
+}
+
+button:disabled:hover {
+  background-color:black;
+  color:white;
+  transition: 0.25s;
+}
+
+textarea{
+  color:white;
+  background-color:black;
+  resize:none;
+  
+  font-family:"Chevin";
+  font-size:20px;
+  
+  border: 2px solid white;  
+}
+
+.stage{
+  width:1920px;
+  height:1080px;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  overflow:hidden;
+  z-index:0;
+}
+
+.holder{
+  border-inline: 2px solid white;
+  background-color: black;
+}
+
+.holder-title {
+  top:0px;
+  left:0px;
+  width:100%;
+  height:45px;
+  
+  font-family:'Chevin';
+  font-size:32px;
+  line-height:45px;
+  text-align:center;
+  
+  background-color:white;
+}
+
+#background{
+  background-color: #221C35;
+  
+  background-image:none;
+  background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+  
+  opacity:1;
+  
+  width:1920px;
+  height:1080px;
+  left:0%;
+  top:0%;
+}
+
+/* Holder-1 */
+
+#holder-1{
+  top:0px;
+  left:0px;
+  width:1280px;
+  height:1080px;
+}
+
+.right-ans{
+	font-family:'Chevin';
+	font-size:48px;
+  
+  top:50px;
+  left:4px;
+  color:white;
+}
+
