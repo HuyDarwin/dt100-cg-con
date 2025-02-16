@@ -124,6 +124,18 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Money%20and%20Escapes%20Reveal.mp3?v=1739678309755",2);
               upd("t_reveal", 0);
             }
+            if(data.no_mob_sfx == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/totaal_bedrag_draai.mp3?v=1739696137462",2);
+              upd("no_mob_sfx", 0);
+            }
+            if(data.eli_mob_sfx == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Mob%20Eliminated.mp3?v=1739696086785",2);
+              upd("eli_mob_sfx", 0);
+            }
+            if(data.deposit_sfx == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/utomp3.com%20-%20MONEY%20SOUND%20EFFECT%20.mp3?v=1739696030709",2);
+              upd("deposit_sfx", 0);
+            }
           
         });
         

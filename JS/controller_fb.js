@@ -509,7 +509,12 @@ $(function () {
           if (mob_eli < mob_to_eli) {
             mob_eli++;
             upd("mob_eli", mob_eli);
+            
             upd("mob_eli_mode", 1);
+            upd("eli_mob_sfx", 1);
+            
+            eli_money = Math.round(50000 / mob_left * mob_eli);
+            upd("eli_money", eli_money);
           }
           else {
             if (mob_to_eli == 0) {
@@ -518,6 +523,7 @@ $(function () {
             }
             else if (escape_used == false) {
               upd("deposit_sfx", 1);
+              
             }
             dib(".eliminate");
             enb(".hide-eliminate");            
