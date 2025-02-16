@@ -145,6 +145,59 @@ $(function () {
               upd("win_sfx", 0);
             }
           
+            if(data.welcome_bed == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_10.mp3?v=1739707894022",3);
+              upd("welcome_bed", 0);
+            }
+            if(data.intro == 1) {
+              con.StopSound(3);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_07.mp3?v=1739707908555",1);
+              upd("intro", 0);
+            }
+            if(data.new_player == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_04.mp3?v=1739707937770",1);
+              upd("new_player", 0);
+            }
+            if(data.comm_in == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_02.mp3?v=1739707941201",1);
+              upd("comm_in", 0);
+            }
+            if(data.comm_out == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_03.mp3?v=1739707943606",1);
+              upd("comm_out", 0);
+            }
+            if(data.theme == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_06.mp3?v=1739707955411",3);
+              upd("theme", 0);
+            }
+            if(data.restyle_1 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_01.mp3?v=1739707961717",1);
+              upd("restyle_1", 0);
+            }
+            if(data.restyle_5 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_05.mp3?v=1739707966312",3);
+              upd("restyle_5", 0);
+            }
+            if(data.restyle_8 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",1);
+              upd("restyle_8", 0);
+            }
+            if(data.pause_bed == 1) {
+              con.StopSound(3,1);
+              con.StopSound(4,1);
+              con.StopSound(5,1);
+              upd("pause_bed", 0);
+            }
+            if(data.resume_bed == 1) {
+              con.ResumeSound(3);
+              con.ResumeSound(4);
+              con.ResumeSound(5);
+              upd("resume_bed", 0);
+            }
+            if(data.stop_sounds == 1) {
+              con.StopSound();
+              upd("stop_sounds", 0);
+            }
         });
         
       
