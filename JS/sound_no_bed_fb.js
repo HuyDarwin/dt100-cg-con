@@ -57,9 +57,9 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/reveal%20answer.mp3?v=1739630572444",2);
               upd("a_reveal_3", 0);
             }
-            if(data.q_m_e_reveal == 1) {
+            if(data.m_e_t_sfx == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Money%20and%20Escapes%20Reveal.mp3?v=1739678309755",2);
-              upd("q_m_e_reveal", 0);
+              upd("m_e_t_sfx", 0);
             }
             if(data.mob_answer == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/denk_tijd_06_sec_full.mp3?v=1739630706495",2);

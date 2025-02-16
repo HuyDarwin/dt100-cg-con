@@ -433,6 +433,7 @@ $(function () {
               enb("#q-escape-75");
             }            
           }
+          upd("m_e_t_sfx",1);
         });
           
         $("#q-escape-25").click(function(){
@@ -567,6 +568,8 @@ $(function () {
           dib(".e-hide");
           is_eli_showing = false;
           upd("is_eli_showing", is_eli_showing);
+          
+          upd("e_hide",1);
         });
       
         $(".t-reveal").click(function(){
@@ -576,14 +579,19 @@ $(function () {
             dib(".e-reveal");
             is_eli_showing = false;
             upd("is_eli_showing", is_eli_showing);
+            upd("e_to_t_reveal",1);
+            upd("m_e_t_sfx",1);            
           }
-          
-          upd("t_reveal",1);
+          else {
+            upd("t_reveal",1);            
+          }
         });
       
         $(".t-hide").click(function(){
           dib(".t-hide, .e-hide");
           enb(".t-reveal");
+          
+          upd("t_hide",1);
         });
       
         $(".eliminate").click(function(){

@@ -187,18 +187,41 @@ $(function () {
             })
         }
 
-        function EscapeReveal(){
+        function EscapeReveal(a,b,c){
             $('.q-escape-p').css('opacity',0)
 
-            setTimeout(function(){
-              $('#q-escape-p-25').css('opacity',1)
-            }, 100)
-            setTimeout(function(){
-              $('#q-escape-p-50').css('opacity',1)
-            }, 200)
-            setTimeout(function(){
-              $('#q-escape-p-75').css('opacity',1)
-            }, 300)
+            if(a == true) {
+              setTimeout(function(){
+                $('#q-escape-p-25').css('opacity',1)
+              }, 100)              
+            }
+            else{
+              setTimeout(function(){
+                $('#q-escape-p-25').css('opacity',0.25)
+              }, 100)                
+            }
+
+            if(b == true) {
+              setTimeout(function(){
+                $('#q-escape-p-50').css('opacity',1)
+              }, 200)              
+            }
+            else{
+              setTimeout(function(){
+                $('#q-escape-p-50').css('opacity',0.25)
+              }, 200)                
+            }
+
+            if(c == true) {
+              setTimeout(function(){
+                $('#q-escape-p-75').css('opacity',1)
+              }, 300)              
+            }
+            else{
+              setTimeout(function(){
+                $('#q-escape-p-75').css('opacity',0.25)
+              }, 300)                
+            }
 
             $('.q-escape').playKeyframe({
               name: 'key-q-reveal',
@@ -236,9 +259,6 @@ $(function () {
           else if (ans == 3){
             answer = 'c';
           }
-
-          $('#answer-' + answer).css('opacity',1)
-          $('#answer-' + answer + ' div').css('opacity',1)
 
           $('#answer-' + answer + ' .ans-letter').playKeyframe({
               name: 'key-q-reveal-4',
@@ -368,59 +388,6 @@ $(function () {
           ResetQuestion();        
         }
 
-        /*
-
-        setTimeout(function(){
-          RevealEliminateGpx()
-        }, 1000)
-
-        setTimeout(function(){
-          HideEliminateGpx()
-        }, 2000)
-        */
-
-        /*
-        QuestionReveal()
-        AnswerReveal(1)
-        AnswerReveal(2)
-        AnswerReveal(3)
-        EscapeReveal()
-        MoneyReveal()
-        setTimeout(function(){
-          HideQuestionAndAnswer()
-        }, 1000)
-        */
-
-        /*
-        setTimeout(function(){
-          AnswerReveal(1)
-        }, 2000)
-        setTimeout(function(){
-          AnswerReveal(2)
-        }, 4000)
-        setTimeout(function(){
-          AnswerReveal(3)
-        }, 6000)
-        setTimeout(function(){
-          RemainReveal()
-        }, 8000)
-        setTimeout(function(){
-          RemainHide()
-        }, 11000)
-        setTimeout(function(){
-          EscapeReveal()
-        }, 11250)
-        setTimeout(function(){
-          MoneyReveal()
-        }, 11500)
-        setTimeout(function(){
-          EscapeHide()
-        }, 13000)
-        setTimeout(function(){
-          HideQuestionAndAnswer()
-        }, 15000)
-        */
-
         //
 
         onValue(ref(db), (snapshot) => {
@@ -455,7 +422,7 @@ $(function () {
               RemainHide();
               if(data.mob_left < 100) {
                 setTimeout(function(){
-                  EscapeReveal();
+                  EscapeReveal(data.escape_25, data.escape_50, data.escape_75);
                 }, 250);         
                 setTimeout(function(){
                   MoneyReveal();
@@ -554,14 +521,12 @@ $(function () {
               upd("e_hide", 0);
             }
             if(data.t_reveal == 1) {
-              if(data.is_ele_showing == true) {
-                EliminateToTotalGpx();
-              }
-              else {
-                RevealTotalGpx();
-              }
-              RevealEliminateGpx();
+              RevealTotalGpx();
               upd("t_reveal", 0);
+            }
+            if(data.e_to_t_reveal == 1) {
+              EliminateToTotalGpx();
+              upd("e_to_t_reveal", 0);
             }
             if(data.t_hide == 1) {
               HideTotalGpx();
