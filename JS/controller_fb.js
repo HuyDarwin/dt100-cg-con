@@ -444,8 +444,11 @@ $(function () {
               $(".q-next").html("Câu hỏi tiếp theo: ");
             }
           
-            $(".mob-remain-p").html("Số người còn lại: " + );
-            $(".mob-w-e-p").html("Số người sẽ bị loại: " + );
+            $(".mob-remain-p").html("Số người còn lại: " + data.mob_left);
+            $(".mob-w-e-p").html("Số người sẽ bị loại: " + data.mob_to_eli);
+            $(".money-add-p").html("Tiền thưởng nhận được: " + data.eli_money);
+            $(".money-total-p").html("Tiền thưởng tổng cộng: " + data.total_money);
+            $(".e-num").html(data.mob_eli);
         });
 
     }(window.CONTROLLER = window.CONTROLLER || {}));
