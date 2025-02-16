@@ -506,12 +506,22 @@ $(function () {
         });
       
         $(".eliminate").click(function(){
-          mob_eli++;
-          if (mob_eli >= mob_to_eli){
-            mob_eli = mob_to_eli;
+          if (mob_eli < mob_to_eli) {
+            mob_eli++;
+            upd("mob_eli", mob_eli);
+            upd("mob_eli_mode", 1);
+          }
+          else {
+            if (mob_to_eli == 0) {
+              upd("no_mob_sfx", 1);
+              upd("mob_eli_mode", 2);
+            }
+            else if (escape_used == false) {
+              upd("deposit_sfx", 1);
+            }
             dib(".eliminate");
-            enb(".hide-eliminate");
-          }          
+            enb(".hide-eliminate");            
+          }
         });
       
         $(".hide-eliminate").click(function(){
@@ -556,14 +566,13 @@ $(function () {
         function getRandomInt(min, max) {
           const minCeiled = Math.round(min);
           const maxFloored = Math.round(max);
-          return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+          return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
         }
       
         $(".mob-w-e-random").click(function(){
           dib(".mob-w-e-random");
           
           var xs = [];
-          var muc1 = Math.round(mob_left / 5 * 1);
           
           var a = 0, b = 0, c = 0, d = 0, e = 0;
           
@@ -582,6 +591,27 @@ $(function () {
           else if (difficulty == 5) {
             a = 1, b = 2, c = 3, d = 4, e = 10;            
           }
+          
+          for (var i = 1; i <= a; i++) {
+            xs.push(getRandomInt(mob_left / 5 * 0, mob_left / 5 * 1));
+          }
+          for (var i = 1; i <= b; i++) {
+            xs.push(getRandomInt(mob_left / 5 * 1, mob_left / 5 * 2));
+          }
+          for (var i = 1; i <= c; i++) {
+            xs.push(getRandomInt(mob_left / 5 * 2, mob_left / 5 * 3));
+          }
+          for (var i = 1; i <= d; i++) {
+            xs.push(getRandomInt(mob_left / 5 * 3, mob_left / 5 * 4));
+          }
+          for (var i = 1; i <= e; i++) {
+            xs.push(getRandomInt(mob_left / 5 * 4, mob_left / 5 * 5));
+          }
+          
+          var final = getRandomInt(0,19);
+          
+          mob_to_eli = final;
+          upd("mob_to_eli", final);
         });
 
         //
