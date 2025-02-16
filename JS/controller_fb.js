@@ -525,15 +525,23 @@ $(function () {
             }
           }
           else {
-            if(mob_eli == mob_to_eli == 1) {
+            if(mob_eli == mob_to_eli - 1) {
               mob_eli++;
-              upd("mob_eli", mob_eli);
-              upd("eli_mob_sfx", 1);                 
+              upd("mob_eli", mob_eli);            
+              upd("mob_eli_mode", 1);
+              upd("eli_mob_sfx", 1);   
+            
+              if (escape_used == false && lose == false){
+                eli_money = Math.round(50000 / mob_left * mob_eli);
+                upd("eli_money", eli_money);              
+              }              
             }         
             
             if (mob_to_eli == 0) {
               upd("no_mob_sfx", 1);
-              upd("mob_eli_mode", 2);
+              setTimeout(function(){
+                upd("mob_eli_mode", 2);
+              }, 500);
             }
             else if (escape_used == false) {
               upd("deposit_sfx", 1);
@@ -633,7 +641,7 @@ $(function () {
           }
           
           for (var i = 1; i <= a; i++) {
-            xs.push(getRandomInt(mob_left / 5 * 0, mob_left / 5 * 1));
+            xs.push(getRandomInt(0, mob_left / 5 * 1));
           }
           for (var i = 1; i <= b; i++) {
             xs.push(getRandomInt(mob_left / 5 * 1, mob_left / 5 * 2));
@@ -645,15 +653,13 @@ $(function () {
             xs.push(getRandomInt(mob_left / 5 * 3, mob_left / 5 * 4));
           }
           for (var i = 1; i <= e; i++) {
-            xs.push(getRandomInt(mob_left / 5 * 4, mob_left / 5 * 5));
+            xs.push(getRandomInt(mob_left / 5 * 4, mob_left));
           }
-          
-          console.log(xs);
           
           var final = getRandomInt(0,19);
           
-          mob_to_eli = final;
-          upd("mob_to_eli", final);
+          mob_to_eli = xs[final];
+          upd("mob_to_eli", xs[final]);
         });
 
         //
@@ -697,7 +703,7 @@ $(function () {
         });
       
         //
-        var delta = 100;
+        var delta = 50;
         var last = 0;
       
         $(document).on('keydown',function(e){
