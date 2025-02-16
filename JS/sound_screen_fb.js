@@ -74,9 +74,9 @@ $(function () {
               }, 7000);
               upd("mob_answer", 0);
             }
-            if(data.escape_sfx == 1) {
+            if(data.escape_use == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/geld_er_af_na_escape%20SAT%20GOC.mp3?v=1739631377667",2);
-              upd("escape_sfx", 0);
+              upd("escape_use", 0);
             }
             if(data.lock_ans_sfx == 1) {
               con.StopSound(5);
@@ -120,10 +120,6 @@ $(function () {
             if(data.e_reveal == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/sound_09_soft_reveal.mp3?v=1739679621402",2);
               upd("e_reveal", 0);
-            }
-            if(data.t_reveal == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Money%20and%20Escapes%20Reveal.mp3?v=1739678309755",2);
-              upd("t_reveal", 0);
             }
             if(data.no_mob_sfx == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/totaal_bedrag_draai.mp3?v=1739696137462",2);
