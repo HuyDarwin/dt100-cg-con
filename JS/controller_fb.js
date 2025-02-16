@@ -106,6 +106,8 @@ $(function () {
           enb(".goodbye");
           enb(".mob-remain-update, .mob-w-e-update, .money-add-update, .money-total-update");
           enb(".reset");
+          
+          enb(".rel button");
 
           upd("question_now", 0);
           upd("mob_left",100);
@@ -358,6 +360,19 @@ $(function () {
 
         $(".reload").click(function(){
           upd("reload", 1);
+        });
+      
+        $(".to-screen").click(function(){
+          $(".screen-iframe").css("opacity",0);
+          $("#i-screen").css("opacity",1);
+        });
+        $(".to-main").click(function(){
+          $(".screen-iframe").css("opacity",0);
+          $("#i-main").css("opacity",1);
+        });
+        $(".to-categories").click(function(){
+          $(".screen-iframe").css("opacity",0);
+          $("#i-categories").css("opacity",1);
         });
       
       

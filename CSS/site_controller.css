@@ -179,7 +179,8 @@ textarea{
 }
 
 #holder-3 .rel button{
-  position:relative;
+	position:static;
+  margin-bottom:0.1vw;
   font-size:28px;
 }
 
