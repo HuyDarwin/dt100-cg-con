@@ -432,7 +432,7 @@ $(function () {
               upd("q_reveal", 0);
             }
             if(data.q_m_e_reveal == 1) {
-              
+              RemainReveal();
               upd("q_m_e_reveal", 0);
             }
           
