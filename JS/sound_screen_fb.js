@@ -112,6 +112,10 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_09.mp3?v=1739678743256",2);
               upd("wrong_ans_sfx", 0);
             }
+            if(data.goodbye == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_13.mp3?v=1739681218629",2);
+              upd("goodbye", 0);
+            }
             if(data.e_reveal == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/sound_09_soft_reveal.mp3?v=1739679621402",2);
               upd("e_reveal", 0);

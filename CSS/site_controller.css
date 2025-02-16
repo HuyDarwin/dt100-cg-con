@@ -406,6 +406,17 @@ textarea{
   font-size:24px;   
 }
 
+.goodbye{
+  top:4000px;
+  width:155px;
+  height:70px;
+  left:715px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;   
+}
+
 /* Holder-5 */
 
 #holder-5{

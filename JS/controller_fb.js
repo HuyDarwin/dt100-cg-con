@@ -96,6 +96,7 @@ $(function () {
           $('.reload').removeAttr("disabled");
           $('.q-submit').removeAttr("disabled");
           enb(".t-reveal");
+          enb(".goodbye");
 
           upd("question_now", 0);
           upd("mob_left",100);
@@ -435,6 +436,10 @@ $(function () {
             else if(chosen_ans == 3) {
               upd("a_wrong_3", 1);
             }
+            
+            if(escape_used == false){
+              $(".goodbye").css("top","400px");
+            }
           }
           
           
@@ -456,6 +461,11 @@ $(function () {
           if (show_money){
             enb(".e-reveal");
           }
+        });
+      
+        $(".goodbye").click(function(){
+          upd("goodbye", 1);
+          $(".goodbye").css("top","4000px");
         });
       
         $(".e-reveal").click(function(){
