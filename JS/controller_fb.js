@@ -210,22 +210,28 @@ $(function () {
             escape_75 = false;               
           }
           
-          setTimeout(function(){ 
-            upd("escape_" + mode, false);
-          }, 500);
+          upd("escape_" + mode, false);
           setTimeout(function(){ 
             upd("escape_" + mode, true);
-          }, 1000);
+          }, 300);
           setTimeout(function(){ 
             upd("escape_" + mode, false);
-          }, 1500);
+          }, 600);
+          setTimeout(function(){ 
+            upd("escape_" + mode, true);
+          }, 900);
+          setTimeout(function(){ 
+            upd("escape_" + mode, false);
+          }, 1200);
           
-          var old_money = Math.round(total_money )
+          var old_money = total_money;
+          var minus_money = Math.round(total_money / 100 * mode);
           
-          for (var i=1;i<=15;i++) {
+          for (var i=1;i<=10;i++) {
             setTimeout(function(){
-              total_money = total_money - Math.round()
-            }, 100 * i);
+              total_money = old_money - Math.round(minus_money / 10 * i);
+              upd("total_money", total_money);
+            }, 120 * i);
           }
         }
 
@@ -408,26 +414,26 @@ $(function () {
           
         $("#q-escape-50").click(function(){
           upd("escape_sfx",1);
-          upd("escape_50",false);
           show_money = false;
-          escape_50 = false;
           dib(".q-escape");
           $("#q-escape-50").css("color","purple");
           
           escape_used = true;
           upd("escape_used", true);
+          
+          DisableEscape(50);
         });
           
         $("#q-escape-75").click(function(){
           upd("escape_sfx",1);
-          upd("escape_75",false);
           show_money = false;
-          escape_75 = false;
           dib(".q-escape");
           $("#q-escape-75").css("color","purple");
           
           escape_used = true;
           upd("escape_used", true);
+          
+          DisableEscape(75);
         });
       
         $("#a-choose-1").click(function(){
