@@ -136,6 +136,13 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/utomp3.com%20-%20MONEY%20SOUND%20EFFECT%20.mp3?v=1739696030709",2);
               upd("deposit_sfx", 0);
             }
+            if(data.win_sfx == 1) {
+              con.StopSound(4);
+              setTimeout(function(){
+                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_11%20SAT%20GOC.mp3?v=1739696640381",1);                
+              }, 500);
+              upd("win_sfx", 0);
+            }
           
         });
         

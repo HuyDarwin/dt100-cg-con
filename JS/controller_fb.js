@@ -524,7 +524,17 @@ $(function () {
             else if (escape_used == false) {
               upd("deposit_sfx", 1);
               
+              total_money += eli_money;
+              upd("total_money", total_money);
             }
+            
+            mob_left -= mob_eli;
+            upd("mob_left", mob_left);
+            
+            if(mob_left == 0) {
+              upd("win_sfx", 1);
+            }
+            
             dib(".eliminate");
             enb(".hide-eliminate");            
           }
@@ -537,7 +547,15 @@ $(function () {
           setTimeout(function(){
             ResetQuestion();
             NextQuestion();
-            $(".q-chosen").html("Đã chọn: ");            
+            $(".q-chosen").html("Đã chọn: ");  
+            
+            eli_money = 0;
+            mob_to_eli = 0;
+            mob_eli = 0;
+            
+            upd("eli_money", 0);
+            upd("mob_to_eli", 0);
+            upd("mob_eli", 0);
           }, 100);
         });
       

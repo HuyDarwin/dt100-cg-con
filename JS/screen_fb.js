@@ -585,7 +585,11 @@ $(function () {
               ResetNumEle();
               RevealLogo();
               upd("hide_eliminate", 0);
-            }          
+            }
+            if(data.mob_eli_mode == 1) {
+              ShowWhichNumEle()              
+              upd("mob_eli_mode", 0);
+            }
         });
       
     }(window.CONTROLLER = window.CONTROLLER || {}));
