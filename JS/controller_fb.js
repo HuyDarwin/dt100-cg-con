@@ -32,6 +32,7 @@ $(function () {
         var escape_75 = true;
       
         var escape_used = false;
+        var lose = false;
         
         var show_money = true;
         var is_eli_showing = false;
@@ -90,6 +91,8 @@ $(function () {
           
           escape_used = false;
           upd("escape_used", false);
+          
+          lose = false;
           
           difficulty = 0;
         }
@@ -348,14 +351,16 @@ $(function () {
           upd("q_m_e_reveal", 1);
           dib(".q-m-e-reveal");
           enb(".a-choose");
-          if (escape_25) {
-            enb("#q-escape-25");
-          }
-          else if (escape_50) {
-            enb("#q-escape-50");
-          }
-          else if (escape_75) {
-            enb("#q-escape-75");
+          if (mob_left < 100) {
+            if (escape_25) {
+              enb("#q-escape-25");
+            }
+            else if (escape_50) {
+              enb("#q-escape-50");
+            }
+            else if (escape_75) {
+              enb("#q-escape-75");
+            }            
           }
         });
           
@@ -445,6 +450,7 @@ $(function () {
             }
             
             if(escape_used == false){
+              lose = true;
               $(".goodbye").css("top","400px");
             }
           }
@@ -506,17 +512,25 @@ $(function () {
         });
       
         $(".eliminate").click(function(){
-          if (mob_eli < mob_to_eli) {
+          if (mob_eli < mob_to_eli - 1) {
             mob_eli++;
             upd("mob_eli", mob_eli);
             
             upd("mob_eli_mode", 1);
             upd("eli_mob_sfx", 1);
             
-            eli_money = Math.round(50000 / mob_left * mob_eli);
-            upd("eli_money", eli_money);
+            if (escape_used == false && lose == false){
+              eli_money = Math.round(50000 / mob_left * mob_eli);
+              upd("eli_money", eli_money);              
+            }
           }
           else {
+            if(mob_eli == mob_to_eli == 1) {
+              mob_eli++;
+              upd("mob_eli", mob_eli);
+              upd("eli_mob_sfx", 1);                 
+            }         
+            
             if (mob_to_eli == 0) {
               upd("no_mob_sfx", 1);
               upd("mob_eli_mode", 2);
@@ -524,8 +538,10 @@ $(function () {
             else if (escape_used == false) {
               upd("deposit_sfx", 1);
               
-              total_money += eli_money;
-              upd("total_money", total_money);
+              if (escape_used == false && lose == false){
+                total_money += eli_money;
+                upd("total_money", total_money);
+              }
             }
             
             mob_left -= mob_eli;
@@ -632,6 +648,8 @@ $(function () {
             xs.push(getRandomInt(mob_left / 5 * 4, mob_left / 5 * 5));
           }
           
+          console.log(xs);
+          
           var final = getRandomInt(0,19);
           
           mob_to_eli = final;
@@ -676,6 +694,20 @@ $(function () {
             $(".money-add-p").html("Tiền thưởng nhận được: " + accounting.formatMoney(data.eli_money));
             $(".money-total-p").html("Tiền thưởng tổng cộng: " + accounting.formatMoney(data.total_money));
             $(".e-num").html(data.mob_eli);
+        });
+      
+        //
+        var delta = 100;
+        var last = 0;
+      
+        $(document).on('keydown',function(e){
+          if(e.keyCode == 76){
+            var now = new Date();
+            if(now - last > delta && mob_eli < mob_to_eli) {
+              $(".eliminate").click();
+              last = now;
+            }
+          }
         });
 
     }(window.CONTROLLER = window.CONTROLLER || {}));

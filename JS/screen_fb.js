@@ -414,7 +414,7 @@ $(function () {
             $('.num-e-red').css('opacity',1);    
           }
           else if(num==3){
-            $('.num-e-red').css('opacity',1);    
+            $('.num-e-yellow').css('opacity',1);    
           }
         }
 
@@ -587,7 +587,11 @@ $(function () {
               upd("hide_eliminate", 0);
             }
             if(data.mob_eli_mode == 1) {
-              ShowWhichNumEle()              
+              ShowWhichNumEle(2);              
+              upd("mob_eli_mode", 0);
+            }
+            if(data.mob_eli_mode == 2) {
+              ShowWhichNumEle(3);              
               upd("mob_eli_mode", 0);
             }
         });
