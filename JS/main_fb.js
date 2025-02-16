@@ -145,6 +145,9 @@ $(function () {
 
         function ResetQuestion(){
           $('.q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+          AnswerStatus(1,0);
+          AnswerStatus(2,0);
+          AnswerStatus(3,0);
         }
 
         function QuestionReveal() {
@@ -336,6 +339,14 @@ $(function () {
           })  
         }
 
+        function RevealTotalGpx(){
+          $('.total-money').playKeyframe({
+              name: 'key-q-reveal-5',
+              duration: '0.75s',
+              timingFunction: 'ease'
+          })  
+        }
+
         function HideEliminateGpx(){
           $('.eliminate-money').playKeyframe({
               name: 'key-q-hide-4',
@@ -425,15 +436,38 @@ $(function () {
             $("#answer-b .ans-text-p td").html(data.answer_b.toString().toUpperCase());
             $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
           
+            $(".q-remain-p").html("1 ĐẤU " + data.mob_left);
+            $(".q-money-p").html(accounting.formatMoney(data.total_money));
+            $(".eliminate-money-p").html(accounting.formatMoney(data.eli_money));
+            $(".total-money-p").html(accounting.formatMoney(data.total_money));
+          
             if(data.q_reveal == 1) {
               setTimeout(function(){
                 QuestionReveal();
               }, 500);
               upd("q_reveal", 0);
             }
-            if(data.q_m_e_reveal == 1) {
+            if(data.mob_answer == 1) {
               RemainReveal();
+              upd("mob_answer", 0);
+            }
+            if(data.q_m_e_reveal == 1) {
+              RemainHide();
+              if(data.mob_left < 100) {
+                setTimeout(function(){
+                  EscapeReveal();
+                }, 250);         
+                setTimeout(function(){
+                  MoneyReveal();
+                }, 500);                     
+              }
               upd("q_m_e_reveal", 0);
+            }
+            if(data.escape_use == 1) {
+              setTimeout(function(){
+                EscapeHide();
+              }, 1500);              
+              upd("escape_use", 0);
             }
           
             if(data.escape_25 == true) {
@@ -505,8 +539,34 @@ $(function () {
             }
             if(data.q_hide == 1) {
               HideQuestionAndAnswer();
+              setTimeout(function(){
+                ResetQuestion();
+              }, 1000);
               upd("q_hide", 0);
             }  
+          
+            if(data.e_reveal == 1) {
+              RevealEliminateGpx();
+              upd("e_reveal", 0);
+            }
+            if(data.e_hide == 1) {
+              HideEliminateGpx();
+              upd("e_hide", 0);
+            }
+            if(data.t_reveal == 1) {
+              if(data.is_ele_showing == true) {
+                EliminateToTotalGpx();
+              }
+              else {
+                RevealTotalGpx();
+              }
+              RevealEliminateGpx();
+              upd("t_reveal", 0);
+            }
+            if(data.t_hide == 1) {
+              HideTotalGpx();
+              upd("t_hide", 0);
+            }          
 
 
         });

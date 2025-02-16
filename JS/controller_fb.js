@@ -436,7 +436,7 @@ $(function () {
         });
           
         $("#q-escape-25").click(function(){
-          upd("escape_sfx",1);
+          upd("escape_use",1);
           show_money = false;
           dib(".q-escape");
           $("#q-escape-25").css("color","purple");
@@ -448,7 +448,7 @@ $(function () {
         });
           
         $("#q-escape-50").click(function(){
-          upd("escape_sfx",1);
+          upd("escape_use",1);
           show_money = false;
           dib(".q-escape");
           $("#q-escape-50").css("color","purple");
@@ -460,7 +460,7 @@ $(function () {
         });
           
         $("#q-escape-75").click(function(){
-          upd("escape_sfx",1);
+          upd("escape_use",1);
           show_money = false;
           dib(".q-escape");
           $("#q-escape-75").css("color","purple");
