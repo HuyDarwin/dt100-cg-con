@@ -417,6 +417,17 @@ textarea{
   font-size:24px;   
 }
 
+.reset{
+  top:480px;
+  width:155px;
+  height:50px;
+  left:315px;
+  
+  color:white;
+  font-family:"Chevin";
+  font-size:24px;   
+}
+
 /* Holder-5 */
 
 #holder-5{

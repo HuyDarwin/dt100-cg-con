@@ -105,6 +105,7 @@ $(function () {
           enb(".t-reveal");
           enb(".goodbye");
           enb(".mob-remain-update, .mob-w-e-update, .money-add-update, .money-total-update");
+          enb(".reset");
 
           upd("question_now", 0);
           upd("mob_left",100);
@@ -115,6 +116,30 @@ $(function () {
           upd("escape_25",true);
           upd("escape_50",true);
           upd("escape_75",true);
+      
+          option = 0;
+
+          mob_left = 100;
+          total_money = 0;
+
+          mob_to_eli = 0;
+          mob_eli = 0;
+          eli_money = 0;
+
+          escape_25 = true;
+          escape_50 = true;
+          escape_75 = true;
+
+          escape_used = false;
+          lose = false;
+
+          show_money = true;
+          is_eli_showing = false;
+
+          chosen_ans = 0;
+          correct_ans = 0;
+
+          difficulty = 0;
           
           escape_used = false;
           upd("escape_used", false);
@@ -707,6 +732,10 @@ $(function () {
           
           mob_to_eli = xs[final];
           upd("mob_to_eli", xs[final]);
+        });
+      
+        $(".reset").click(function(){
+          Init();
         });
 
         //
