@@ -199,6 +199,16 @@ $(function () {
           }
         }
       
+        function TruTien (i, old_money, minus_money) {
+          total_money = old_money - Math.round(minus_money / 20 * i);
+          upd("total_money", total_money);          
+          if (i < 20) {
+            setTimeout(function(){
+              TruTien (i + 1, old_money, minus_money);
+            }, 60);
+          }
+        }
+      
         function DisableEscape(mode){          
           if(mode == 25) {
             escape_25 = false;            
@@ -227,12 +237,7 @@ $(function () {
           var old_money = total_money;
           var minus_money = Math.round(total_money / 100 * mode);
           
-          for (var i=1;i<=10;i++) {
-            setTimeout(function(){
-              total_money = old_money - Math.round(minus_money / 10 * i);
-              upd("total_money", total_money);
-            }, 120 * i);
-          }
+          TruTien (1, old_money, minus_money);
         }
 
         //
@@ -314,11 +319,14 @@ $(function () {
         });
 
         $(".q-submit").click(function(){
-          question_now = parseInt($('.list-qs').val());
-          upd('question_now', question_now);
-          UpdateData(1);
-          
-          enb(".c-reveal");
+          if (parseInt($('.list-qs').val()) >= 1 && parseInt($('.list-qs').val()) <= 50) {
+            question_now = parseInt($('.list-qs').val());
+            upd('question_now', question_now);
+
+            UpdateData(1);
+
+            enb(".c-reveal");            
+          }
         });
 
         $(".reload").click(function(){
@@ -621,6 +629,7 @@ $(function () {
         $(".mob-remain-update").click(function(){
           var val = $(".mob-remain-change").val();
           if(parseInt(val) == val || val != NaN){
+            mob_left = parseInt(val);
             upd("mob_left", parseInt(val));
           }
         });
@@ -628,6 +637,7 @@ $(function () {
         $(".mob-w-e-update").click(function(){
           var val = $(".mob-w-e-change").val();
           if(parseInt(val) == val || val != NaN){
+            mob_to_eli = parseInt(val);
             upd("mob_to_eli", parseInt(val));
           }
         });
@@ -635,6 +645,7 @@ $(function () {
         $(".money-add-update").click(function(){
           var val = $(".money-add-change").val();
           if(parseInt(val) == val || val != NaN){
+            eli_money = parseInt(val);
             upd("eli_money", parseInt(val));
           }
         });
@@ -642,6 +653,7 @@ $(function () {
         $(".money-total-update").click(function(){
           var val = $(".money-total-change").val();
           if(parseInt(val) == val || val != NaN){
+            total_money = parseInt(val);
             upd("total_money", parseInt(val));
           }
         });
