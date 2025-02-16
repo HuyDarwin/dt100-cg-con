@@ -34,6 +34,8 @@ $(function () {
             const data = snapshot.val();
           
             if(data.c_reveal == 1) {
+              con.StopSound(4);
+              con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);
               setTimeout(function(){
                 con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/b_01_vraag_spanning.mp3?v=1739630222120",4);                

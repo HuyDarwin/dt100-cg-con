@@ -425,6 +425,7 @@ $(function () {
             $("#answer-a .ans-text-p td").html(data.answer_a.toString().toUpperCase());
             $("#answer-b .ans-text-p td").html(data.answer_b.toString().toUpperCase());
             $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
+            $(".number-eliminated-p").html(data.mob_eli);
 
             if(data.reload == 1) {
               location.reload();
@@ -432,6 +433,7 @@ $(function () {
             }
           
             if(data.c_reveal == 1) {
+              ResetLogo();
               RevealType (data.q_type);
               upd("c_reveal", 0);
             }
@@ -464,6 +466,11 @@ $(function () {
               ResetQuestion();
               RevealNumEle();
               upd("q_hide", 0);
+            }  
+            if(data.hide_eliminate == 1) {
+              ResetNumEle();
+              RevealLogo();
+              upd("hide_eliminate", 0);
             }          
         });
       

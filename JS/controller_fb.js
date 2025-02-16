@@ -266,6 +266,7 @@ $(function () {
       
       
         $(".c-reveal").click(function(){
+          dib("e-reveal");
           mob_eli = 0;
           upd("mob_eli", 0);
           
@@ -422,6 +423,8 @@ $(function () {
       
         $(".hide-eliminate").click(function(){
           dib(".hide-eliminate");
+          upd("hide_eliminate",1);
+          
           ResetQuestion();
           NextQuestion();
         });
