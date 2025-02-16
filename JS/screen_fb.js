@@ -292,9 +292,60 @@ $(function () {
 
         /* q-hold */
 
+        function AnswerStatus (ans, status) {
+          var answer = '';
+          if(ans == 1){
+            answer = 'a';
+          }
+          else if (ans == 2){
+            answer = 'b';
+          }
+          else if (ans == 3){
+            answer = 'c';
+          }
+
+          $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',0)   
+          $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',0)
+          $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',0)
+
+          if(status == 0) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-main').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-main').css('opacity',1)
+          }
+          else if(status == 1) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-lock').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-lock').css('opacity',1)
+          }
+          else if(status == 2) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-correct').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-correct').css('opacity',1) 
+          }
+          else if(status == 3) {
+            $('#answer-' + answer + ' .ans-letter .ans-letter-wrong').css('opacity',1)
+            $('#answer-' + answer + ' .ans-text .ans-text-wrong').css('opacity',1)
+          }
+        }
+
+        function EscapeStatus (mode, status) {
+          if (status == 0) {
+            $('#q-escape-p-' + mode).css('opacity', 0.25);
+          }
+          else if (status == 1) {
+            $('#q-escape-p-' + mode).css('opacity', 1);    
+          }
+        }
+
         function ResetQuestion(){
           $('.q-image, .q-escape, .q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
           $('.q-a-con').css({'transform':'scaleY(1) scaleX(1) translateY(0%)'});
+          AnswerStatus(1,0);
+          AnswerStatus(2,0);
+          AnswerStatus(3,0);
         }
 
         function QuestionReveal() {
@@ -453,6 +504,26 @@ $(function () {
               }, 500);
               upd("q_reveal", 0);
             }
+          
+            if(data.escape_25 == true) {
+              EscapeStatus(25,1);
+            }
+            else{
+              EscapeStatus(25,0);
+            }
+            if(data.escape_50 == true) {
+              EscapeStatus(50,1);
+            }
+            else{
+              EscapeStatus(50,0);
+            }
+            if(data.escape_75 == true) {
+              EscapeStatus(75,1);
+            }
+            else{
+              EscapeStatus(75,0);
+            }
+          
             if(data.a_reveal_1 == 1) {
               AnswerReveal(1);
               upd("a_reveal_1", 0);
@@ -464,6 +535,42 @@ $(function () {
             if(data.a_reveal_3 == 1) {
               AnswerReveal(3);
               upd("a_reveal_3", 0);
+            }
+            if(data.a_choose_1 == 1) {
+              AnswerStatus(1,1);
+              upd("a_choose_1", 0);
+            }
+            if(data.a_choose_2 == 1) {
+              AnswerStatus(2,1);
+              upd("a_choose_2", 0);
+            }
+            if(data.a_choose_3 == 1) {
+              AnswerStatus(3,1);
+              upd("a_choose_3", 0);
+            }
+            if(data.a_right_1 == 1) {
+              AnswerStatus(1,2);
+              upd("a_right_1", 0);
+            }
+            if(data.a_right_2 == 1) {
+              AnswerStatus(2,2);
+              upd("a_right_2", 0);
+            }
+            if(data.a_right_3 == 1) {
+              AnswerStatus(3,2);
+              upd("a_right_3", 0);
+            }
+            if(data.a_wrong_1 == 1) {
+              AnswerStatus(1,3);
+              upd("a_wrong_1", 0);
+            }
+            if(data.a_wrong_2 == 1) {
+              AnswerStatus(2,3);
+              upd("a_wrong_2", 0);
+            }
+            if(data.a_wrong_3 == 1) {
+              AnswerStatus(3,3);
+              upd("a_wrong_3", 0);
             }
             if(data.q_hide == 1) {
               ResetQuestion();

@@ -462,6 +462,8 @@ $(function () {
           dib(".e-reveal");
           enb(".e-hide");
           is_eli_showing = true;
+          
+          upd("e-reveal",1);
         });
       
         $(".e-hide").click(function(){
@@ -476,6 +478,8 @@ $(function () {
             dib(".e-reveal");
             is_eli_showing = false;
           }
+          
+          upd("t-reveal",1);
         });
       
         $(".t-hide").click(function(){
@@ -538,8 +542,8 @@ $(function () {
           
             $(".mob-remain-p").html("Số người còn lại: " + data.mob_left);
             $(".mob-w-e-p").html("Số người sẽ bị loại: " + data.mob_to_eli);
-            $(".money-add-p").html("Tiền thưởng nhận được: " + data.eli_money);
-            $(".money-total-p").html("Tiền thưởng tổng cộng: " + data.total_money);
+            $(".money-add-p").html("Tiền thưởng nhận được: " + accounting.formatMoney(data.eli_money));
+            $(".money-total-p").html("Tiền thưởng tổng cộng: " + accounting.formatMoney(data.total_money));
             $(".e-num").html(data.mob_eli);
         });
 
