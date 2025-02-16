@@ -198,6 +198,36 @@ $(function () {
             enb(".c-reveal");
           }
         }
+      
+        function DisableEscape(mode){          
+          if(mode == 25) {
+            escape_25 = false;            
+          }
+          else if (mode == 50) {
+            escape_50 = false;               
+          }
+          else if (mode == 75) {
+            escape_75 = false;               
+          }
+          
+          setTimeout(function(){ 
+            upd("escape_" + mode, false);
+          }, 500);
+          setTimeout(function(){ 
+            upd("escape_" + mode, true);
+          }, 1000);
+          setTimeout(function(){ 
+            upd("escape_" + mode, false);
+          }, 1500);
+          
+          var old_money = Math.round(total_money )
+          
+          for (var i=1;i<=15;i++) {
+            setTimeout(function(){
+              total_money = total_money - Math.round()
+            }, 100 * i);
+          }
+        }
 
         //
 
@@ -366,14 +396,14 @@ $(function () {
           
         $("#q-escape-25").click(function(){
           upd("escape_sfx",1);
-          upd("escape_25",false);
           show_money = false;
-          escape_25 = false;
           dib(".q-escape");
           $("#q-escape-25").css("color","purple");
           
           escape_used = true;
           upd("escape_used", true);
+          
+          DisableEscape(25);
         });
           
         $("#q-escape-50").click(function(){
@@ -451,6 +481,7 @@ $(function () {
             
             if(escape_used == false){
               lose = true;
+              show_money = false;
               $(".goodbye").css("top","400px");
             }
           }
@@ -496,7 +527,7 @@ $(function () {
         });
       
         $(".t-reveal").click(function(){
-          dib(".t-reveal");
+          dib(".t-reveal, .e-reveal");
           enb(".t-hide");
           if(is_eli_showing) {
             dib(".e-reveal");
@@ -507,7 +538,7 @@ $(function () {
         });
       
         $(".t-hide").click(function(){
-          dib(".t-hide");
+          dib(".t-hide, .e-hide");
           enb(".t-reveal");
         });
       
@@ -543,19 +574,17 @@ $(function () {
                 upd("mob_eli_mode", 2);
               }, 500);
             }
-            else if (escape_used == false) {
+            else if (escape_used == false && lose == false) {
               upd("deposit_sfx", 1);
               
-              if (escape_used == false && lose == false){
-                total_money += eli_money;
-                upd("total_money", total_money);
-              }
+              total_money += eli_money;
+              upd("total_money", total_money);
             }
             
             mob_left -= mob_eli;
             upd("mob_left", mob_left);
             
-            if(mob_left == 0) {
+            if(mob_left == 0 && lose == false) {
               upd("win_sfx", 1);
             }
             
