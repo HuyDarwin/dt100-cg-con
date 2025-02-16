@@ -1,5 +1,7 @@
 body {
-  background-color: black;
+  background: url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%202.png?v=1739716854912") no-repeat;
+  background-size:cover;
+  background-position:center;
 }
 
 button {
