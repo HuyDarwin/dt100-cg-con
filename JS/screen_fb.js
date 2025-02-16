@@ -401,6 +401,7 @@ $(function () {
 
         /* Init */
         ResetAll();
+        RevealLogo();
 
         //
 
@@ -447,7 +448,9 @@ $(function () {
             }
             if(data.q_reveal == 1) {
               ResetAllTypes();
-              QuestionReveal();
+              setTimeout(function(){
+                QuestionReveal();
+              }, 500);
               upd("q_reveal", 0);
             }
             if(data.a_reveal_1 == 1) {

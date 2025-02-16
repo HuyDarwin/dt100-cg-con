@@ -280,6 +280,7 @@ $(function () {
           dib(".q-c-type");
           UpdateData(2);
           enb(".q-reveal");
+          $(".q-chosen").html("Đã chọn: Lựa chọn 1");
         });
       
         $("#q-c-type-2").click(function(){
@@ -287,6 +288,7 @@ $(function () {
           dib(".q-c-type");
           UpdateData(2);
           enb(".q-reveal");
+          $(".q-chosen").html("Đã chọn: Lựa chọn 2");
         });
       
         $(".q-reveal").click(function(){
@@ -336,23 +338,29 @@ $(function () {
           
         $("#q-escape-25").click(function(){
           upd("escape_sfx",1);
+          upd("escape_25",false);
           show_money = false;
           escape_25 = false;
           dib(".q-escape");
+          $("#q-escape-25").css("color","purple");
         });
           
         $("#q-escape-50").click(function(){
           upd("escape_sfx",1);
+          upd("escape_50",false);
           show_money = false;
           escape_50 = false;
           dib(".q-escape");
+          $("#q-escape-50").css("color","purple");
         });
           
         $("#q-escape-75").click(function(){
           upd("escape_sfx",1);
+          upd("escape_75",false);
           show_money = false;
           escape_75 = false;
           dib(".q-escape");
+          $("#q-escape-75").css("color","purple");
         });
       
         $("#a-choose-1").click(function(){
@@ -425,8 +433,11 @@ $(function () {
           dib(".hide-eliminate");
           upd("hide_eliminate",1);
           
-          ResetQuestion();
-          NextQuestion();
+          setTimeout(function(){
+            ResetQuestion();
+            NextQuestion();
+            $(".q-chosen").html("Đã chọn: ");            
+          }, 100);
         });
 
         //
@@ -445,6 +456,21 @@ $(function () {
             else {
               $(".q-now").html("Câu hỏi hiện tại: ");
               $(".q-next").html("Câu hỏi tiếp theo: ");
+            }
+          
+            $(".question").html(data.question);
+            $("#ans-text-a").html(data.answer_a);
+            $("#ans-text-b").html(data.answer_b);
+            $("#ans-text-c").html(data.answer_c);
+            $(".ans-letter").css("color","purple");
+            if(data.correct_ans == 1) {
+              $("#ans-letter-a").css("color","green");
+            }
+            else if(data.correct_ans == 2) {
+              $("#ans-letter-b").css("color","green");
+            }
+            else if(data.correct_ans == 3) {
+              $("#ans-letter-c").css("color","green");
             }
           
             $(".mob-remain-p").html("Số người còn lại: " + data.mob_left);
