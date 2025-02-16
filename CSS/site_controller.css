@@ -171,12 +171,16 @@ textarea{
   height:170px;
 }
 
-.reload{
-  left:5px;
+#holder-3 .rel{
   top:50px;
-  width:150px;
-  height:40px;
-  font-size:24px;
+  left:5px;
+  width:570px;
+  height:160px;
+}
+
+#holder-3 .rel button{
+  position:relative;
+  font-size:28px;
 }
 
 /* Holder-4 */
