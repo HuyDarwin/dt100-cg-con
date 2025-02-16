@@ -38,6 +38,8 @@ $(function () {
       
         var chosen_ans = 0;
         var correct_ans = 0;
+      
+        var difficulty = 0;
 
         //
 
@@ -88,6 +90,8 @@ $(function () {
           
           escape_used = false;
           upd("escape_used", false);
+          
+          difficulty = 0;
         }
       
         function Init(){
@@ -159,12 +163,14 @@ $(function () {
               upd("answer_a", questions[r].One_AnswerA);
               upd("answer_b", questions[r].One_AnswerB);
               upd("answer_c", questions[r].One_AnswerC);
+              difficulty = questions[r].One_Difficulty;
             }
             else if (option == 2) {
               upd("question", questions[r].Two_Question);
               upd("answer_a", questions[r].Two_AnswerA);
               upd("answer_b", questions[r].Two_AnswerB);
-              upd("answer_c", questions[r].Two_AnswerC);              
+              upd("answer_c", questions[r].Two_AnswerC); 
+              difficulty = questions[r].Two_Difficulty;
             }
           }
           else if (index == 3) {
@@ -462,6 +468,7 @@ $(function () {
           if (show_money){
             enb(".e-reveal");
           }
+          enb(".mob-w-e-random");
         });
       
         $(".goodbye").click(function(){
@@ -543,6 +550,37 @@ $(function () {
           var val = $(".money-total-change").val();
           if(parseInt(val) == val || val != NaN){
             upd("total_money", parseInt(val));
+          }
+        });
+      
+        function getRandomInt(min, max) {
+          const minCeiled = Math.round(min);
+          const maxFloored = Math.round(max);
+          return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
+        }
+      
+        $(".mob-w-e-random").click(function(){
+          dib(".mob-w-e-random");
+          
+          var xs = [];
+          var muc1 = Math.round(mob_left / 5 * 1);
+          
+          var a = 0, b = 0, c = 0, d = 0, e = 0;
+          
+          if (difficulty == 1) {
+            a = 10, b = 5, c = 2, d = 2, e = 1;
+          }
+          else if (difficulty == 2) {
+            a = 8, b = 6, c = 3, d = 2, e = 1;            
+          }
+          else if (difficulty == 3) {
+            a = 4, b = 4, c = 7, d = 3, e = 2;            
+          }
+          else if (difficulty == 4) {
+            a = 2, b = 3, c = 6, d = 4, e = 5;            
+          }
+          else if (difficulty == 5) {
+            a = 1, b = 2, c = 3, d = 4, e = 10;            
           }
         });
 
