@@ -34,7 +34,6 @@ $(function () {
             const data = snapshot.val();
           
             if(data.c_reveal == 1) {
-              con.StopSound(4);
               con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);
               setTimeout(function(){
@@ -62,6 +61,10 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/reveal%20answer.mp3?v=1739630572444",2);
               upd("a_reveal_3", 0);
             }
+            if(data.q_m_e_reveal == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Money%20and%20Escapes%20Reveal.mp3?v=1739678309755",2);
+              upd("q_m_e_reveal", 0);
+            }
             if(data.mob_answer == 1) {
               con.StopSound(4);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/denk_tijd_06_sec_full.mp3?v=1739630706495",2);
@@ -74,6 +77,35 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/geld_er_af_na_escape%20SAT%20GOC.mp3?v=1739631377667",2);
               upd("escape_sfx", 0);
             }
+            if(data.lock_ans_sfx == 1) {
+              con.StopSound(5);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/button_c_heavy.mp3?v=1739631381206",2);
+              setTimeout(function(){
+                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/spanning_na_keuze_gemaakt.mp3?v=1739631384748",5);                
+              }, 500);
+              upd("lock_ans_sfx", 0);
+            }
+            if(data.right_ans_sfx == 1) {
+              setTimeout(function(){ 
+                con.StopSound(5,1);
+              }, 500);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_12.mp3?v=1739678749617",2);
+              setTimeout(function(){ 
+                con.PlaySound(5);
+              }, 3500);
+              upd("right_ans_sfx", 0);
+            }
+            if(data.right_ans_sfx == 1) {
+              setTimeout(function(){ 
+                con.StopSound(5,1);
+              }, 500);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_12.mp3?v=1739678749617",2);
+              setTimeout(function(){ 
+                con.PlaySound(5);
+              }, 3500);
+              upd("right_ans_sfx", 0);
+            }
+          
         });
         
       

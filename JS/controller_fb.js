@@ -30,9 +30,14 @@ $(function () {
         var escape_25 = true;
         var escape_50 = true;
         var escape_75 = true;
+      
+        var escape_used = false;
         
         var show_money = true;
         var is_eli_showing = false;
+      
+        var chosen_ans = 0;
+        var correct_ans = 0;
 
         //
 
@@ -78,6 +83,11 @@ $(function () {
           mob_to_eli = 0;
           eli_money = 0;
           option = 0;
+          chosen_ans = 0;
+          correct_ans = 0;
+          
+          escape_used = false;
+          upd("escape_used", false);
         }
       
         function Init(){
@@ -96,6 +106,9 @@ $(function () {
           upd("escape_25",true);
           upd("escape_50",true);
           upd("escape_75",true);
+          
+          escape_used = false;
+          upd("escape_used", false);
           
           ResetQuestion();
         }
@@ -155,10 +168,12 @@ $(function () {
           else if (index == 3) {
             if (option == 1) {
               upd("correct_ans", questions[r].One_CorrectAns);
+              correct_ans = questions[r].One_CorrectAns;
               upd("note", questions[r].One_Note);
             }
             else if (option == 2) {
               upd("correct_ans", questions[r].Two_CorrectAns);
+              correct_ans = questions[r].Two_CorrectAns;
               upd("note", questions[r].Two_Note);              
             }
           }
@@ -343,6 +358,9 @@ $(function () {
           escape_25 = false;
           dib(".q-escape");
           $("#q-escape-25").css("color","purple");
+          
+          escape_used = true;
+          upd("escape_used", true);
         });
           
         $("#q-escape-50").click(function(){
@@ -352,6 +370,9 @@ $(function () {
           escape_50 = false;
           dib(".q-escape");
           $("#q-escape-50").css("color","purple");
+          
+          escape_used = true;
+          upd("escape_used", true);
         });
           
         $("#q-escape-75").click(function(){
@@ -361,29 +382,71 @@ $(function () {
           escape_75 = false;
           dib(".q-escape");
           $("#q-escape-75").css("color","purple");
+          
+          escape_used = true;
+          upd("escape_used", true);
         });
       
         $("#a-choose-1").click(function(){
           UpdateData(3);
           dib(".a-choose, .q-escape");
           enb(".a-announce");
+          
+          chosen_ans = 1;
+          upd("a_choose_1", 1);
+          upd("lock_ans_sfx", 1);
         });
       
         $("#a-choose-2").click(function(){
           UpdateData(3);
           dib(".a-choose, .q-escape");
           enb(".a-announce");
+          
+          chosen_ans = 2;
+          upd("a_choose_2", 1);
+          upd("lock_ans_sfx", 1);
         });
       
         $("#a-choose-3").click(function(){
           UpdateData(3);
           dib(".a-choose, .q-escape");
           enb(".a-announce");
+          
+          chosen_ans = 3;
+          upd("a_choose_3", 1);
+          upd("lock_ans_sfx", 1);
         });
       
         $(".a-announce").click(function(){
           dib(".a-announce");
           enb(".q-hide");
+          
+          if (chosen_ans == correct_ans) {
+            upd("right_ans_sfx", 1);
+          }
+          else {
+            upd("wrong_ans_sfx", 1);
+            if (chosen_ans == 1) {
+              upd("a_wrong_1", 1);
+            }
+            else if(chosen_ans == 2) {
+              upd("a_wrong_2", 1);
+            }
+            else if(chosen_ans == 3) {
+              upd("a_wrong_3", 1);
+            }
+          }
+          
+          
+          if (correct_ans == 1) {
+            upd("a_right_1", 1);
+          }
+          else if(correct_ans == 2) {
+            upd("a_right_2", 1);
+          }
+          else if(correct_ans == 3) {
+            upd("a_right_3", 1);
+          }
         });
       
         $(".q-hide").click(function(){
