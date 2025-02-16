@@ -21,7 +21,7 @@ accounting.settings.currency.format = "%v %s";
 accounting.settings.currency.format = {
 	pos : "%v %s",   // for positive values, eg. "$ 1.00" (required)
 	neg : "%s (%v)", // for negative values, eg. "$ (1.00)" [optional]
-	zero: "%s  -- "  // for zero values, eg. "$  --" [optional]
+	zero: "%v %s"  // for zero values, eg. "$  --" [optional]
 };
 
 /*

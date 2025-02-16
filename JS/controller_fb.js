@@ -463,7 +463,7 @@ $(function () {
           enb(".e-hide");
           is_eli_showing = true;
           
-          upd("e-reveal",1);
+          upd("e_reveal",1);
         });
       
         $(".e-hide").click(function(){
@@ -479,7 +479,7 @@ $(function () {
             is_eli_showing = false;
           }
           
-          upd("t-reveal",1);
+          upd("t_reveal",1);
         });
       
         $(".t-hide").click(function(){
