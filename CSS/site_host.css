@@ -93,12 +93,135 @@ textarea{
   height:1080px;
 }
 
-.right-ans{
+.type{
 	font-family:'Chevin';
-	font-size:48px;
+	font-size:72px;
   
   top:50px;
-  left:4px;
+  left:5px;
   color:white;
 }
 
+.right-ans{
+	font-family:'Chevin';
+	font-size:72px;
+  
+  top:140px;
+  left:5px;
+  color:white;
+}
+
+.note{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:230px;
+  height:840px;
+  width:1270px;
+  left:5px;
+  color:white;
+}
+
+/* Holder-2 */
+
+#holder-2{
+  top:0px;
+  left:1280px;
+  width:640px;
+  height:1080px;
+}
+
+.mob-remain-text{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:50px;
+  left:5px;
+  color:white;  
+}
+
+.mob-remain-p{
+	font-family:'Chevin';
+	font-size:60px;
+  font-weight:bold;
+  
+  top:120px;
+  left:5px;
+  color:white;  
+}
+
+.mob-w-e-text{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:250px;
+  left:5px;
+  color:white;  
+}
+
+.mob-w-e-p{
+	font-family:'Chevin';
+	font-size:60px;
+  font-weight:bold;
+  
+  top:320px;
+  left:5px;
+  color:white;  
+}
+
+.mob-e-text{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:450px;
+  left:5px;
+  color:white;  
+}
+
+.mob-e-p{
+	font-family:'Chevin';
+	font-size:60px;
+  font-weight:bold;
+  
+  top:520px;
+  left:5px;
+  color:white;  
+}
+
+.money-add-text{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:650px;
+  left:5px;
+  color:white;  
+}
+
+.money-add-p{
+	font-family:'Chevin';
+	font-size:60px;
+  font-weight:bold;
+  
+  top:720px;
+  left:5px;
+  color:white;  
+}
+
+.money-total-text{
+	font-family:'Chevin';
+	font-size:60px;
+  
+  top:850px;
+  left:5px;
+  color:white;  
+}
+
+.money-total-p{
+	font-family:'Chevin';
+	font-size:60px;
+  font-weight:bold;
+  
+  top:920px;
+  left:5px;
+  color:white;  
+}
