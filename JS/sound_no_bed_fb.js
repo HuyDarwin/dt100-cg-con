@@ -132,6 +132,31 @@ $(function () {
               upd("win_sfx", 0);
             }
           
+            if(data.welcome_bed == 1) {
+              con.PlaySound(,3);
+              upd("welcome_bed", 0);
+            }
+            if(data.intro == 1) {
+              con.PlaySound(,1);
+              upd("intro", 0);
+            }
+            if(data.new_player == 1) {
+              con.PlaySound(,1);
+              upd("new_player", 0);
+            }
+            if(data.new_player == 1) {
+              con.PlaySound(,1);
+              upd("new_player", 0);
+            }
+            if(data.new_player == 1) {
+              con.PlaySound(,1);
+              upd("new_player", 0);
+            }
+            if(data.new_playe == 1) {
+              con.PlaySound(,3);
+              upd("new_player, 0);
+            }
+          
         });
         
       

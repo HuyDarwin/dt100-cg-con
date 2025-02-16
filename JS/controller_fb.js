@@ -766,6 +766,10 @@ $(function () {
           Init();
           $(".q-escape").css("color","white");
         });
+      
+        $(".autoname").click(function(){
+          upd(this.id, 1);
+        });
 
         //
 

@@ -38,6 +38,12 @@ textarea{
   border: 2px solid white;  
 }
 
+.rel button{
+	position:static;
+  margin-bottom:0.1vw;
+  font-size:28px;
+}
+
 .stage{
   width:1920px;
   height:1080px;
@@ -176,12 +182,6 @@ textarea{
   left:5px;
   width:570px;
   height:160px;
-}
-
-#holder-3 .rel button{
-	position:static;
-  margin-bottom:0.1vw;
-  font-size:28px;
 }
 
 /* Holder-4 */
@@ -672,4 +672,11 @@ textarea{
   left:1460px;
   width:460px;
   height:1080px;
+}
+
+#holder-6 .rel{
+  top:50px;
+  left:5px;
+  width:450px;
+  height:1020px;
 }
