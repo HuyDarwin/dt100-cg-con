@@ -57,6 +57,20 @@ $(function () {
             }
           }
         ]);
+      
+        function upd(key, val) {
+            update(ref(db), {
+                [key]: val
+            })
+        }
+
+        function enb(key) {
+            $(key).removeAttr('disabled')
+        }
+
+        function dib(key) {
+            $(key).attr('disabled', true);
+        }
 
         function ResetAllTypes(){
           $('.type').css('top','100%');
@@ -154,16 +168,66 @@ $(function () {
             }
           }
         }
+      
+        function ResetAll(){
+          ResetAllTypes();
+          $(".q-image").css("opacity",0);
+        }
+
+        /* Init */
+        ResetAll();
 
         //
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
+          
+            $("#type-1 .category-p td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-2 .image").css("background-image", "url('" + data.option_a_img + "')");
+            $("#type-2 .category-p td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-3 #category-p-a td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-3 #category-p-b td").html(data.option_b_name.toString().toUpperCase());
+            $("#type-4 #category-p-a td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-4 .image").css("background-image", "url('" + data.option_a_img + "')");
+            $("#type-4 #category-p-b td").html(data.option_b_name.toString().toUpperCase());
+            $("#type-5 #category-image-a").css("background-image", "url('" + data.option_a_img + "')");
+            $("#type-5 #category-image-b").css("background-image", "url('" + data.option_b_img + "')");
+            $("#type-6 #category-image-a").css("background-image", "url('" + data.option_a_img + "')");
+            $("#type-6 #category-image-b").css("background-image", "url('" + data.option_b_img + "')");
+            $("#type-6 #category-text-p-a td").html(data.option_a_name.toString().toUpperCase());
+            $("#type-6 #category-text-p-b td").html(data.option_b_name.toString().toUpperCase());
+          
+            $(".q-image").css("background-image", "url('" + data.option_a_img + "')");
 
 
+            if(data.c_reveal == 1) {
+              RevealType (data.q_type);
+              upd("c_reveal", 0);
+            }
+            if(data.choose_option == 1) {
+              ChooseOption (data.q_type, 1);
+              upd("choose_option", 0);
+            }
+            if(data.choose_option == 2) {
+              ChooseOption (data.q_type, 2);
+              upd("choose_option", 0);
+            }
+            if(data.q_reveal == 1) {
+              ResetAllTypes();
+              setTimeout(function(){
+                if(data.q_type == 2 || data.q_type == 4) {
+                  $(".q-image").css("opacity",1);
+                }
+              }, 500);
+              upd("q_reveal", 0);
+            }
+            if(data.q_hide == 1) {
+              if(data.q_type == 2 || data.q_type == 4) {
+                $(".q-image").css("opacity",0);
+              }              
+              upd("q_hide", 0);
+            }
         });
-
-        /* Init */
 
     }(window.CONTROLLER = window.CONTROLLER || {}));
 });

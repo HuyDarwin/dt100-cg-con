@@ -34,11 +34,7 @@ $(function () {
             const data = snapshot.val();
           
             if(data.c_reveal == 1) {
-              con.StopSound(4);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);
-              setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/b_01_vraag_spanning.mp3?v=1739630222120",4);                
-              }, 500);
               upd("c_reveal", 0);
             }     
             if(data.choose_option == 1 || data.choose_option == 2) {
@@ -66,11 +62,7 @@ $(function () {
               upd("q_m_e_reveal", 0);
             }
             if(data.mob_answer == 1) {
-              con.StopSound(4);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/denk_tijd_06_sec_full.mp3?v=1739630706495",2);
-              setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/spanning_nadenken.mp3?v=1739527926198",5,7);  
-              }, 7000);
               upd("mob_answer", 0);
             }
             if(data.escape_sfx == 1) {
@@ -78,11 +70,7 @@ $(function () {
               upd("escape_sfx", 0);
             }
             if(data.lock_ans_sfx == 1) {
-              con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/button_c_heavy.mp3?v=1739631381206",2);
-              setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/spanning_na_keuze_gemaakt.mp3?v=1739631384748",4);                
-              }, 500);
               upd("lock_ans_sfx", 0);
             }
             if(data.right_ans_sfx == 1) {

@@ -736,6 +736,7 @@ $(function () {
       
         $(".reset").click(function(){
           Init();
+          $(".q-escape").css("color","white");
         });
 
         //
