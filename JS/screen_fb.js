@@ -348,8 +348,10 @@ $(function () {
           AnswerStatus(3,0);
         }
 
-        function QuestionReveal() {
-            $('.q-escape').css('opacity',1)
+        function QuestionReveal(show) {
+            if(show == true){
+              $('.q-escape').css('opacity',1)
+            }
             $('.question').playKeyframe({
               name: 'key-q-reveal',
               duration: '0.75s',
@@ -504,7 +506,11 @@ $(function () {
                 if(data.q_type == 2 || data.q_type == 4) {
                   ImageReveal();
                 }
-                QuestionReveal();
+                var boolean = false;
+                if (data.mob_left < 100) {
+                  boolean = true;
+                }
+                QuestionReveal(boolean);
               }, 500);
               upd("q_reveal", 0);
             }
