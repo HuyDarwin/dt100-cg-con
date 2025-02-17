@@ -167,6 +167,44 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",1);
               upd("restyle_8", 0);
             }
+          
+            if(data.custom_1 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/01.mp3?v=1739804137276", 1);
+              upd("custom_1", 0);
+            }     
+            if(data.custom_2== 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/02.mp3?v=1739804150310", 1);
+              upd("custom_2", 0);
+            }     
+            if(data.custom_3 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/03.mp3?v=1739804158883", 1);
+              upd("custom_3", 0);
+            }     
+            if(data.custom_4 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/04.mp3?v=1739804166535", 1);
+              upd("custom_4", 0);
+            }     
+            if(data.custom_5 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/05.mp3?v=1739804178456", 1);
+              upd("custom_5", 0);
+            }     
+            if(data.custom_6 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/06.MP3?v=1739804183095", 1);
+              upd("custom_6", 0);
+            }     
+            if(data.custom_7 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/07.MP3?v=1739804187524", 1);
+              upd("custom_7", 0);
+            }     
+            if(data.custom_8 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/08.MP3?v=1739804191451", 1);
+              upd("custom_8", 0);
+            }     
+            if(data.custom_9 == 1) {
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/09.MP3?v=1739804200694", 1);
+              upd("custom_9", 0);
+            }          
+          
             if(data.pause_bed == 1) {
               con.StopSound(4,1);
               con.StopSound(5,1);
