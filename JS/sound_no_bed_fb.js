@@ -164,7 +164,8 @@ $(function () {
               upd("restyle_5", 0);
             }
             if(data.restyle_8 == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",1);
+              con.StopSound(3);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",3);
               upd("restyle_8", 0);
             }
           
@@ -172,7 +173,7 @@ $(function () {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/01.mp3?v=1739804137276", 1);
               upd("custom_1", 0);
             }     
-            if(data.custom_2== 1) {
+            if(data.custom_2 == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/02.mp3?v=1739804150310", 1);
               upd("custom_2", 0);
             }     
