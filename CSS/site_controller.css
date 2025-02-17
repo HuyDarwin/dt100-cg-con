@@ -656,6 +656,18 @@ textarea{
   font-size:28px;
 }
 
+.note_2{
+  left:345px;
+  top:420px;
+  height:75px;
+  width:240px;
+  
+  color:red;
+  font-family:"Chevin";
+  font-size:24px;
+  opacity:0;
+}
+
 .hide-eliminate{
   left:595px;
   top:420px;

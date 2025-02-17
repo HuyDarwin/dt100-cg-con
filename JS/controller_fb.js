@@ -661,22 +661,32 @@ $(function () {
         });
       
         $(".hide-eliminate").click(function(){
-          dib(".hide-eliminate");
-          upd("hide_eliminate",1);
-          
-          setTimeout(function(){
-            ResetQuestion();
-            NextQuestion();
-            $(".q-chosen").html("Đã chọn: ");  
-            
-            eli_money = 0;
-            mob_to_eli = 0;
-            mob_eli = 0;
-            
-            upd("eli_money", 0);
-            upd("mob_to_eli", 0);
-            upd("mob_eli", 0);
-          }, 100);
+          if (is_eli_showing == true) {
+            $(".note_2").css("opacity",1);
+            $(".note").css("opacity",0);
+            setTimeout(function(){
+              $(".note_2").css("opacity",0);
+              $(".note").css("opacity",1);
+            }, 2500);
+          }
+          else{
+            dib(".hide-eliminate");
+            upd("hide_eliminate",1);
+
+            setTimeout(function(){
+              ResetQuestion();
+              NextQuestion();
+              $(".q-chosen").html("Đã chọn: ");  
+
+              eli_money = 0;
+              mob_to_eli = 0;
+              mob_eli = 0;
+
+              upd("eli_money", 0);
+              upd("mob_to_eli", 0);
+              upd("mob_eli", 0);
+            }, 100);            
+          }
         });
       
         $(".mob-remain-update").click(function(){
@@ -713,7 +723,7 @@ $(function () {
       
         function getRandomInt(min, max) {
           const minCeiled = Math.round(min);
-          const maxFloored = Math.round(max);
+          const maxFloored = Math.ceil(max);
           return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
         }
       
@@ -756,9 +766,27 @@ $(function () {
             xs.push(getRandomInt(mob_left / 5 * 4, mob_left));
           }
           
-          var final = getRandomInt(0,19);
+          var sub = 0;
+          
+          if (21 <= mob_left && mob_left <= 40) {
+            sub = 2;
+          }
+          else if (41 <= mob_left && mob_left <= 60) {
+            sub = 4;
+          }
+          else if (61 <= mob_left && mob_left <= 80) {
+            sub = 6;
+          }
+          else if (81 <= mob_left && mob_left <= 100) {
+            sub = 7;
+          }
+          
+          var final = getRandomInt(0,19 - sub);
           
           mob_to_eli = xs[final];
+          
+          if (mob_to_eli > mob_left) mob_to_eli = mob_left;
+          
           upd("mob_to_eli", xs[final]);
         });
       
