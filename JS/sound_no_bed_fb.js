@@ -142,6 +142,8 @@ $(function () {
               upd("new_player", 0);
             }
             if(data.comm_in == 1) {
+              con.StopSound(4,1);
+              con.StopSound(5,1);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_02.mp3?v=1739707941201",1);
               upd("comm_in", 0);
             }
