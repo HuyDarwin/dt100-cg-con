@@ -109,7 +109,7 @@ $(function () {
           
           enb(".rel button");
 
-          upd("question_now", 0);
+          upd("question_now", question_now);          
           upd("mob_left",100);
           upd("total_money",0);
           upd("mob_to_eli",0);
@@ -558,7 +558,9 @@ $(function () {
         $(".q-hide").click(function(){
           upd("q_hide", 1);
           dib(".q-hide");
-          enb(".eliminate");
+          if(escape_used == true || lose == true) {
+            enb(".eliminate");            
+          }
           if (show_money){
             enb(".e-reveal");
           }
@@ -576,6 +578,10 @@ $(function () {
           is_eli_showing = true;
           upd("is_eli_showing", is_eli_showing);
           
+          if(escape_used == false && lose == false) {
+            enb(".eliminate");            
+          }
+          
           upd("e_reveal",1);
         });
       
@@ -588,7 +594,7 @@ $(function () {
         });
       
         $(".t-reveal").click(function(){
-          dib(".t-reveal, .e-reveal");
+          dib(".t-reveal, .e-reveal, .e-hide");
           enb(".t-hide");
           if(is_eli_showing) {
             dib(".e-reveal");
