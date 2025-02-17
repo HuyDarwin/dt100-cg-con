@@ -175,7 +175,7 @@ $(function () {
               upd("restyle_5", 0);
             }
             if(data.restyle_8 == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",4);
               upd("restyle_8", 0);
             }
           
