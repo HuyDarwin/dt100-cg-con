@@ -32,6 +32,11 @@ $(function () {
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
+
+            if(data.reload == 1) {
+              location.reload();
+              upd("reload", 0);
+            }
           
             if(data.c_reveal == 1) {
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);

@@ -32,7 +32,11 @@ $(function () {
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();
-          
+
+            if(data.reload == 1) {
+              location.reload();
+              upd("reload", 0);
+            }          
             
             if(data.c_reveal == 1) {
               con.StopSound(4);
