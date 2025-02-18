@@ -516,7 +516,9 @@ $(function () {
             }  
           
             if(data.e_reveal == 1) {
-              RevealEliminateGpx();
+              setTimeout(function(){
+                RevealEliminateGpx();
+              }, 500);
               upd("e_reveal", 0);
             }
             if(data.e_hide == 1) {
