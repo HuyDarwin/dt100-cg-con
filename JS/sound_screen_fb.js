@@ -146,11 +146,11 @@ $(function () {
             }
           
             if(data.welcome_bed == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_10.mp3?v=1739707894022",3);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_10.mp3?v=1739707894022",5);
               upd("welcome_bed", 0);
             }
             if(data.intro == 1) {
-              con.StopSound(3);
+              con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_07.mp3?v=1739707908555",1);
               upd("intro", 0);
             }
