@@ -340,8 +340,33 @@ $(function () {
           }
         }
 
+        function RemainReveal() {
+            $('.q-remain').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.75s',
+              timingFunction: 'ease'
+            })
+        }
+
+        function RemainHide() {
+            $('.q-remain').playKeyframe({
+              name: 'key-q-hide',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
+
+        function MoneyReveal() {
+            $('.q-money').playKeyframe({
+              name: 'key-q-reveal',
+              duration: '0.25s',
+              timingFunction: 'linear'
+            })
+        }
+
+
         function ResetQuestion(){
-          $('.q-image, .q-escape, .q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+          $('.q-image, .q-escape, .q-con div, .q-con, .answer, .q-remain, .q-money').css('opacity',0).playKeyframe('reset');
           $('.q-a-con').css({'transform':'scaleY(1) scaleX(1) translateY(0%)'});
           AnswerStatus(1,0);
           AnswerStatus(2,0);
@@ -487,6 +512,9 @@ $(function () {
             $(".number-eliminated-p").html(data.mob_eli);
             $(".q-image").css("background-image", "url('" + data.option_a_img + "')");
           
+            $(".q-remain-p").html("1 ĐẤU " + data.mob_left);
+            $(".q-money-p").html(accounting.formatMoney(data.total_money));
+          
             if(data.c_reveal == 1) {
               ResetLogo();
               RevealType (data.q_type);
@@ -513,6 +541,19 @@ $(function () {
                 QuestionReveal(boolean);
               }, 500);
               upd("q_reveal", 0);
+            }
+            if(data.mob_answer == 1) {
+              RemainReveal();
+              upd("mob_answer", 0);
+            }
+            if(data.q_m_e_reveal == 1) {
+              RemainHide();
+              if(data.mob_left < 100) {
+                setTimeout(function(){
+                  MoneyReveal();
+                }, 500);                     
+              }
+              upd("q_m_e_reveal", 0);
             }
           
             if(data.escape_25 == true) {
