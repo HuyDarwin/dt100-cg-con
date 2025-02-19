@@ -128,7 +128,7 @@ $(function () {
             if(data.win_sfx == 1) {
               con.StopSound(4);
               setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_11%20SAT%20GOC.mp3?v=1739696640381",1);                
+                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro.mp3?v=1739975842756",1);                
               }, 500);
               upd("win_sfx", 0);
             }
@@ -143,17 +143,17 @@ $(function () {
               upd("intro", 0);
             }
             if(data.new_player == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_04.mp3?v=1739707937770",1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Sau%20QC%20%2B%20Nguoi%20choi%20moi.mp3?v=1739977069488",1);
               upd("new_player", 0);
             }
             if(data.comm_in == 1) {
               con.StopSound(4,1);
               con.StopSound(5,1);
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_02.mp3?v=1739707941201",1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Vao%20Quang%20Cao.mp3?v=1739977067828",1);
               upd("comm_in", 0);
             }
             if(data.comm_out == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_03.mp3?v=1739707943606",1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Sau%20QC%20%2B%20Nguoi%20choi%20moi.mp3?v=1739977069488",1);
               upd("comm_out", 0);
             }
             if(data.theme == 1) {
