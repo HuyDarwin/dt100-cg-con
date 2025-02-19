@@ -72,7 +72,7 @@ $(function () {
             }
             if(data.mob_answer == 1) {
               con.StopSound(4);
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/denk_tijd_06_sec_full.mp3?v=1739630706495",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/6%20giay.mp3?v=1739983703309",2);
               setTimeout(function(){
                 con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/spanning_nadenken.mp3?v=1739527926198",5,7);  
               }, 7000);
@@ -94,10 +94,10 @@ $(function () {
               setTimeout(function(){ 
                 con.StopSound(4,1);
               }, 500);
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_12.mp3?v=1739678749617",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Dung.mp3?v=1739983705816",2);
               setTimeout(function(){ 
                 con.ResumeSound(4);
-              }, 3500);
+              }, 2500);
               upd("right_ans_sfx", 0);
             }
             if(data.wrong_ans_sfx == 1) {
@@ -107,14 +107,14 @@ $(function () {
                 }, 500);
                 setTimeout(function(){ 
                   con.ResumeSound(4);
-                }, 3500);
+                }, 2000);
               }
               else{
                 setTimeout(function(){ 
                   con.StopSound(4);
                 }, 500);
               }
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_09.mp3?v=1739678743256",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Sai%20sai.mp3?v=1739983709889",2);
               upd("wrong_ans_sfx", 0);
             }
             if(data.goodbye == 1) {
@@ -182,7 +182,7 @@ $(function () {
             }
             if(data.restyle_8 == 1) {
               con.StopSound(3);
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_08%20SAT%20GOC.mp3?v=1739707972287",5);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chon%20NC%20moi.mp3?v=1739983703853",5);
               upd("restyle_8", 0);
             }
           
