@@ -660,7 +660,7 @@ $(function () {
             if(mob_left == 0 && lose == false) {
               setTimeout(function(){
                 upd("win_sfx", 1);
-              }, 1000);
+              }, 500);
             }
             
             dib(".eliminate");
