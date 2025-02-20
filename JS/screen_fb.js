@@ -510,6 +510,7 @@ $(function () {
             $("#answer-b .ans-text-p td").html(data.answer_b.toString().toUpperCase());
             $("#answer-c .ans-text-p td").html(data.answer_c.toString().toUpperCase());
             $(".number-eliminated-p").html(data.mob_eli);
+          
             $(".q-image").css("background-image", "url('" + data.option_a_img + "')");
           
             $(".q-remain-p").html("1 ĐẤU " + data.mob_left);

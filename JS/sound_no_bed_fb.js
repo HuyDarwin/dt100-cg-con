@@ -39,6 +39,7 @@ $(function () {
             }
           
             if(data.c_reveal == 1) {
+              con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);
               upd("c_reveal", 0);
             }     
@@ -109,7 +110,7 @@ $(function () {
             if(data.win_sfx == 1) {
               con.StopSound(4);
               setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro.mp3?v=1739975842756",1);                
+                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro%20%2B%20Win.mp3?v=1740043531809",1);                
               }, 500);
               upd("win_sfx", 0);
             }
@@ -120,7 +121,7 @@ $(function () {
             }
             if(data.intro == 1) {
               con.StopSound(5);
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro.mp3?v=1739975842756",1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro%20%2B%20Win.mp3?v=1740043531809",1);
               upd("intro", 0);
             }
             if(data.new_player == 1) {
