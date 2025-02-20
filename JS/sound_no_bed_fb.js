@@ -109,9 +109,7 @@ $(function () {
             }
             if(data.win_sfx == 1) {
               con.StopSound(4);
-              setTimeout(function(){
-                con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro%20%2B%20Win.mp3?v=1740043531809",1);                
-              }, 500);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Intro%20%2B%20Win.mp3?v=1740043531809",1);      
               upd("win_sfx", 0);
             }
           

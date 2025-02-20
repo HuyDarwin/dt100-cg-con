@@ -658,7 +658,9 @@ $(function () {
             upd("mob_left", mob_left);
             
             if(mob_left == 0 && lose == false) {
-              upd("win_sfx", 1);
+              setTimeout(function(){
+                upd("win_sfx", 1);
+              }, 500);
             }
             
             dib(".eliminate");
