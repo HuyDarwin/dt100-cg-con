@@ -100,7 +100,7 @@ $(function () {
         function Init(){
           remove(ref(db));
           $('button').attr("disabled","true");
-          $('.reload').removeAttr("disabled");
+          $('.reload').removeAttr("disabled");  
           $('.q-submit').removeAttr("disabled");
           enb(".t-reveal");
           enb(".goodbye");
@@ -660,7 +660,7 @@ $(function () {
             if(mob_left == 0 && lose == false) {
               setTimeout(function(){
                 upd("win_sfx", 1);
-              }, 500);
+              }, 1000);
             }
             
             dib(".eliminate");
@@ -854,7 +854,7 @@ $(function () {
         $(document).on('keydown',function(e){
           if(e.keyCode == 76){
             var now = new Date();
-            if(now - last > delta && mob_eli < mob_to_eli) {
+            if(now - last > delta && $(".eliminate").prop("disabled") != true) {
               $(".eliminate").click();
               last = now;
             }
