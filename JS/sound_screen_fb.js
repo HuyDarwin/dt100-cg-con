@@ -181,6 +181,7 @@ $(function () {
             }
             if(data.restyle_8 == 1) {
               con.StopSound(3);
+              con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chon%20NC%20moi.mp3?v=1739983703853",5);
               upd("restyle_8", 0);
             }
