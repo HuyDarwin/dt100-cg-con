@@ -119,7 +119,7 @@ $(function () {
               upd("wrong_ans_sfx", 0);
             }
             if(data.goodbye == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/1_tegen_100_restyle_2019_13.mp3?v=1739681218629",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/nha%CC%A3c%20ta%CC%A3m%20bie%CC%A3%CC%82t%20fade.mp3?v=1740056122624",2);
               upd("goodbye", 0);
             }
             if(data.e_reveal == 1) {
