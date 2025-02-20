@@ -186,7 +186,7 @@ $(function () {
             }
           
             if(data.custom_1 == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/01.mp3?v=1739804137276", 1);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/download.mp3?v=1740046284348", 1);
               upd("custom_1", 0);
             }     
             if(data.custom_2 == 1) {
