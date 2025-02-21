@@ -3,8 +3,8 @@ body {
 }
 
 .stage{
-  width:1920px;
-  height:1080px;
+  width:100vw;
+  height:100vh;
   top:0px;
   bottom:0px;
   left:0px;
@@ -14,8 +14,8 @@ body {
 }
 
 .holder{
-  width:1920px;
-  height:1080px;
+  width:100vw;
+  height:100vh;
   top:0px;
   left:0px;
   bottom:0px;
