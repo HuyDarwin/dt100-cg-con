@@ -137,7 +137,7 @@ $(function () {
               upd("comm_out", 0);
             }
             if(data.theme == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/theme%20(co%20tap%20am%20da%20loc%20nhung%20khong%20kha%20hon%20may).mp3?v=1740133170631",3);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/theme%20(co%20tap%20am%20da%20loc%20nhung%20khong%20kha%20hon%20may).mp3?v=1740133170631",5);
               upd("theme", 0);
             }
             if(data.restyle_1 == 1) {
