@@ -29,6 +29,10 @@ $(function () {
         }
 
         //
+      
+        con.PlayWhiteNoise();
+
+        //
 
         onValue(ref(db), (snapshot) => {
             const data = snapshot.val();

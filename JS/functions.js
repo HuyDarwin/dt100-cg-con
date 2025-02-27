@@ -85,6 +85,21 @@ $(function () {
             }				
           }
         };
+      
+        con.PlayWhiteNoise = function() {
+          try{			
+            var at6 = new Audio("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/White%20noise.mp3?v=1740662654234");
+            at6.volume = 0.0025;
+            at6.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+            at6.play();
+          }
+          catch(e){
+            // do nothing
+          }				
+        }
 
         con.StopSound = function(a,b) {
           try {
