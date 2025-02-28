@@ -76,7 +76,7 @@ $(function () {
               upd("mob_answer", 0);
             }
             if(data.escape_use == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/geld_er_af_na_escape%20SAT%20GOC.mp3?v=1739631377667",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/geld_er_af_na_escape%20SAT%20GOC.mp3?v=1740743210731",2);
               upd("escape_use", 0);
             }
             if(data.lock_ans_sfx == 1) {
