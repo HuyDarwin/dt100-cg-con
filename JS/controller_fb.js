@@ -325,13 +325,7 @@ $(function () {
                 });
             }
 
-            $(".list_qs").empty();
-            if(loaded == 1){
-              for(var i = 0; i < questions.length; i++) {
-                $(".list_qs").remove(i);
-              }              
-            }
-            loaded = 1;
+            $(".list-qs").empty();
 
             for(var i = 0; i < questions.length; i++){
               var type = questions[i].Type;
