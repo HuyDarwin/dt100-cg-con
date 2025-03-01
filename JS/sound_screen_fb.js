@@ -40,7 +40,16 @@ $(function () {
             if(data.reload == 1) {
               location.reload();
               upd("reload", 0);
-            }          
+            }     
+          
+            if(data.play_q_music_1 == 1) {
+              con.PlaySound(data.option_a_music,2);
+              upd("play_q_music_1", 0);
+            }
+            if(data.play_q_music_2 == 1) {
+              con.PlaySound(data.option_b_music,2);
+              upd("play_q_music_2", 0);
+            }     
             
             if(data.c_reveal == 1) {
               con.StopSound(4);
