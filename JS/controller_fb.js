@@ -95,6 +95,8 @@ $(function () {
           lose = false;
           
           difficulty = 0;
+          
+          dib(".play_q_music");
         }
       
         function Init(){
@@ -185,6 +187,16 @@ $(function () {
               upd("option_b_name", questions[r].Two_Name);
               upd("option_a_img", questions[r].One_Img);
               upd("option_b_img", questions[r].Two_Img);
+            }
+            
+            upd("option_a_music", questions[r].One_Audio);
+            upd("option_b_music", questions[r].Two_Audio);
+            
+            if(questions[r].One_Audio != ".") {
+              enb("#play_q_music_1");
+            }
+            if(questions[r].Two_Audio != ".") {
+              enb("#play_q_music_2");
             }
           }
           else if (index == 2) {
@@ -801,6 +813,10 @@ $(function () {
         $(".reset").click(function(){
           Init();
           $(".q-escape").css("color","white");
+        });
+      
+        $(".play_q_music").click(function(){
+          upd(this.id, 1);
         });
       
         $(".autoname").click(function(){

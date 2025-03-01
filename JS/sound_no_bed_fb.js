@@ -42,6 +42,15 @@ $(function () {
               upd("reload", 0);
             }
           
+            if(data.play_q_music_1 == 1) {
+              con.PlaySound(data.option_a_music,2);
+              upd("play_q_music_1", 0);
+            }
+            if(data.play_q_music_2 == 1) {
+              con.PlaySound(data.option_b_music,2);
+              upd("play_q_music_2", 0);
+            }
+          
             if(data.c_reveal == 1) {
               con.StopSound(5);
               con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/los_eindje_nadenken.mp3?v=1739630120173",2);
