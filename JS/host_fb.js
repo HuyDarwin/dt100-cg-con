@@ -80,7 +80,20 @@ $(function () {
             $(".mob-w-e-p").html(data.mob_to_eli);
             $(".money-add-p").html(accounting.formatMoney(data.eli_money));
             $(".money-total-p").html(accounting.formatMoney(data.total_money));
-            $(".mob-e-p").html(data.mob_eli);         
+            $(".mob-e-p").html(data.mob_eli);  
+          
+            if(data.option_a_music != "." && data.option_b_music != ".") {
+              $(".more-info").html("Có âm thanh ở câu 1 và 2");
+            }
+            if(data.option_a_music != ".") {
+              $(".more-info").html("Có âm thanh ở câu 1 / câu chính");
+            }
+            else if(data.option_b_music != ".") {
+              $(".more-info").html("Có âm thanh ở câu 2");
+            }
+            else{
+              $(".more-info").html("");              
+            }
           
         });
       
