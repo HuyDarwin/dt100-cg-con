@@ -389,7 +389,7 @@ $(function () {
           $("#i-categories").css("opacity",1);
         });
       
-      
+        $(".to-main").click();
       
         $(".c-reveal").click(function(){
           dib("e-reveal");
