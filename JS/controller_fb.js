@@ -366,6 +366,7 @@ $(function () {
             question_now = parseInt($('.list-qs').val());
             upd('question_now', question_now);
 
+            dib(".play_q_music");
             UpdateData(1);
 
             enb(".c-reveal");            
