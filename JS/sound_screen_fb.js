@@ -132,7 +132,7 @@ $(function () {
               upd("wrong_ans_sfx", 0);
             }
             if(data.goodbye == 1) {
-              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/nha%CC%A3c%20ta%CC%A3m%20bie%CC%A3%CC%82t%20fade.mp3?v=1740056122624",2);
+              con.PlaySound("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Tam%20biet%20(sa%CC%A3ch%20ho%CC%9Bn).mp3?v=1741877706597",2);
               upd("goodbye", 0);
             }
             if(data.e_reveal == 1) {
