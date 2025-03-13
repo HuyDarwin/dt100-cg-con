@@ -30,7 +30,7 @@ $(function () {
 
         //
       
-        // con.PlayWhiteNoise();
+        con.PlayWhiteNoise();
 
         //
 
