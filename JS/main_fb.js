@@ -157,6 +157,7 @@ $(function () {
 
         function ResetQuestion(){
           $('.q-con div, .q-con').css('opacity',0).playKeyframe('reset');
+          $(".answer").playKeyframe('reset');
           $(".answer div").playKeyframe({
               name: 'opacity-0',
               duration: '0s',

@@ -384,6 +384,7 @@ $(function () {
               timingFunction: 'ease'
             })
           $('.q-image, .q-escape, .q-con div, .q-con, .q-remain, .q-money').css('opacity',0).playKeyframe('reset');
+          $(".answer").playKeyframe('reset');
           $('.q-a-con').css({'transform':'scaleY(1) scaleX(1) translateY(0%)'});
           AnswerStatus(1,0);
           AnswerStatus(2,0);
