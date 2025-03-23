@@ -190,6 +190,18 @@ $(function () {
               "opacity": "1",
                "transform": "translateY(0%)"
             }
+          },
+          {
+            name: 'opacity-0',
+            '100%': {
+              "opacity": "0"
+            } 
+          },
+          {
+            name: 'opacity-1',
+            '100%': {
+              "opacity": "1"
+            } 
           }
         ]);
 
@@ -366,7 +378,12 @@ $(function () {
 
 
         function ResetQuestion(){
-          $('.q-image, .q-escape, .q-con div, .q-con, .answer, .q-remain, .q-money').css('opacity',0).playKeyframe('reset');
+          $(".answer div").playKeyframe({
+              name: 'opacity-0',
+              duration: '0s',
+              timingFunction: 'ease'
+            })
+          $('.q-image, .q-escape, .q-con div, .q-con, .q-remain, .q-money').css('opacity',0).playKeyframe('reset');
           $('.q-a-con').css({'transform':'scaleY(1) scaleX(1) translateY(0%)'});
           AnswerStatus(1,0);
           AnswerStatus(2,0);
@@ -404,9 +421,6 @@ $(function () {
           else if (ans == 3){
             answer = 'c';
           }
-
-          $('#answer-' + answer).css('opacity',1)
-          $('#answer-' + answer + ' div').css('opacity',1)
 
           $('#answer-' + answer + ' .ans-letter').playKeyframe({
               name: 'key-q-reveal-4',

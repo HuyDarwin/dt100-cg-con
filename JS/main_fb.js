@@ -140,11 +140,28 @@ $(function () {
               "transform": "translateY(0%)",
               "clip-path": "inset(0% 0% 100% 0%)"
             }    
+          },
+          {
+            name: 'opacity-0',
+            '100%': {
+              "opacity": "0"
+            } 
+          },
+          {
+            name: 'opacity-1',
+            '100%': {
+              "opacity": "1"
+            } 
           }
         ]);
 
         function ResetQuestion(){
-          $('.q-con div, .q-con, .answer').css('opacity',0).playKeyframe('reset');
+          $('.q-con div, .q-con').css('opacity',0).playKeyframe('reset');
+          $(".answer div").playKeyframe({
+              name: 'opacity-0',
+              duration: '0s',
+              timingFunction: 'ease'
+            })
           AnswerStatus(1,0);
           AnswerStatus(2,0);
           AnswerStatus(3,0);
@@ -259,9 +276,6 @@ $(function () {
           else if (ans == 3){
             answer = 'c';
           }
-
-          $('#answer-' + answer).css('opacity',1)
-          $('#answer-' + answer + ' div').css('opacity',1)
 
           $('#answer-' + answer + ' .ans-letter').playKeyframe({
               name: 'key-q-reveal-4',
