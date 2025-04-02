@@ -39,7 +39,7 @@ $(function () {
           
             $(".damn #hello").html(data.hello);
           
-            console.log($(".damn").width() + " " + $(".damn #hello").get(0).getBBox().width);
+            $(".damn #hello").removeAttr('textLength');
             $(".damn #hello").attr('textLength', Math.min($(".damn").width(), $(".damn #hello").get(0).getBBox().width));
         });
       
