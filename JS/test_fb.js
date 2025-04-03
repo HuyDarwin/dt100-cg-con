@@ -37,10 +37,12 @@ $(function () {
               upd("reload", 0);
             }
           
-            $(".damn #hello").html(data.hello);
+            $(".damn #textline1").html(data.hello);
           
-            $(".damn #hello").removeAttr('textLength');
-            $(".damn #hello").attr('textLength', Math.min($(".damn").width(), $(".damn #hello").get(0).getBBox().width));
+            $(".damn text").removeAttr('textLength');
+            console.log($(".damn").width() + " " + $(".damn #textline1").get(0).getBBox().width + " " + $(".damn #textline2").get(0).getBBox().width + " " + Math.min($(".damn").width(), Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width)));
+            $(".damn #textline1").attr('textLength', Math.min($(".damn").width(), Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width)));
+            
         });
       
     }(window.CONTROLLER = window.CONTROLLER || {}));
