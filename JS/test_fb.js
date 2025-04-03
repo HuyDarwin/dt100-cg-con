@@ -42,10 +42,24 @@ $(function () {
           
             $(".damn #textline1").removeAttr('textLength');
             $(".damn #textline2").removeAttr('textLength');
-            var width1 = ($(".damn #textline1").get(0).getBBox().width);
-            var width2 = ($(".damn #textline2").get(0).getBBox().width);
-            $(".damn #textline1").attr("textLength", Math.min(width1 / $(".damn").width() * 100, 100, width1 / Math.max(width1, width2) * 100) + "%");
-            $(".damn #textline2").attr("textLength", Math.min(width2 / $(".damn").width() * 100, 100, width2 / Math.max(width1, width2) * 100) + "%");
+            var width1 = Math.min($(".damn #textline1").get(0).getBBox().width / $(".damn").width() * 100, 100);
+            if (Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width) != 0) {
+              width1 = Math.min(width1, $(".damn #textline1").get(0).getBBox().width * 100 / Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width));
+            }
+            var width2 = Math.min($(".damn #textline2").get(0).getBBox().width / $(".damn").width() * 100, 100);
+            if (Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width) != 0) {
+              width2 = Math.min(width2, $(".damn #textline2").get(0).getBBox().width * 100 / Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width));
+            }
+            $(".damn #textline1").attr("textLength", width1 + "%");
+            $(".damn #textline2").attr("textLength", width2 + "%");
+          
+            if(data.textline2 == ""){
+              $(".damn #textline1").attr("y", "50");
+            }
+            else{
+              $(".damn #textline1").attr("y", "32.5");
+              $(".damn #textline2").attr("y", "67.5");
+            }
            
         });
       
