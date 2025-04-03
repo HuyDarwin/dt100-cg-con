@@ -37,11 +37,12 @@ $(function () {
               upd("reload", 0);
             }
           
-            $(".damn #textline1").html(data.hello);
+            $(".damn #textline1").html(data.textline1);
+            $(".damn #textline2").html(data.textline2);
           
             $(".damn text").removeAttr('textLength');
             console.log($(".damn").width() + " " + $(".damn #textline1").get(0).getBBox().width + " " + $(".damn #textline2").get(0).getBBox().width + " " + Math.min($(".damn").width(), Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width)));
-            $(".damn #textline1").attr('textLength', Math.min($(".damn").width(), Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width)));
+            $(".damn text").attr('textLength', Math.min($(".damn").width(), Math.max($(".damn #textline1").get(0).getBBox().width, $(".damn #textline2").get(0).getBBox().width)));
             
         });
       
