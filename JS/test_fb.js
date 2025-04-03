@@ -54,11 +54,11 @@ $(function () {
             $(".damn #textline2").attr("textLength", width2 + "%");
           
             if(data.textline2 == ""){
-              $(".damn #textline1").attr("y", "50");
+              $(".damn #textline1").attr("y", "42.5"); // (70 + 30 / 2) / 2
             }
             else{
-              $(".damn #textline1").attr("y", "32.5");
-              $(".damn #textline2").attr("y", "67.5");
+              $(".damn #textline1").attr("y", "25"); // 42.5 - (30 / 2 + 2.5)
+              $(".damn #textline2").attr("y", "60"); // 42.5 + (30 / 2 + 2.5)
             }
            
         });
