@@ -23,7 +23,7 @@ body {
 }
 
 #background{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Postcode%20Loterij%20E%C3%A9n%20Tegen%20100%20(05.05.2024)%2014-28%20screenshot.png?v=1738769694421') no-repeat;
+  background: url("../Assets/Postcode%20Loterij%20Eén%20Tegen%20100%20(05.05.2024)%2014-28%20screenshot.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   opacity:0;
@@ -44,7 +44,7 @@ body {
 }
 
 .q-remain {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
+  background: url("../Assets/thanh%20tiền%20và%20số%20người%20cùng%20chơi.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:15%;
@@ -65,7 +65,7 @@ body {
 }
 
 .q-money {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
+  background: url("../Assets/thanh%20tiền%20và%20số%20người%20cùng%20chơi.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:15%;
@@ -86,7 +86,7 @@ body {
 }
 
 .q-escape {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20gi%E1%BA%A3i%20tho%C3%A1t.png?v=1738762402938') no-repeat;
+  background: url("../Assets/thanh%20giải%20thoát.png") no-repeat;
   background-position: center;
 	background-size: cover;
   width:21.6%;
@@ -212,7 +212,7 @@ body {
 }
 
 .eliminate-money{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20th%C6%B0%E1%BB%9Fng.png?v=1738762395889') no-repeat;
+  background: url("../Assets/thanh%20tiền%20thưởng.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:28%;
@@ -233,7 +233,7 @@ body {
 }
 
 .total-money{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20th%C6%B0%E1%BB%9Fng.png?v=1738762395889') no-repeat;
+  background: url("../Assets/thanh%20tiền%20thưởng.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:28%;

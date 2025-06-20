@@ -1,9 +1,9 @@
 @font-face {
 	font-family: "Chevin";
 	src:
-		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("woff"),
-		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("opentype"),
-		url("https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Chevin-Medium%20(font%20viet%20hoa).ttf?v=1738762058405") format("truetype");
+		url("../Assets/Chevin-Medium (font viet hoa).ttf") format("woff"),
+		url("../Assets/Chevin-Medium (font viet hoa).ttf") format("opentype"),
+		url("../Assets/Chevin-Medium (font viet hoa).ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;

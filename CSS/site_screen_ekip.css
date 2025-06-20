@@ -23,7 +23,7 @@ body {
 }
 
 #background{
-  background-image: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%404x.png?v=1738851294903');
+  background: url("../Assets/dt100%20copy%404x.png") no-repeat;
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -316,7 +316,7 @@ body {
 }
 
 .q-remain {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
+  background: url("../Assets/thanh%20tiền%20và%20số%20người%20cùng%20chơi.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:15%;
@@ -337,7 +337,7 @@ body {
 }
 
 .q-money {
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/thanh%20ti%E1%BB%81n%20v%C3%A0%20s%E1%BB%91%20ng%C6%B0%E1%BB%9Di%20c%C3%B9ng%20ch%C6%A1i.png?v=1738762401298') no-repeat;
+  background: url("../Assets/thanh%20tiền%20và%20số%20người%20cùng%20chơi.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   width:15%;
@@ -531,7 +531,7 @@ body {
   top:0%;
   left:0%;
   
-  background-image: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/Untitled-1.png?v=1739088412250');
+  background-image: url("../Assets/Untitled-1.png");
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

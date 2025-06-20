@@ -23,7 +23,7 @@ body {
 }
 
 #background{
-  background: url('https://cdn.glitch.global/eb98023a-5c09-46b5-a350-c2ece068cb4e/dt100%20copy%404x.png?v=1738851294903') no-repeat;
+  background: url("../Assets/dt100%20copy%404x.png") no-repeat;
 	background-position: center;
 	background-size: cover;
   opacity:1;
